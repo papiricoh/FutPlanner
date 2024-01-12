@@ -11,18 +11,23 @@ import SwiftData
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
+    @State private var selection = 2
 
     var body: some View {
         VStack {
-            TabView {
+            TabView(selection:$selection) {
+                Text("Stadistics").tabItem {
+                    Image(systemName: "chart.line.uptrend.xyaxis")
+                    Text("Evaluaciones")
+                }.tag(1)
                 HomeTab().tabItem {
-                    Image(systemName: "house.fill")
-                    Text("Home")
-                }
-                Text("profile").tabItem {
-                    Image(systemName: "person.fill")
-                    Text("profile")
-                }
+                    Image(systemName: "soccerball")
+                    Text("Principal")
+                }.tag(2)
+                Text("Team").tabItem {
+                    Image(systemName: "sportscourt")
+                    Text("Equipo")
+                }.tag(3)
             }
         }
         
