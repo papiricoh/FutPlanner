@@ -9,8 +9,12 @@ import SwiftUI
 
 struct HomeTab: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
         
+        VStack(alignment: .center) {
+            Text("FutPlanner").font(.system(size: 30)).multilineTextAlignment(.leading).bold()
+            ClubCard()
+            Spacer()
+        }
     }
 }
 
