@@ -11,7 +11,7 @@ import SwiftData
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @State private var selection = 2
-    @State public var logged = false
+    @State public var logged = true
     @State public var loading = false
     
     var body: some View {
@@ -39,7 +39,7 @@ struct ContentView: View {
                 }
             }
             if(loading) {
-                Text("CARDANDO...")
+                LoadingComponent()
             }
         }
         

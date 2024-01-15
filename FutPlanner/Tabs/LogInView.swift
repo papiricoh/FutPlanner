@@ -13,31 +13,34 @@ struct LogInView: View {
     @State private var password: String = ""
     
     var body: some View {
-        VStack {
-            Image("ClubPlaceholder").resizable().frame(width: 100, height: 100).clipShape(Rectangle()).cornerRadius(20)
-            Text("Bienvenido a FutPlanner")
+        ZStack {
             VStack {
-                ZStack (alignment: .leading) {
-                    TextField("", text: $username).padding().clipShape(Rectangle()).background(Color("FutGreen")).foregroundColor(.white).cornerRadius(8).padding(.horizontal)
-                    
-                    if username.isEmpty {
-                        Text("Usuario").foregroundStyle(Color.gray).padding(.leading, 34).allowsHitTesting(false)
+                Image("ClubPlaceholder").resizable().frame(width: 100, height: 100).clipShape(Rectangle()).cornerRadius(20)
+                Text("Bienvenido a FutPlanner")
+                VStack {
+                    ZStack (alignment: .leading) {
+                        TextField("", text: $username).padding().clipShape(Rectangle()).background(Color("FutGreen")).foregroundColor(.white).cornerRadius(8).padding(.horizontal)
+                        
+                        if username.isEmpty {
+                            Text("Usuario").foregroundStyle(Color.gray).padding(.leading, 34).allowsHitTesting(false)
+                        }
+                        
+                    }
+                    ZStack (alignment: .leading) {
+                        SecureField("", text: $password).padding().clipShape(Rectangle()).background(Color("FutGreen")).foregroundColor(.white).cornerRadius(8).padding(.horizontal)
+                        
+                        if password.isEmpty {
+                            Text("Contraseña").foregroundStyle(Color.gray).padding(.leading, 34).allowsHitTesting(false)
+                        }
                     }
                     
+                    Button(action: login) {
+                        Text("Iniciar Sesión")
+                    }.padding().background(Color("FutGreenLight")).foregroundColor(.white).bold().clipShape(Rectangle()).cornerRadius(8)
                 }
-                ZStack (alignment: .leading) {
-                    SecureField("", text: $password).padding().clipShape(Rectangle()).background(Color("FutGreen")).foregroundColor(.white).cornerRadius(8).padding(.horizontal)
-                    
-                    if password.isEmpty {
-                        Text("Contraseña").foregroundStyle(Color.gray).padding(.leading, 34).allowsHitTesting(false)
-                    }
-                }
-                
-                Button(action: login) {
-                    Text("Iniciar Sesión")
-                }.padding().background(Color("FutGreenLight")).foregroundColor(.white).bold().clipShape(Rectangle()).cornerRadius(8)
-            }
-        }
+            }.padding(32).foregroundColor(.white).background(Color.futGreenDark).cornerRadius(20).padding()
+        }.containerRelativeFrame([.horizontal, .vertical])
+            .background(Gradient(colors: [.green, .gray, .green]).opacity(0.6))
     }
     func login() {
         // Aquí debería implementar la lógica de validación y autenticación
