@@ -12,9 +12,14 @@ struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
     @State private var selection = 2
-
+    @State public var logged = false
+    
     var body: some View {
-        VStack {
+        if(!logged) {
+            LogInView(onLoginSuccess: {
+                self.logged = true
+            });
+        }else {
             NavigationView() {
                 TabView(selection:$selection) {
                     Text("Stadistics").tabItem {
@@ -32,8 +37,6 @@ struct ContentView: View {
                 }
             }
         }
-        
-        
     }
 
     private func addItem() {
