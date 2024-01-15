@@ -1,0 +1,28 @@
+[
+    {
+        "id": 1,
+        "homeTeamName": "Hienas -> B",
+        "awayTeamName": "Hienas",
+        "category": "Juvenil",
+        "subCategory": "Preferente",
+        "date": 3203920,
+
+        "coordinates": {
+            "latitude": 10.0,
+            "longitude": 10.0
+        }
+    },
+    {
+        "id": 2,
+        "homeTeamName": "Lopecines",
+        "awayTeamName": "Leones",
+        "category": "Juvenil",
+        "subCategory": "2",
+        "date": 320203920,
+
+        "coordinates": {
+            "latitude": 200.0,
+            "longitude": 10.0
+        }
+    }
+]

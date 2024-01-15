@@ -16,6 +16,10 @@
 		7C2054EF2B552C7E00D1FCFA /* MatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2054EE2B552C7E00D1FCFA /* MatchesView.swift */; };
 		7C2054F12B554CF600D1FCFA /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2054F02B554CF600D1FCFA /* LogInView.swift */; };
 		7C24883E2B55C898001A18AB /* LoadingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C24883D2B55C898001A18AB /* LoadingComponent.swift */; };
+		7C2488422B55D896001A18AB /* MatchInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2488412B55D896001A18AB /* MatchInfo.swift */; };
+		7C2488452B55DA40001A18AB /* ModelLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2488442B55DA40001A18AB /* ModelLoader.swift */; };
+		7C2488482B55DAD8001A18AB /* matchData.json in Resources */ = {isa = PBXBuildFile; fileRef = 7C2488472B55DAD8001A18AB /* matchData.json */; };
+		7C24884B2B55DE42001A18AB /* MatchOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C24884A2B55DE42001A18AB /* MatchOverview.swift */; };
 		7C3A7DDE2B544B7E006B8B81 /* ClubCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3A7DDD2B544B7E006B8B81 /* ClubCard.swift */; };
 		7CEB240C2B3031C600BDF78E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CEB240B2B3031C600BDF78E /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
@@ -31,6 +35,10 @@
 		7C2054EE2B552C7E00D1FCFA /* MatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesView.swift; sourceTree = "<group>"; };
 		7C2054F02B554CF600D1FCFA /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		7C24883D2B55C898001A18AB /* LoadingComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingComponent.swift; sourceTree = "<group>"; };
+		7C2488412B55D896001A18AB /* MatchInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchInfo.swift; sourceTree = "<group>"; };
+		7C2488442B55DA40001A18AB /* ModelLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelLoader.swift; sourceTree = "<group>"; };
+		7C2488472B55DAD8001A18AB /* matchData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = matchData.json; sourceTree = "<group>"; };
+		7C24884A2B55DE42001A18AB /* MatchOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchOverview.swift; sourceTree = "<group>"; };
 		7C3A7DDD2B544B7E006B8B81 /* ClubCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubCard.swift; sourceTree = "<group>"; };
 		7CEB240B2B3031C600BDF78E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -65,6 +73,8 @@
 		7C02D6E42ACE958E000917BD /* FutPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				7C2488462B55DA84001A18AB /* Resources */,
+				7C24883F2B55D875001A18AB /* Objects */,
 				7C2054ED2B552C6800D1FCFA /* Activities */,
 				7C3A7DDC2B544B64006B8B81 /* Components */,
 				7C0547592B516E40000BC7D2 /* Tabs */,
@@ -103,11 +113,45 @@
 			path = Activities;
 			sourceTree = "<group>";
 		};
+		7C24883F2B55D875001A18AB /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				7C2488432B55DA0C001A18AB /* Utils */,
+				7C2488402B55D87D001A18AB /* Matches */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		7C2488402B55D87D001A18AB /* Matches */ = {
+			isa = PBXGroup;
+			children = (
+				7C2488412B55D896001A18AB /* MatchInfo.swift */,
+			);
+			path = Matches;
+			sourceTree = "<group>";
+		};
+		7C2488432B55DA0C001A18AB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7C2488442B55DA40001A18AB /* ModelLoader.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		7C2488462B55DA84001A18AB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7C2488472B55DAD8001A18AB /* matchData.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		7C3A7DDC2B544B64006B8B81 /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				7C3A7DDD2B544B7E006B8B81 /* ClubCard.swift */,
 				7C24883D2B55C898001A18AB /* LoadingComponent.swift */,
+				7C24884A2B55DE42001A18AB /* MatchOverview.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -171,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CEB240C2B3031C600BDF78E /* Launch Screen.storyboard in Resources */,
+				7C2488482B55DAD8001A18AB /* matchData.json in Resources */,
 				7C02D6EF2ACE958F000917BD /* Preview Assets.xcassets in Resources */,
 				7C02D6EC2ACE958F000917BD /* Assets.xcassets in Resources */,
 			);
@@ -183,7 +228,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C24884B2B55DE42001A18AB /* MatchOverview.swift in Sources */,
 				7C05475B2B516E55000BC7D2 /* HomeTab.swift in Sources */,
+				7C2488422B55D896001A18AB /* MatchInfo.swift in Sources */,
+				7C2488452B55DA40001A18AB /* ModelLoader.swift in Sources */,
 				7C2054F12B554CF600D1FCFA /* LogInView.swift in Sources */,
 				7C24883E2B55C898001A18AB /* LoadingComponent.swift in Sources */,
 				7C02D6E82ACE958E000917BD /* ContentView.swift in Sources */,

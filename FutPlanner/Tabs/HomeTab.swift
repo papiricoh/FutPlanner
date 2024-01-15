@@ -24,6 +24,7 @@ struct HomeTab: View {
                         Image(systemName: "arrowshape.forward.fill")
                     }.padding().background(Color("FutGreen")).foregroundColor(Color.white)
                 }
+                
                 NavigationLink(destination: MatchesView()) {
                     HStack {
                         VStack(alignment: .leading) {
