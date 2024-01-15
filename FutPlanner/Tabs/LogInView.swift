@@ -16,15 +16,26 @@ struct LogInView: View {
         VStack {
             Image("ClubPlaceholder").resizable().frame(width: 100, height: 100).clipShape(Rectangle()).cornerRadius(20)
             Text("Bienvenido a FutPlanner")
-            Form {
-                Section(header: Text("Credenciales")) {
-                    TextField("Nombre de Usuario", text: $username)
-                    SecureField("Contraseña", text: $password)
+            VStack {
+                ZStack (alignment: .leading) {
+                    TextField("", text: $username).padding().clipShape(Rectangle()).background(Color("FutGreen")).foregroundColor(.white).cornerRadius(8).padding(.horizontal)
+                    
+                    if username.isEmpty {
+                        Text("Usuario").foregroundStyle(Color.gray).padding(.leading, 34).allowsHitTesting(false)
+                    }
+                    
+                }
+                ZStack (alignment: .leading) {
+                    SecureField("", text: $password).padding().clipShape(Rectangle()).background(Color("FutGreen")).foregroundColor(.white).cornerRadius(8).padding(.horizontal)
+                    
+                    if password.isEmpty {
+                        Text("Contraseña").foregroundStyle(Color.gray).padding(.leading, 34).allowsHitTesting(false)
+                    }
                 }
                 
                 Button(action: login) {
                     Text("Iniciar Sesión")
-                }
+                }.padding().background(Color("FutGreenLight")).foregroundColor(.white).bold().clipShape(Rectangle()).cornerRadius(8)
             }
         }
     }
@@ -35,6 +46,14 @@ struct LogInView: View {
         
         // Supongamos que la validación fue exitosa
         onLoginSuccess()
+    }
+    
+}
+
+extension UITextField {
+    func setPlaceholderColor(to color: UIColor) {
+        let placeholderText = self.placeholder ?? ""
+        self.attributedPlaceholder = NSAttributedString(string: placeholderText, attributes: [.foregroundColor: color])
     }
 }
 
