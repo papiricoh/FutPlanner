@@ -15,19 +15,21 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-            TabView(selection:$selection) {
-                Text("Stadistics").tabItem {
-                    Image(systemName: "chart.line.uptrend.xyaxis")
-                    Text("Evaluaciones")
-                }.tag(1)
-                HomeTab().tabItem {
-                    Image(systemName: "soccerball")
-                    Text("Principal")
-                }.tag(2)
-                Text("Team").tabItem {
-                    Image(systemName: "sportscourt")
-                    Text("Equipo")
-                }.tag(3)
+            NavigationView() {
+                TabView(selection:$selection) {
+                    Text("Stadistics").tabItem {
+                        Image(systemName: "chart.line.uptrend.xyaxis")
+                        Text("Evaluaciones")
+                    }.tag(1)
+                    HomeTab().tabItem {
+                        Image(systemName: "soccerball")
+                        Text("Principal")
+                    }.tag(2)
+                    Text("Team").tabItem {
+                        Image(systemName: "sportscourt")
+                        Text("Equipo")
+                    }.tag(3)
+                }
             }
         }
         
