@@ -13,6 +13,7 @@
 		7C02D6EC2ACE958F000917BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C02D6EB2ACE958F000917BD /* Assets.xcassets */; };
 		7C02D6EF2ACE958F000917BD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C02D6EE2ACE958F000917BD /* Preview Assets.xcassets */; };
 		7C05475B2B516E55000BC7D2 /* HomeTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C05475A2B516E55000BC7D2 /* HomeTab.swift */; };
+		7C17A0802B569E1B00EFFE5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C17A07F2B569E1B00EFFE5C /* Main.storyboard */; };
 		7C2054EF2B552C7E00D1FCFA /* MatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2054EE2B552C7E00D1FCFA /* MatchesView.swift */; };
 		7C2054F12B554CF600D1FCFA /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2054F02B554CF600D1FCFA /* LogInView.swift */; };
 		7C24883E2B55C898001A18AB /* LoadingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C24883D2B55C898001A18AB /* LoadingComponent.swift */; };
@@ -33,6 +34,7 @@
 		7C02D6EB2ACE958F000917BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C02D6EE2ACE958F000917BD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7C05475A2B516E55000BC7D2 /* HomeTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTab.swift; sourceTree = "<group>"; };
+		7C17A07F2B569E1B00EFFE5C /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		7C2054EE2B552C7E00D1FCFA /* MatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesView.swift; sourceTree = "<group>"; };
 		7C2054F02B554CF600D1FCFA /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		7C24883D2B55C898001A18AB /* LoadingComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingComponent.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				7C02D6E92ACE958E000917BD /* Item.swift */,
 				7C02D6EB2ACE958F000917BD /* Assets.xcassets */,
 				7C02D6ED2ACE958F000917BD /* Preview Content */,
+				7C17A07F2B569E1B00EFFE5C /* Main.storyboard */,
 			);
 			path = FutPlanner;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CEB240C2B3031C600BDF78E /* Launch Screen.storyboard in Resources */,
+				7C17A0802B569E1B00EFFE5C /* Main.storyboard in Resources */,
 				7C2488482B55DAD8001A18AB /* matchData.json in Resources */,
 				7C02D6EF2ACE958F000917BD /* Preview Assets.xcassets in Resources */,
 				7C02D6EC2ACE958F000917BD /* Assets.xcassets in Resources */,
@@ -382,6 +386,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -410,6 +415,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
