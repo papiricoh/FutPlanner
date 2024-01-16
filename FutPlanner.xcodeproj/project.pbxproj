@@ -23,11 +23,26 @@
 		7C24884B2B55DE42001A18AB /* MatchOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C24884A2B55DE42001A18AB /* MatchOverview.swift */; };
 		7C3A7DDE2B544B7E006B8B81 /* ClubCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3A7DDD2B544B7E006B8B81 /* ClubCard.swift */; };
 		7C50936E2B56728F00521CC4 /* MatchInfoActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C50936D2B56728F00521CC4 /* MatchInfoActivity.swift */; };
+		7C91B3942B56B35F0028891B /* Lottie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C91B3932B56B35F0028891B /* Lottie.framework */; };
+		7C91B3952B56B35F0028891B /* Lottie.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7C91B3932B56B35F0028891B /* Lottie.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7CEB240C2B3031C600BDF78E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CEB240B2B3031C600BDF78E /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		7C1F001E2B56B0D400DA2662 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7C91B3952B56B35F0028891B /* Lottie.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		7C02D6E22ACE958E000917BD /* FutPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FutPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C02D6E52ACE958E000917BD /* FutPlannerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FutPlannerApp.swift; sourceTree = "<group>"; };
 		7C02D6E72ACE958E000917BD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7C02D6E92ACE958E000917BD /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -44,6 +59,8 @@
 		7C24884A2B55DE42001A18AB /* MatchOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchOverview.swift; sourceTree = "<group>"; };
 		7C3A7DDD2B544B7E006B8B81 /* ClubCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubCard.swift; sourceTree = "<group>"; };
 		7C50936D2B56728F00521CC4 /* MatchInfoActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchInfoActivity.swift; sourceTree = "<group>"; };
+		7C91B3922B56B2E60028891B /* FutPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = FutPlanner.app; path = "/Users/pabloricoal/Desktop/FutPlanner/FutPlanner/build/Debug-iphoneos/FutPlanner.app"; sourceTree = "<absolute>"; };
+		7C91B3932B56B35F0028891B /* Lottie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lottie.framework; path = Carthage/Build/iOS/Lottie.framework; sourceTree = "<group>"; };
 		7CEB240B2B3031C600BDF78E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -52,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C91B3942B56B35F0028891B /* Lottie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,16 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				7C02D6E42ACE958E000917BD /* FutPlanner */,
-				7C02D6E32ACE958E000917BD /* Products */,
+				7C1F00192B56B0D300DA2662 /* Frameworks */,
 			);
-			sourceTree = "<group>";
-		};
-		7C02D6E32ACE958E000917BD /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				7C02D6E22ACE958E000917BD /* FutPlanner.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		7C02D6E42ACE958E000917BD /* FutPlanner */ = {
@@ -108,6 +118,14 @@
 				7C2054F02B554CF600D1FCFA /* LogInView.swift */,
 			);
 			path = Tabs;
+			sourceTree = "<group>";
+		};
+		7C1F00192B56B0D300DA2662 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7C91B3932B56B35F0028891B /* Lottie.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		7C2054ED2B552C6800D1FCFA /* Activities */ = {
@@ -172,6 +190,7 @@
 				7C02D6DE2ACE958E000917BD /* Sources */,
 				7C02D6DF2ACE958E000917BD /* Frameworks */,
 				7C02D6E02ACE958E000917BD /* Resources */,
+				7C1F001E2B56B0D400DA2662 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -179,7 +198,7 @@
 			);
 			name = FutPlanner;
 			productName = FutPlanner;
-			productReference = 7C02D6E22ACE958E000917BD /* FutPlanner.app */;
+			productReference = 7C91B3922B56B2E60028891B /* FutPlanner.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -206,7 +225,7 @@
 				Base,
 			);
 			mainGroup = 7C02D6D92ACE958E000917BD;
-			productRefGroup = 7C02D6E32ACE958E000917BD /* Products */;
+			productRefGroup = 7C02D6D92ACE958E000917BD;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -382,6 +401,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"FutPlanner/Preview Content\"";
 				DEVELOPMENT_TEAM = S62924SPM4;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -411,6 +434,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"FutPlanner/Preview Content\"";
 				DEVELOPMENT_TEAM = S62924SPM4;
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
