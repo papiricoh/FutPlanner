@@ -9,7 +9,8 @@ import SwiftUI
 import MapKit
 
 struct MatchInfoActivity: View {
-    var infoMatch: MatchInfo
+    let infoMatch: MatchInfo
+    
     var body: some View {
         VStack {
             Map(initialPosition: .region(region)).frame(height: 400)
@@ -31,6 +32,8 @@ struct MatchInfoActivity: View {
                         Text(infoMatch.awayTeamName).bold().font(.headline)
                     }.padding().frame(width: 150).background(Color("NightColor")).cornerRadius(10).offset(y: -100)
                 }.padding()
+                    .padding(.bottom, -110)
+                Divider()
                 HStack {
                     VStack(alignment: .leading) {
                         Text("Categoria").bold().font(.title3)
@@ -41,7 +44,7 @@ struct MatchInfoActivity: View {
                         Text("Fecha").bold().font(.title3)
                         Text(formatDate(infoMatch.date))
                     }
-                }.padding().offset(y: -100)
+                }.padding()
             }
             Spacer()
         }.navigationTitle(infoMatch.homeTeamName + " - " + infoMatch.awayTeamName)

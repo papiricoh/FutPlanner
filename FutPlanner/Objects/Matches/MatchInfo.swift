@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct MatchInfo: Hashable, Codable {
+struct MatchInfo: Identifiable, Hashable, Codable {
     var id: Int
     var homeTeamName: String
     var awayTeamName: String
@@ -22,4 +22,5 @@ struct MatchInfo: Hashable, Codable {
         var latitude: Double
         var longitude: Double
     }
+    
 }
