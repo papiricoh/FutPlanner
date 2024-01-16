@@ -18,7 +18,7 @@ struct MatchOverview: View {
             }
             Spacer()
             Image(systemName: "play.fill")
-        }.padding(8).background(Color("futGreen")).foregroundColor(.white)
+        }.padding(8).background(Color.futGreen).cornerRadius(10).foregroundColor(.white).padding(4)
         
     }
     

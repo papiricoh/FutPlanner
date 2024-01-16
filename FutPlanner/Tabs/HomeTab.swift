@@ -25,7 +25,7 @@ struct HomeTab: View {
                         }
                         Spacer()
                         Image(systemName: "arrowshape.forward.fill")
-                    }.padding().background(Color("FutGreen")).foregroundColor(Color.white)
+                    }.padding().background(Color("FutGreen")).cornerRadius(10).foregroundColor(Color.white).padding(4)
                 }
                 
                 NavigationLink(destination: MatchesView()) {
@@ -38,8 +38,8 @@ struct HomeTab: View {
                         Image(systemName: "arrowshape.forward.fill")
                     }
                     .padding()
-                    .background(Color("FutGreen"))
-                    .foregroundColor(Color.white)
+                    .background(Color("FutGreen")).cornerRadius(10)
+                    .foregroundColor(Color.white).padding(4)
                 }
             }
         }
