@@ -27,7 +27,9 @@ struct ContentView: View {
                             Image(systemName: "chart.line.uptrend.xyaxis")
                             Text("Evaluaciones")
                         }.tag(1)
-                        HomeTab().tabItem {
+                        HomeTab(onLogout: {
+                            self.logged = false
+                        }).tabItem {
                             Image(systemName: "soccerball")
                             Text("Principal")
                         }.tag(2)

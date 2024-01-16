@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct HomeTab: View {
+    var onLogout: () -> Void
     var body: some View {
         
         VStack() {
             Text("FutPlanner").font(.system(size: 30)).multilineTextAlignment(.leading).bold()
-            ClubCard()
+            ClubCard(onLogout: {
+                self.onLogout()
+            })
             ScrollView {
                 NavigationLink(destination: MatchesView()) {
                     HStack {
@@ -44,5 +47,6 @@ struct HomeTab: View {
 }
 
 #Preview {
-    HomeTab()
+    HomeTab(onLogout: {
+    })
 }

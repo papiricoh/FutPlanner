@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ClubCard: View {
+    var onLogout: () -> Void
     var body: some View {
         HStack() {
             Image("ClubPlaceholder").resizable().frame(width: 80.0, height: 80.0)
@@ -17,7 +18,7 @@ struct ClubCard: View {
                 Text("Nombre de tu equipo")
             }
             Spacer()
-            Button(action: {}, label: {
+            Button(action: onLogout, label: {
                 VStack {
                     Image(systemName: "rectangle.portrait.and.arrow.right")
                     Text("Salir").multilineTextAlignment(.center)
@@ -28,5 +29,7 @@ struct ClubCard: View {
 }
 
 #Preview {
-    ClubCard()
+    ClubCard(onLogout: {
+        
+    })
 }
