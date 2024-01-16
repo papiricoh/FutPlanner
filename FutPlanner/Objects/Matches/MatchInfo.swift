@@ -17,7 +17,7 @@ struct MatchInfo: Hashable, Codable {
     var date: Date
 
 
-    private var coordinates: Coordinates
+    var coordinates: Coordinates
     struct Coordinates: Hashable, Codable {
         var latitude: Double
         var longitude: Double

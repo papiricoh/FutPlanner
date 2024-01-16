@@ -1,15 +1,15 @@
 [
     {
         "id": 1,
-        "homeTeamName": "Hienas -> B",
+        "homeTeamName": "Robertines",
         "awayTeamName": "Hienas",
         "category": "Juvenil",
         "subCategory": "Preferente",
         "date": 3203920,
 
         "coordinates": {
-            "latitude": 10.0,
-            "longitude": 10.0
+            "latitude": 43.359496,
+            "longitude": -5.8653342
         }
     },
     {
@@ -21,7 +21,7 @@
         "date": 320203920,
 
         "coordinates": {
-            "latitude": 200.0,
+            "latitude": 100.0,
             "longitude": 10.0
         }
     }

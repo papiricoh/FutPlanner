@@ -22,7 +22,7 @@ struct MatchesView: View {
             ScrollView {
                 VStack  {
                     ForEach(matches, id: \.id) { match in
-                        NavigationLink(destination: {}) {
+                        NavigationLink(destination: MatchInfoActivity(infoMatch: match)) {
                             MatchOverview(match: match)
                         }
                     }
