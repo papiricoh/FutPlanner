@@ -8,17 +8,20 @@
 import SwiftUI
 
 struct MatchesView: View {
+    @State var addMode = false
     
     var body: some View {
         VStack {
             HStack {
                 Text("Gestion de partidos").font(.title2).bold()
                 Spacer()
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                Button(action: {self.addMode = !self.addMode}, label: {
                     Image(systemName: "plus.circle.fill").font(.largeTitle)
                 })
             }.padding()
-            
+            if(self.addMode) {
+                
+            }
             ScrollView {
                 VStack  {
                     ForEach(matches, id: \.id) { match in
@@ -29,7 +32,7 @@ struct MatchesView: View {
                 }
             }
             Spacer()
-        }.navigationBarTitle("Proximos partidos", displayMode: .inline)
+        }.navigationBarTitle("Proximos partidos", displayMode: .inline).animation(.default, value: addMode)
     }
 }
 

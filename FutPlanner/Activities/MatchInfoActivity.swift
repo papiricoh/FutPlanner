@@ -10,10 +10,11 @@ import MapKit
 
 struct MatchInfoActivity: View {
     let infoMatch: MatchInfo
+    @State var loaded = false
     
     var body: some View {
         VStack {
-            Map(initialPosition: .region(region)).frame(height: 400)
+            Map(initialPosition: .region(region)).frame(height: 500)
             VStack {
                 HStack {
                     VStack {
@@ -31,8 +32,7 @@ struct MatchInfoActivity: View {
                             }.shadow(radius: 3)
                         Text(infoMatch.awayTeamName).bold().font(.headline)
                     }.padding().frame(width: 150).background(Color("NightColor")).cornerRadius(10).offset(y: -100)
-                }.padding()
-                    .padding(.bottom, -110)
+                }.padding().padding(.bottom, -110)
                 Divider()
                 HStack {
                     VStack(alignment: .leading) {
@@ -45,7 +45,11 @@ struct MatchInfoActivity: View {
                         Text(formatDate(infoMatch.date))
                     }
                 }.padding()
-            }
+            }.offset(x: 0, y: self.loaded ? 0 : UIScreen.main.bounds.height)
+                .animation(Animation.spring().delay(0.5), value: self.loaded)
+                .onAppear {
+                self.loaded = true
+                }
             Spacer()
         }.navigationTitle(infoMatch.homeTeamName + " - " + infoMatch.awayTeamName)
     }

@@ -23,6 +23,8 @@
 		7C24884B2B55DE42001A18AB /* MatchOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C24884A2B55DE42001A18AB /* MatchOverview.swift */; };
 		7C3A7DDE2B544B7E006B8B81 /* ClubCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3A7DDD2B544B7E006B8B81 /* ClubCard.swift */; };
 		7C50936E2B56728F00521CC4 /* MatchInfoActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C50936D2B56728F00521CC4 /* MatchInfoActivity.swift */; };
+		7CD9FCEF2B56CBF300421B0D /* TeamTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9FCEE2B56CBF300421B0D /* TeamTab.swift */; };
+		7CD9FCF12B56CD0600421B0D /* PlayerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9FCF02B56CD0600421B0D /* PlayerRow.swift */; };
 		7CEB240C2B3031C600BDF78E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CEB240B2B3031C600BDF78E /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +47,8 @@
 		7C50936D2B56728F00521CC4 /* MatchInfoActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchInfoActivity.swift; sourceTree = "<group>"; };
 		7C91B3962B56B4390028891B /* FutPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FutPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C91B3972B56B4D20028891B /* lottie-ios */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "lottie-ios"; path = "Carthage/Checkouts/lottie-ios"; sourceTree = "<group>"; };
+		7CD9FCEE2B56CBF300421B0D /* TeamTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTab.swift; sourceTree = "<group>"; };
+		7CD9FCF02B56CD0600421B0D /* PlayerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRow.swift; sourceTree = "<group>"; };
 		7CEB240B2B3031C600BDF78E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,6 +104,7 @@
 			children = (
 				7C05475A2B516E55000BC7D2 /* HomeTab.swift */,
 				7C2054F02B554CF600D1FCFA /* LogInView.swift */,
+				7CD9FCEE2B56CBF300421B0D /* TeamTab.swift */,
 			);
 			path = Tabs;
 			sourceTree = "<group>";
@@ -160,6 +165,7 @@
 				7C3A7DDD2B544B7E006B8B81 /* ClubCard.swift */,
 				7C24883D2B55C898001A18AB /* LoadingComponent.swift */,
 				7C24884A2B55DE42001A18AB /* MatchOverview.swift */,
+				7CD9FCF02B56CD0600421B0D /* PlayerRow.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -246,9 +252,11 @@
 				7C24883E2B55C898001A18AB /* LoadingComponent.swift in Sources */,
 				7C02D6E82ACE958E000917BD /* ContentView.swift in Sources */,
 				7C3A7DDE2B544B7E006B8B81 /* ClubCard.swift in Sources */,
+				7CD9FCF12B56CD0600421B0D /* PlayerRow.swift in Sources */,
 				7C02D6EA2ACE958E000917BD /* Item.swift in Sources */,
 				7C2054EF2B552C7E00D1FCFA /* MatchesView.swift in Sources */,
 				7C02D6E62ACE958E000917BD /* FutPlannerApp.swift in Sources */,
+				7CD9FCEF2B56CBF300421B0D /* TeamTab.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

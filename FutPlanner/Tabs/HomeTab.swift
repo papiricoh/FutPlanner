@@ -9,10 +9,12 @@ import SwiftUI
 
 struct HomeTab: View {
     var onLogout: () -> Void
+    @State private var loaded = false
     var body: some View {
         
         VStack() {
             Text("FutPlanner").font(.system(size: 30)).multilineTextAlignment(.leading).bold()
+            Divider()
             ClubCard(onLogout: {
                 self.onLogout()
             })
@@ -42,7 +44,11 @@ struct HomeTab: View {
                     .foregroundColor(Color.white).padding(4)
                 }
             }
-        }
+        }.offset(x: 0, y: self.loaded ? 0 : -UIScreen.main.bounds.height)
+            .animation(Animation.spring().delay(0.5), value: self.loaded)
+            .onAppear {
+            self.loaded = true
+            }
     }
 }
 

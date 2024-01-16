@@ -33,7 +33,7 @@ struct ContentView: View {
                             Image(systemName: "soccerball")
                             Text("Principal")
                         }.tag(2)
-                        Text("Team").tabItem {
+                        TeamTab().tabItem {
                             Image(systemName: "sportscourt")
                             Text("Equipo")
                         }.tag(3)
