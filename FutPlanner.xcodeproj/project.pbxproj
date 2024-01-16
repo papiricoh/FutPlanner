@@ -23,6 +23,7 @@
 		7C24884B2B55DE42001A18AB /* MatchOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C24884A2B55DE42001A18AB /* MatchOverview.swift */; };
 		7C3A7DDE2B544B7E006B8B81 /* ClubCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3A7DDD2B544B7E006B8B81 /* ClubCard.swift */; };
 		7C50936E2B56728F00521CC4 /* MatchInfoActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C50936D2B56728F00521CC4 /* MatchInfoActivity.swift */; };
+		7C7EA12B2B5705BF00218D30 /* TeamData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7EA12A2B5705BF00218D30 /* TeamData.swift */; };
 		7CD9FCEF2B56CBF300421B0D /* TeamTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9FCEE2B56CBF300421B0D /* TeamTab.swift */; };
 		7CD9FCF12B56CD0600421B0D /* PlayerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9FCF02B56CD0600421B0D /* PlayerRow.swift */; };
 		7CEB240C2B3031C600BDF78E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CEB240B2B3031C600BDF78E /* Launch Screen.storyboard */; };
@@ -45,6 +46,7 @@
 		7C24884A2B55DE42001A18AB /* MatchOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchOverview.swift; sourceTree = "<group>"; };
 		7C3A7DDD2B544B7E006B8B81 /* ClubCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubCard.swift; sourceTree = "<group>"; };
 		7C50936D2B56728F00521CC4 /* MatchInfoActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchInfoActivity.swift; sourceTree = "<group>"; };
+		7C7EA12A2B5705BF00218D30 /* TeamData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamData.swift; sourceTree = "<group>"; };
 		7C91B3962B56B4390028891B /* FutPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FutPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C91B3972B56B4D20028891B /* lottie-ios */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "lottie-ios"; path = "Carthage/Checkouts/lottie-ios"; sourceTree = "<group>"; };
 		7CD9FCEE2B56CBF300421B0D /* TeamTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTab.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 		7C24883F2B55D875001A18AB /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				7C7EA1292B5705A100218D30 /* Team */,
 				7C2488432B55DA0C001A18AB /* Utils */,
 				7C2488402B55D87D001A18AB /* Matches */,
 			);
@@ -168,6 +171,14 @@
 				7CD9FCF02B56CD0600421B0D /* PlayerRow.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		7C7EA1292B5705A100218D30 /* Team */ = {
+			isa = PBXGroup;
+			children = (
+				7C7EA12A2B5705BF00218D30 /* TeamData.swift */,
+			);
+			path = Team;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +267,7 @@
 				7C02D6EA2ACE958E000917BD /* Item.swift in Sources */,
 				7C2054EF2B552C7E00D1FCFA /* MatchesView.swift in Sources */,
 				7C02D6E62ACE958E000917BD /* FutPlannerApp.swift in Sources */,
+				7C7EA12B2B5705BF00218D30 /* TeamData.swift in Sources */,
 				7CD9FCEF2B56CBF300421B0D /* TeamTab.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

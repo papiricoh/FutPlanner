@@ -21,7 +21,7 @@ struct ContentView: View {
                     self.logged = true
                 });
             }else {
-                NavigationView() {
+                NavigationStack() {
                     TabView(selection:$selection) {
                         Text("Stadistics").tabItem {
                             Image(systemName: "chart.line.uptrend.xyaxis")
