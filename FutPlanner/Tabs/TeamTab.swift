@@ -8,19 +8,57 @@
 import SwiftUI
 
 struct TeamTab: View {
+    @State var searchText: String = ""
+    @State var dataAnimation: Bool = false
+    
     var body: some View {
         VStack(alignment: .center) {
-            Text("Nombre de tu equipo").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).bold()
+            Text(team.team_name).font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).bold()
             Divider()
             VStack(alignment: .leading) {
                 Text("TODO: GENERADOR DE ALINEACIONES")
                 Text("Lista de jugadores:").font(.title3).bold()
+                HStack {
+                    Image(systemName: "magnifyingglass")
+                    TextField("Buscar jugador", text: $searchText)
+                                    .padding()
+                }.padding(4).padding(.horizontal, 14).background(Color.futGrey).cornerRadius(10)
                 ScrollView {
-                    PlayerRow()
+                    ForEach(filteredPlayers, id: \.id) { player in
+                        PlayerRow(player: player)
+                    }.animation(.default)
                 }
             }
             Spacer()
         }.padding()
+    }
+    var filteredPlayers: [Player] {
+        if searchText.isEmpty {
+            return team.players
+        } else {
+            return team.players.filter { player in
+                player.first_name.lowercased().contains(searchText.lowercased()) ||
+                player.last_name.lowercased().contains(searchText.lowercased())
+            }
+        }
+    }
+}
+
+extension View {
+    func keyboardDoneButton() -> some View {
+        self
+            .toolbar {
+                ToolbarItemGroup(placement: .keyboard) {
+                    Spacer()
+                    Button("Done") {
+                        hideKeyboard()
+                    }
+                }
+            }
+    }
+
+    private func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }
 

@@ -9,6 +9,7 @@ import Foundation
 
 
 var matches: [MatchInfo] = load("matchData.json")
+var team: TeamData = load("teamData.json")
 
 
 func load<T: Decodable>(_ filename: String) -> T {

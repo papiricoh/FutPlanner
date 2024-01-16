@@ -1,28 +1,23 @@
-[
-    {
-        "id": 1,
-        "homeTeamName": "Robertines",
-        "awayTeamName": "Hienas",
-        "category": "Juvenil",
-        "subCategory": "Preferente",
-        "date": 3203920,
-
-        "coordinates": {
-            "latitude": 43.359496,
-            "longitude": -5.8653342
-        }
-    },
-    {
-        "id": 2,
-        "homeTeamName": "Lopecines",
-        "awayTeamName": "Leones",
-        "category": "Juvenil",
-        "subCategory": "2",
-        "date": 320203920,
-
-        "coordinates": {
-            "latitude": 100.0,
-            "longitude": 10.0
-        }
-    }
-]
+{
+    "id": 1,
+    "team_name": "Lopecines",
+    "shield_url": "",
+    "category": "Absoluta",
+    "subCategory": "2-B",
+    "players": [
+            {
+                "id": 1,
+                "first_name": "Pablo",
+                "last_name": "Lopez",
+                "photo_url": "",
+                "date_of_birth": 423472741
+            },
+            {
+                "id": 2,
+                "first_name": "Pablo",
+                "last_name": "Rico",
+                "photo_url": "",
+                "date_of_birth": 441472741
+            }
+    ]
+}
