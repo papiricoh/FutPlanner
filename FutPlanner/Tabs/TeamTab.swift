@@ -9,7 +9,6 @@ import SwiftUI
 
 struct TeamTab: View {
     @State var searchText: String = ""
-    @State var dataAnimation: Bool = false
     
     var body: some View {
         VStack(alignment: .center) {
@@ -26,7 +25,7 @@ struct TeamTab: View {
                 ScrollView {
                     ForEach(filteredPlayers, id: \.id) { player in
                         PlayerRow(player: player)
-                    }.animation(.default)
+                    }.animation(.default, value: searchText)
                 }
             }
             Spacer()

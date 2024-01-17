@@ -32,7 +32,7 @@ struct PlayerRow: View {
                     Text("DJWDO")
                 }.padding()
             }
-        }.padding(4).background(Color.brown).cornerRadius(8).foregroundStyle(Color.black)
+        }.padding(4).background(Color.brown).cornerRadius(8).foregroundStyle(Color.black).animation(.default, value: isDataOpen)
     }
     
     func formatDate(_ date: Date) -> String {
