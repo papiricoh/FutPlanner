@@ -24,5 +24,101 @@
             "latitude": 100.0,
             "longitude": 10.0
         }
+    },
+    {
+        "id": 3,
+        "homeTeamName": "Gacelas",
+        "awayTeamName": "Tigres",
+        "category": "Cadete",
+        "subCategory": "A",
+        "date": 320404920,
+        "coordinates": {
+            "latitude": 40.7143528,
+            "longitude": -74.0059731
+        }
+    },
+    {
+        "id": 4,
+        "homeTeamName": "Águilas",
+        "awayTeamName": "Cobras",
+        "category": "Infantil",
+        "subCategory": "B",
+        "date": 320505920,
+        "coordinates": {
+            "latitude": 34.0522342,
+            "longitude": -118.2436849
+        }
+    },
+    {
+        "id": 5,
+        "homeTeamName": "Delfines",
+        "awayTeamName": "Escorpiones",
+        "category": "Senior",
+        "subCategory": "Primera",
+        "date": 320606920,
+        "coordinates": {
+            "latitude": 48.856614,
+            "longitude": 2.3522219
+        }
+    },
+    {
+        "id": 6,
+        "homeTeamName": "Halcones",
+        "awayTeamName": "Jabalíes",
+        "category": "Juvenil",
+        "subCategory": "Regional",
+        "date": 320707920,
+        "coordinates": {
+            "latitude": 52.5200066,
+            "longitude": 13.404954
+        }
+    },
+    {
+        "id": 7,
+        "homeTeamName": "Gacelas",
+        "awayTeamName": "Tigres",
+        "category": "Cadete",
+        "subCategory": "A",
+        "date": 320404920,
+        "coordinates": {
+            "latitude": 40.7143528,
+            "longitude": -74.0059731
+        }
+    },
+    {
+        "id": 8,
+        "homeTeamName": "Águilas",
+        "awayTeamName": "Cobras",
+        "category": "Infantil",
+        "subCategory": "B",
+        "date": 320505920,
+        "coordinates": {
+            "latitude": 34.0522342,
+            "longitude": -118.2436849
+        }
+    },
+    {
+        "id": 9,
+        "homeTeamName": "Delfines",
+        "awayTeamName": "Escorpiones",
+        "category": "Senior",
+        "subCategory": "Primera",
+        "date": 320606920,
+        "coordinates": {
+            "latitude": 48.856614,
+            "longitude": 2.3522219
+        }
+    },
+    {
+        "id": 10,
+        "homeTeamName": "Halcones",
+        "awayTeamName": "Jabalíes",
+        "category": "Juvenil",
+        "subCategory": "Regional",
+        "date": 320707920,
+        "coordinates": {
+            "latitude": 52.5200066,
+            "longitude": 13.404954
+        }
     }
 ]

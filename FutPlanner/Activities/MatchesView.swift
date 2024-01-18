@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct MatchesView: View {
-    @State var addMode = false
+    @State private var showCreateMatchSheet = false
     
     var body: some View {
         VStack {
             HStack {
                 Text("Gestion de partidos").font(.title2).bold()
                 Spacer()
-                Button(action: {self.addMode = !self.addMode}, label: {
+                Button(action: {self.showCreateMatchSheet = !self.showCreateMatchSheet}, label: {
                     Image(systemName: "plus.circle.fill").font(.largeTitle)
                 })
             }.padding()
-            if(self.addMode) {
+            if(self.showCreateMatchSheet) {
                 
             }
             ScrollView {
@@ -32,7 +32,9 @@ struct MatchesView: View {
                 }
             }
             Spacer()
-        }.navigationBarTitle("Proximos partidos", displayMode: .inline).animation(.default, value: addMode)
+        }.navigationBarTitle("Proximos partidos", displayMode: .inline).animation(.default, value: showCreateMatchSheet).sheet(isPresented: $showCreateMatchSheet) {
+            CreateMatchSheetView(isPresented: $showCreateMatchSheet)
+        }
     }
 }
 
