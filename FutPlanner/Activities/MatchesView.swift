@@ -33,7 +33,7 @@ struct MatchesView: View {
             }
             Spacer()
         }.navigationBarTitle("Proximos partidos", displayMode: .inline).animation(.default, value: showCreateMatchSheet).sheet(isPresented: $showCreateMatchSheet) {
-            CreateMatchSheetView(isPresented: $showCreateMatchSheet)
+            CreateMatchSheetView().presentationDetents([.medium, .large])
         }
     }
 }

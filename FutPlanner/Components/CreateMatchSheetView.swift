@@ -6,47 +6,60 @@
 //
 
 import SwiftUI
+import MapKit
+import LocationPicker
 
 struct CreateMatchSheetView: View {
-    @Binding var isPresented: Bool
-    @GestureState private var dragState = DragState.inactive
+    @State private var rivalTeamName: String = ""
+    @State private var isHomeTeam: Bool = true
+    @State private var date: Date = Date()
+    @State private var stadiumName: String = ""
+    
+    @State private var coordinates = CLLocationCoordinate2D(latitude: 43.359496, longitude: -5.8653342)
 
     var body: some View {
         VStack {
-            Text("Hell yeah")
-        }
-        .frame(maxWidth: .infinity)
-        .background(Color.white)
-        .cornerRadius(10)
-        .offset(y: dragState.translation.height)
-        .gesture(
-            DragGesture().updating($dragState) { drag, state, transaction in
-                state = .dragging(translation: drag.translation)
-            }
-            .onEnded { drag in
-                if drag.translation.height > 100 {
-                    isPresented = false
+            HStack(alignment: .center) {
+                Text("Añade un partido").bold().font(.title2)
+                Spacer()
+                Button(action: {}) {
+                    Text("Añadir").bold()
                 }
+            }.padding(.horizontal)
+            Divider()
+            ScrollView{
+                VStack(spacing: 30) {
+                    HStack {
+                        Image(systemName: "shield.lefthalf.filled")
+                        TextField("Nombre del rival", text: $rivalTeamName)
+                    }.cornerRadius(20).padding().overlay(
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(.blue, lineWidth: 5)
+                    )
+                    Toggle("Tu equipo juega en casa?", isOn: $isHomeTeam).toggleStyle(SwitchToggleStyle(tint: Color.futGreen))
+                    DatePicker(
+                        "Comienzo del partido",
+                        selection: $date,
+                        displayedComponents: [.date, .hourAndMinute]
+                    )
+                    HStack {
+                        Image(systemName: "sportscourt")
+                        TextField("Nombre del estadio", text: $stadiumName)
+                    }.cornerRadius(20).padding().overlay(
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(Color.futGreen, lineWidth: 5)
+                    )
+                    LocationPicker(instructions: "Presiona la localizacion del estadio", coordinates: $coordinates, dismissOnSelection: false).frame(height: 250)
+                }.padding()
             }
-        )
+            
+            Spacer()
+        }.padding(.top, 30)
     }
 
-    enum DragState {
-        case inactive
-        case dragging(translation: CGSize)
-
-        var translation: CGSize {
-            switch self {
-            case .inactive:
-                return .zero
-            case .dragging(let translation):
-                return translation
-            }
-        }
-    }
 }
 
 
 #Preview {
-    CreateMatchSheetView(isPresented: .constant(true))
+    CreateMatchSheetView()
 }

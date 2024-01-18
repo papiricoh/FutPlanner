@@ -22,6 +22,7 @@
 		7C2488482B55DAD8001A18AB /* matchData.json in Resources */ = {isa = PBXBuildFile; fileRef = 7C2488472B55DAD8001A18AB /* matchData.json */; };
 		7C24884B2B55DE42001A18AB /* MatchOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C24884A2B55DE42001A18AB /* MatchOverview.swift */; };
 		7C3A7DDE2B544B7E006B8B81 /* ClubCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3A7DDD2B544B7E006B8B81 /* ClubCard.swift */; };
+		7C43326F2B594BB700045ABE /* LocationPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 7C43326E2B594BB700045ABE /* LocationPicker */; };
 		7C465CCA2B5707C300B97FC8 /* teamData.json in Resources */ = {isa = PBXBuildFile; fileRef = 7C465CC92B5707C300B97FC8 /* teamData.json */; };
 		7C50936E2B56728F00521CC4 /* MatchInfoActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C50936D2B56728F00521CC4 /* MatchInfoActivity.swift */; };
 		7C7EA12B2B5705BF00218D30 /* TeamData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7EA12A2B5705BF00218D30 /* TeamData.swift */; };
@@ -63,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C43326F2B594BB700045ABE /* LocationPicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +205,9 @@
 			dependencies = (
 			);
 			name = FutPlanner;
+			packageProductDependencies = (
+				7C43326E2B594BB700045ABE /* LocationPicker */,
+			);
 			productName = FutPlanner;
 			productReference = 7C91B3962B56B4390028891B /* FutPlanner.app */;
 			productType = "com.apple.product-type.application";
@@ -231,6 +236,9 @@
 				Base,
 			);
 			mainGroup = 7C02D6D92ACE958E000917BD;
+			packageReferences = (
+				7C43326D2B594BB700045ABE /* XCRemoteSwiftPackageReference "LocationPickerForSwiftUI" */,
+			);
 			productRefGroup = 7C02D6D92ACE958E000917BD;
 			projectDirPath = "";
 			projectRoot = "";
@@ -492,6 +500,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7C43326D2B594BB700045ABE /* XCRemoteSwiftPackageReference "LocationPickerForSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alessiorubicini/LocationPickerForSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7C43326E2B594BB700045ABE /* LocationPicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7C43326D2B594BB700045ABE /* XCRemoteSwiftPackageReference "LocationPickerForSwiftUI" */;
+			productName = LocationPicker;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7C02D6DA2ACE958E000917BD /* Project object */;
 }
