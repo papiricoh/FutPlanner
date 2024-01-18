@@ -52,7 +52,7 @@ struct CreateMatchSheetView: View {
                         RoundedRectangle(cornerRadius: 20)
                             .stroke(Color.futGreen, lineWidth: 5)
                     )
-                    LocationPicker(instructions: "Presiona la localizacion del estadio", coordinates: $coordinates, dismissOnSelection: false).frame(height: 250)
+                    LocationPicker(instructions: "Presiona la localizacion del estadio", coordinates: $coordinates, zoomLevel: 500.0).frame(height: 360)
                 }.padding()
             }
             
