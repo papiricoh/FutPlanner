@@ -45,6 +45,9 @@ struct CreateMatchSheetView: View {
                     HStack {
                         Image(systemName: "sportscourt")
                         TextField("Nombre del estadio", text: $stadiumName)
+                        Button(action: {}) {
+                            Text("Buscar")
+                        }
                     }.cornerRadius(20).padding().overlay(
                         RoundedRectangle(cornerRadius: 20)
                             .stroke(Color.futGreen, lineWidth: 5)
