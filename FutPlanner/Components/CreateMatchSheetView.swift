@@ -7,13 +7,13 @@
 
 import SwiftUI
 import MapKit
-import LocationPicker
 
 struct CreateMatchSheetView: View {
     @State private var rivalTeamName: String = ""
     @State private var isHomeTeam: Bool = true
     @State private var date: Date = Date()
     @State private var stadiumName: String = ""
+    @State private var searchMode: Bool = false
     
     @State private var coordinates = CLLocationCoordinate2D(latitude: 43.359496, longitude: -5.8653342)
 
@@ -45,14 +45,15 @@ struct CreateMatchSheetView: View {
                     HStack {
                         Image(systemName: "sportscourt")
                         TextField("Nombre del estadio", text: $stadiumName)
-                        Button(action: {}) {
+                        Button(action: {self.searchMode = !self.searchMode}) {
                             Text("Buscar")
                         }
                     }.cornerRadius(20).padding().overlay(
                         RoundedRectangle(cornerRadius: 20)
                             .stroke(Color.futGreen, lineWidth: 5)
                     )
-                    LocationPicker(instructions: "Presiona la localizacion del estadio", coordinates: $coordinates, zoomLevel: 500.0).frame(height: 360)
+                    
+                    
                 }.padding()
             }
             

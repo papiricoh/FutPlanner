@@ -22,9 +22,10 @@
 		7C2488482B55DAD8001A18AB /* matchData.json in Resources */ = {isa = PBXBuildFile; fileRef = 7C2488472B55DAD8001A18AB /* matchData.json */; };
 		7C24884B2B55DE42001A18AB /* MatchOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C24884A2B55DE42001A18AB /* MatchOverview.swift */; };
 		7C3A7DDE2B544B7E006B8B81 /* ClubCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3A7DDD2B544B7E006B8B81 /* ClubCard.swift */; };
-		7C43326F2B594BB700045ABE /* LocationPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 7C43326E2B594BB700045ABE /* LocationPicker */; };
 		7C465CCA2B5707C300B97FC8 /* teamData.json in Resources */ = {isa = PBXBuildFile; fileRef = 7C465CC92B5707C300B97FC8 /* teamData.json */; };
 		7C50936E2B56728F00521CC4 /* MatchInfoActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C50936D2B56728F00521CC4 /* MatchInfoActivity.swift */; };
+		7C6053942B5A6FF5005F60B0 /* MapPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6053932B5A6FF5005F60B0 /* MapPickerView.swift */; };
+		7C6053972B5A9E0F005F60B0 /* MapItemPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 7C6053962B5A9E0F005F60B0 /* MapItemPicker */; };
 		7C7EA12B2B5705BF00218D30 /* TeamData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7EA12A2B5705BF00218D30 /* TeamData.swift */; };
 		7CC5ED612B5920910056DB7D /* CreateMatchSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC5ED602B5920910056DB7D /* CreateMatchSheetView.swift */; };
 		7CD9FCEF2B56CBF300421B0D /* TeamTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9FCEE2B56CBF300421B0D /* TeamTab.swift */; };
@@ -50,6 +51,7 @@
 		7C3A7DDD2B544B7E006B8B81 /* ClubCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubCard.swift; sourceTree = "<group>"; };
 		7C465CC92B5707C300B97FC8 /* teamData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = teamData.json; sourceTree = "<group>"; };
 		7C50936D2B56728F00521CC4 /* MatchInfoActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchInfoActivity.swift; sourceTree = "<group>"; };
+		7C6053932B5A6FF5005F60B0 /* MapPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPickerView.swift; sourceTree = "<group>"; };
 		7C7EA12A2B5705BF00218D30 /* TeamData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamData.swift; sourceTree = "<group>"; };
 		7C91B3962B56B4390028891B /* FutPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FutPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C91B3972B56B4D20028891B /* lottie-ios */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = "lottie-ios"; path = "Carthage/Checkouts/lottie-ios"; sourceTree = "<group>"; };
@@ -64,7 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C43326F2B594BB700045ABE /* LocationPicker in Frameworks */,
+				7C6053972B5A9E0F005F60B0 /* MapItemPicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +132,7 @@
 			children = (
 				7C2054EE2B552C7E00D1FCFA /* MatchesView.swift */,
 				7C50936D2B56728F00521CC4 /* MatchInfoActivity.swift */,
+				7C6053932B5A6FF5005F60B0 /* MapPickerView.swift */,
 			);
 			path = Activities;
 			sourceTree = "<group>";
@@ -206,7 +209,7 @@
 			);
 			name = FutPlanner;
 			packageProductDependencies = (
-				7C43326E2B594BB700045ABE /* LocationPicker */,
+				7C6053962B5A9E0F005F60B0 /* MapItemPicker */,
 			);
 			productName = FutPlanner;
 			productReference = 7C91B3962B56B4390028891B /* FutPlanner.app */;
@@ -238,6 +241,7 @@
 			mainGroup = 7C02D6D92ACE958E000917BD;
 			packageReferences = (
 				7C43326D2B594BB700045ABE /* XCRemoteSwiftPackageReference "LocationPickerForSwiftUI" */,
+				7C6053952B5A9E0F005F60B0 /* XCRemoteSwiftPackageReference "MapItemPicker" */,
 			);
 			productRefGroup = 7C02D6D92ACE958E000917BD;
 			projectDirPath = "";
@@ -271,6 +275,7 @@
 			files = (
 				7C50936E2B56728F00521CC4 /* MatchInfoActivity.swift in Sources */,
 				7C24884B2B55DE42001A18AB /* MatchOverview.swift in Sources */,
+				7C6053942B5A6FF5005F60B0 /* MapPickerView.swift in Sources */,
 				7C05475B2B516E55000BC7D2 /* HomeTab.swift in Sources */,
 				7C2488422B55D896001A18AB /* MatchInfo.swift in Sources */,
 				7C2488452B55DA40001A18AB /* ModelLoader.swift in Sources */,
@@ -510,13 +515,21 @@
 				minimumVersion = 1.1.2;
 			};
 		};
+		7C6053952B5A9E0F005F60B0 /* XCRemoteSwiftPackageReference "MapItemPicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/FiveSheepCo/MapItemPicker";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		7C43326E2B594BB700045ABE /* LocationPicker */ = {
+		7C6053962B5A9E0F005F60B0 /* MapItemPicker */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 7C43326D2B594BB700045ABE /* XCRemoteSwiftPackageReference "LocationPickerForSwiftUI" */;
-			productName = LocationPicker;
+			package = 7C6053952B5A9E0F005F60B0 /* XCRemoteSwiftPackageReference "MapItemPicker" */;
+			productName = MapItemPicker;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
