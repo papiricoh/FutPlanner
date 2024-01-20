@@ -12,7 +12,7 @@ struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @State private var selection = 2
     @State public var logged = true
-    @State public var loading = true
+    @State public var loading = false
     
     var body: some View {
         ZStack() {

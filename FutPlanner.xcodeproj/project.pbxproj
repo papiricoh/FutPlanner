@@ -26,6 +26,7 @@
 		7C4A17D72B5C2F96001C7C4E /* logo.json in Resources */ = {isa = PBXBuildFile; fileRef = 7C4A17D62B5C2F96001C7C4E /* logo.json */; };
 		7C4A17DA2B5C32C0001C7C4E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 7C4A17D92B5C32C0001C7C4E /* Lottie */; };
 		7C4A17DC2B5C3540001C7C4E /* animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 7C4A17DB2B5C3540001C7C4E /* animation.json */; };
+		7C4A17DE2B5C3727001C7C4E /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 7C4A17DD2B5C3727001C7C4E /* loading.json */; };
 		7C50936E2B56728F00521CC4 /* MatchInfoActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C50936D2B56728F00521CC4 /* MatchInfoActivity.swift */; };
 		7C6053942B5A6FF5005F60B0 /* MapPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6053932B5A6FF5005F60B0 /* MapPickerView.swift */; };
 		7C7EA12B2B5705BF00218D30 /* TeamData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7EA12A2B5705BF00218D30 /* TeamData.swift */; };
@@ -54,6 +55,7 @@
 		7C465CC92B5707C300B97FC8 /* teamData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = teamData.json; sourceTree = "<group>"; };
 		7C4A17D62B5C2F96001C7C4E /* logo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = logo.json; sourceTree = "<group>"; };
 		7C4A17DB2B5C3540001C7C4E /* animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation.json; sourceTree = "<group>"; };
+		7C4A17DD2B5C3727001C7C4E /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		7C50936D2B56728F00521CC4 /* MatchInfoActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchInfoActivity.swift; sourceTree = "<group>"; };
 		7C6053932B5A6FF5005F60B0 /* MapPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPickerView.swift; sourceTree = "<group>"; };
 		7C7EA12A2B5705BF00218D30 /* TeamData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamData.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				7C4A17D62B5C2F96001C7C4E /* logo.json */,
+				7C4A17DD2B5C3727001C7C4E /* loading.json */,
 				7C4A17DB2B5C3540001C7C4E /* animation.json */,
 			);
 			path = Lottie;
@@ -267,6 +270,7 @@
 				7C02D6EC2ACE958F000917BD /* Assets.xcassets in Resources */,
 				7C4A17DC2B5C3540001C7C4E /* animation.json in Resources */,
 				7C4A17D72B5C2F96001C7C4E /* logo.json in Resources */,
+				7C4A17DE2B5C3727001C7C4E /* loading.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

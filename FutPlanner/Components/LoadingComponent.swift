@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Lottie
 
 struct LoadingComponent: View {
     @State var degreesRotating = 0.0
@@ -15,14 +16,14 @@ struct LoadingComponent: View {
             Image(systemName: "soccerball").font(.system(size: 80))
                 .foregroundColor(.black)
                 .rotationEffect(.degrees(degreesRotating))
-            
                 .onAppear {
                     withAnimation(.easeInOut(duration: 1)
-                        .speed(0.8).repeatForever(autoreverses: false)) {
+                        .speed(0.3).repeatForever(autoreverses: false)) {
                             degreesRotating = 360.0
                         }
                 }
-        }.padding(60).background(Color.white).cornerRadius(20).padding()
+            LottieView(animation: .named("loading")).looping()
+        }.frame(width: 250, height: 250).padding(-40).background(Color.white).containerShape(Circle()).padding()
     }
 }
 
