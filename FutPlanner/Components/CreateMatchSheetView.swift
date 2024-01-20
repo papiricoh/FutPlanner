@@ -12,7 +12,7 @@ struct CreateMatchSheetView: View {
     @State private var rivalTeamName: String = ""
     @State private var isHomeTeam: Bool = true
     @State private var date: Date = Date()
-    @State private var stadiumName: String = ""
+    @State private var searchText: String = ""
     @State private var searchMode: Bool = false
     
     @State private var coordinates = CLLocationCoordinate2D(latitude: 43.359496, longitude: -5.8653342)
@@ -44,7 +44,7 @@ struct CreateMatchSheetView: View {
                     )
                     HStack {
                         Image(systemName: "sportscourt")
-                        TextField("Nombre del estadio", text: $stadiumName)
+                        TextField("Nombre del estadio", text: $searchText)
                         Button(action: {self.searchMode = !self.searchMode}) {
                             Text("Buscar")
                         }
