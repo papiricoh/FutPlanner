@@ -44,6 +44,7 @@ struct HomeTab: View {
                     .foregroundColor(Color.white).padding(4)
                 }
             }
+            
         }.offset(x: 0, y: self.loaded ? 0 : -UIScreen.main.bounds.height)
             .animation(Animation.spring().delay(0.5), value: self.loaded)
             .onAppear {
