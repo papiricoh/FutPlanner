@@ -14,7 +14,10 @@ struct MatchInfoActivity: View {
     
     var body: some View {
         VStack {
-            Map(initialPosition: .region(region)).frame(height: 500)
+            ZStack {
+                Map(initialPosition: .region(region)).frame(height: 500)
+                Text(infoMatch.coordinates_name).padding().background(.night).cornerRadius(20).bold().offset(y: -200)
+            }
             VStack {
                 HStack {
                     VStack {

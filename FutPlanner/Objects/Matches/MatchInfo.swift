@@ -15,7 +15,7 @@ struct MatchInfo: Identifiable, Hashable, Codable {
     var category: String
     var subCategory: String
     var date: Date
-
+    var coordinates_name: String
 
     var coordinates: Coordinates
     
