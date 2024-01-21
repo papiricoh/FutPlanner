@@ -19,12 +19,15 @@ struct MatchesView: View {
                     Image(systemName: "plus.circle.fill").font(.largeTitle)
                 })
             }.padding()
-            if(self.showCreateMatchSheet) {
-                
-            }
             ScrollView {
                 VStack  {
-                    ForEach(matches, id: \.id) { match in
+                    NavigationLink(destination: {OldMatchesActivity(oldMatches: self.unavariableMatches())}) {
+                        HStack(){
+                            Text("Completados")
+                            Image(systemName: "trophy.fill")
+                        }
+                    }.frame(width: UIScreen.main.bounds.width).padding(.vertical).background(Color.futGreenDark).foregroundColor(.white).bold()
+                    ForEach(self.avariableMatches(), id: \.id) { match in
                         NavigationLink(destination: MatchInfoActivity(infoMatch: match)) {
                             MatchOverview(match: match)
                         }
@@ -33,8 +36,31 @@ struct MatchesView: View {
             }
             Spacer()
         }.navigationBarTitle("Proximos partidos", displayMode: .inline).animation(.default, value: showCreateMatchSheet).sheet(isPresented: $showCreateMatchSheet) {
-            CreateMatchSheetView().presentationDetents([.medium, .large])
+            CreateMatchSheetView() { 
+                self.showCreateMatchSheet = !self.showCreateMatchSheet
+            }.presentationDetents([.medium, .large])
         }
+    }
+    func avariableMatches() -> [MatchInfo] {
+        var newMatches: [MatchInfo] = []
+        for match in matches {
+            if match.date >= Date() {
+                newMatches.append(match)
+            }
+        }
+        
+        return newMatches.sorted { $0.date < $1.date }
+    }
+    
+    func unavariableMatches() -> [MatchInfo] {
+        var newMatches: [MatchInfo] = []
+        for match in matches {
+            if match.date < Date() {
+                newMatches.append(match)
+            }
+        }
+        
+        return newMatches.sorted { $0.date < $1.date }
     }
 }
 

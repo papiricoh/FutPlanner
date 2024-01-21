@@ -30,10 +30,12 @@
 		7C50936E2B56728F00521CC4 /* MatchInfoActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C50936D2B56728F00521CC4 /* MatchInfoActivity.swift */; };
 		7C6053942B5A6FF5005F60B0 /* MapPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6053932B5A6FF5005F60B0 /* MapPickerView.swift */; };
 		7C7EA12B2B5705BF00218D30 /* TeamData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7EA12A2B5705BF00218D30 /* TeamData.swift */; };
+		7CA3C36B2B5DADC00046D0DD /* LocationSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA3C36A2B5DADC00046D0DD /* LocationSearchService.swift */; };
 		7CC5ED612B5920910056DB7D /* CreateMatchSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC5ED602B5920910056DB7D /* CreateMatchSheetView.swift */; };
 		7CD9FCEF2B56CBF300421B0D /* TeamTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9FCEE2B56CBF300421B0D /* TeamTab.swift */; };
 		7CD9FCF12B56CD0600421B0D /* PlayerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9FCF02B56CD0600421B0D /* PlayerRow.swift */; };
 		7CEB240C2B3031C600BDF78E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CEB240B2B3031C600BDF78E /* Launch Screen.storyboard */; };
+		7CFFBBE02B5DDB9000C66D6C /* OldMatchesActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFFBBDF2B5DDB9000C66D6C /* OldMatchesActivity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,11 +61,13 @@
 		7C50936D2B56728F00521CC4 /* MatchInfoActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchInfoActivity.swift; sourceTree = "<group>"; };
 		7C6053932B5A6FF5005F60B0 /* MapPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPickerView.swift; sourceTree = "<group>"; };
 		7C7EA12A2B5705BF00218D30 /* TeamData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamData.swift; sourceTree = "<group>"; };
-		7C91B3962B56B4390028891B /* FutPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = FutPlanner.app; path = "/Users/pabloricoal/Desktop/FutPlanner/FutPlanner/build/Debug-iphoneos/FutPlanner.app"; sourceTree = "<absolute>"; };
+		7CA3C3682B5DAD630046D0DD /* FutPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FutPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CA3C36A2B5DADC00046D0DD /* LocationSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchService.swift; sourceTree = "<group>"; };
 		7CC5ED602B5920910056DB7D /* CreateMatchSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMatchSheetView.swift; sourceTree = "<group>"; };
 		7CD9FCEE2B56CBF300421B0D /* TeamTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTab.swift; sourceTree = "<group>"; };
 		7CD9FCF02B56CD0600421B0D /* PlayerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRow.swift; sourceTree = "<group>"; };
 		7CEB240B2B3031C600BDF78E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		7CFFBBDF2B5DDB9000C66D6C /* OldMatchesActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldMatchesActivity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,12 +86,14 @@
 			isa = PBXGroup;
 			children = (
 				7C02D6E42ACE958E000917BD /* FutPlanner */,
+				7CA3C3682B5DAD630046D0DD /* FutPlanner.app */,
 			);
 			sourceTree = "<group>";
 		};
 		7C02D6E42ACE958E000917BD /* FutPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				7CA3C3692B5DADAB0046D0DD /* Logic */,
 				7C4A17D32B5C2F65001C7C4E /* Lottie */,
 				7C2488462B55DA84001A18AB /* Resources */,
 				7C24883F2B55D875001A18AB /* Objects */,
@@ -129,6 +135,7 @@
 				7C2054EE2B552C7E00D1FCFA /* MatchesView.swift */,
 				7C50936D2B56728F00521CC4 /* MatchInfoActivity.swift */,
 				7C6053932B5A6FF5005F60B0 /* MapPickerView.swift */,
+				7CFFBBDF2B5DDB9000C66D6C /* OldMatchesActivity.swift */,
 			);
 			path = Activities;
 			sourceTree = "<group>";
@@ -198,6 +205,14 @@
 			path = Team;
 			sourceTree = "<group>";
 		};
+		7CA3C3692B5DADAB0046D0DD /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				7CA3C36A2B5DADC00046D0DD /* LocationSearchService.swift */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -218,7 +233,7 @@
 				7C4A17D92B5C32C0001C7C4E /* Lottie */,
 			);
 			productName = FutPlanner;
-			productReference = 7C91B3962B56B4390028891B /* FutPlanner.app */;
+			productReference = 7CA3C3682B5DAD630046D0DD /* FutPlanner.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -281,6 +296,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CA3C36B2B5DADC00046D0DD /* LocationSearchService.swift in Sources */,
+				7CFFBBE02B5DDB9000C66D6C /* OldMatchesActivity.swift in Sources */,
 				7C50936E2B56728F00521CC4 /* MatchInfoActivity.swift in Sources */,
 				7C24884B2B55DE42001A18AB /* MatchOverview.swift in Sources */,
 				7C6053942B5A6FF5005F60B0 /* MapPickerView.swift in Sources */,
