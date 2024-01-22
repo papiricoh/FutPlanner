@@ -23,12 +23,14 @@ struct ContentView: View {
             }else {
                 NavigationStack() {
                     TabView(selection:$selection) {
-                        Text("Stadistics").tabItem {
+                        StatsTab().tabItem {
                             Image(systemName: "chart.line.uptrend.xyaxis")
                             Text("Evaluaciones")
                         }.tag(1)
                         HomeTab(onLogout: {
                             self.logged = false
+                        }, changeTab: { tab in
+                            self.selection = tab
                         }).tabItem {
                             Image(systemName: "soccerball")
                             Text("Principal")

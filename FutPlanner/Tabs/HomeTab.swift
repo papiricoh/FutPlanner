@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeTab: View {
     var onLogout: () -> Void
     @State private var loaded = false
+    var changeTab: (Int) -> Void
     var body: some View {
         
         VStack() {
@@ -30,7 +31,7 @@ struct HomeTab: View {
                     }.padding().background(Color("FutGreen")).cornerRadius(10).foregroundColor(Color.white).padding(4)
                 }
                 
-                NavigationLink(destination: MatchesView()) {
+                Button(action: {changeTab(1)}) {
                     HStack {
                         VStack(alignment: .leading) {
                             Text("Sesiones/Evaluaciones").font(.system(size: 20)).bold()
@@ -55,5 +56,5 @@ struct HomeTab: View {
 
 #Preview {
     HomeTab(onLogout: {
-    })
+    }, changeTab: {tab in})
 }
