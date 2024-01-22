@@ -76,7 +76,9 @@ struct CreateMatchSheetView: View {
                         }
                         ForEach(searchService.searchResults, id: \.self) { result in
                             if(!self.searchText.isEmpty) {
-                                Text(result.title).onTapGesture {
+                                PlaceListItem(text: result.title).simultaneousGesture(
+                                    TapGesture()
+                                        .onEnded {
                                     selectedPlace = result.title
                                     searchService.getCoordinates(for: result) { coordinate in
                                         if let coordinate = coordinate {
@@ -87,7 +89,7 @@ struct CreateMatchSheetView: View {
                                             print("No se pudo obtener las coordenadas")
                                         }
                                     }
-                                }
+                                })
                             }
                         }
                     }.padding().overlay(
