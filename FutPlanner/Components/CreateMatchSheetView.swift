@@ -95,7 +95,16 @@ struct CreateMatchSheetView: View {
                             .stroke(Color.futGreen, lineWidth: 5)
                     )
                     ZStack {
-                        Map(coordinateRegion: $region, showsUserLocation: true).frame(height: 300).cornerRadius(20)
+                        Map() {
+                            Annotation(self.selectedPlace, coordinate: region.center) {
+                                ZStack {
+                                    RoundedRectangle(cornerRadius: 5)
+                                        .fill(Color.futGreenLight)
+                                    Text("🥅")
+                                        .padding(5)
+                                }
+                            }
+                        }.frame(height: 300).cornerRadius(20)
                         Text(selectedPlace).bold().padding().background(Color.futGreen).cornerRadius(20).foregroundStyle(Color.white).offset(y: -120)
                     }
                     
