@@ -13,6 +13,8 @@
 		7C02D6EC2ACE958F000917BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C02D6EB2ACE958F000917BD /* Assets.xcassets */; };
 		7C02D6EF2ACE958F000917BD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C02D6EE2ACE958F000917BD /* Preview Assets.xcassets */; };
 		7C05475B2B516E55000BC7D2 /* HomeTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C05475A2B516E55000BC7D2 /* HomeTab.swift */; };
+		7C0F53A62B5FE0E100C71AC1 /* PlayerListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0F53A52B5FE0E100C71AC1 /* PlayerListItem.swift */; };
+		7C0F53A82B5FEF5C00C71AC1 /* StatsActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0F53A72B5FEF5C00C71AC1 /* StatsActivity.swift */; };
 		7C17A0802B569E1B00EFFE5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C17A07F2B569E1B00EFFE5C /* Main.storyboard */; };
 		7C1A486E2B5E6889002A8A1E /* PlaceListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A486D2B5E6889002A8A1E /* PlaceListItem.swift */; };
 		7C1A48702B5E9DE4002A8A1E /* StatsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A486F2B5E9DE4002A8A1E /* StatsTab.swift */; };
@@ -48,6 +50,8 @@
 		7C02D6EB2ACE958F000917BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C02D6EE2ACE958F000917BD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7C05475A2B516E55000BC7D2 /* HomeTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTab.swift; sourceTree = "<group>"; };
+		7C0F53A52B5FE0E100C71AC1 /* PlayerListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListItem.swift; sourceTree = "<group>"; };
+		7C0F53A72B5FEF5C00C71AC1 /* StatsActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsActivity.swift; sourceTree = "<group>"; };
 		7C17A07F2B569E1B00EFFE5C /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		7C1A486D2B5E6889002A8A1E /* PlaceListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceListItem.swift; sourceTree = "<group>"; };
 		7C1A486F2B5E9DE4002A8A1E /* StatsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTab.swift; sourceTree = "<group>"; };
@@ -143,6 +147,7 @@
 				7C50936D2B56728F00521CC4 /* MatchInfoActivity.swift */,
 				7C6053932B5A6FF5005F60B0 /* MapPickerView.swift */,
 				7CFFBBDF2B5DDB9000C66D6C /* OldMatchesActivity.swift */,
+				7C0F53A72B5FEF5C00C71AC1 /* StatsActivity.swift */,
 			);
 			path = Activities;
 			sourceTree = "<group>";
@@ -191,6 +196,7 @@
 				7CD9FCF02B56CD0600421B0D /* PlayerRow.swift */,
 				7CC5ED602B5920910056DB7D /* CreateMatchSheetView.swift */,
 				7C1A486D2B5E6889002A8A1E /* PlaceListItem.swift */,
+				7C0F53A52B5FE0E100C71AC1 /* PlayerListItem.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -315,6 +321,7 @@
 				7C05475B2B516E55000BC7D2 /* HomeTab.swift in Sources */,
 				7C2488422B55D896001A18AB /* MatchInfo.swift in Sources */,
 				7C2488452B55DA40001A18AB /* ModelLoader.swift in Sources */,
+				7C0F53A62B5FE0E100C71AC1 /* PlayerListItem.swift in Sources */,
 				7C2054F12B554CF600D1FCFA /* LogInView.swift in Sources */,
 				7C24883E2B55C898001A18AB /* LoadingComponent.swift in Sources */,
 				7C02D6E82ACE958E000917BD /* ContentView.swift in Sources */,
@@ -322,6 +329,7 @@
 				7CC5ED612B5920910056DB7D /* CreateMatchSheetView.swift in Sources */,
 				7CD9FCF12B56CD0600421B0D /* PlayerRow.swift in Sources */,
 				7C02D6EA2ACE958E000917BD /* Item.swift in Sources */,
+				7C0F53A82B5FEF5C00C71AC1 /* StatsActivity.swift in Sources */,
 				7C2054EF2B552C7E00D1FCFA /* MatchesView.swift in Sources */,
 				7C1A48702B5E9DE4002A8A1E /* StatsTab.swift in Sources */,
 				7C02D6E62ACE958E000917BD /* FutPlannerApp.swift in Sources */,

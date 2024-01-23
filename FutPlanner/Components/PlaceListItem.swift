@@ -13,7 +13,7 @@ struct PlaceListItem: View {
     
     var body: some View {
         Divider()
-        Text(text).padding().frame(width: UIScreen.main.bounds.width - 60).background(isPressed ? Color.gray : Color.night).cornerRadius(10).bold().gesture(DragGesture(minimumDistance: 0).onChanged({ _ in self.isPressed = true }).onEnded({ _ in self.isPressed = false })).animation(.default, value: isPressed)
+        Text(text).padding().frame(width: UIScreen.main.bounds.width - 60).background(isPressed ? Color.gray : Color.futDay).cornerRadius(10).bold().gesture(DragGesture(minimumDistance: 0).onChanged({ _ in self.isPressed = true }).onEnded({ _ in self.isPressed = false })).animation(.default, value: isPressed)
     }
 }
 

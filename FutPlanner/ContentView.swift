@@ -25,7 +25,7 @@ struct ContentView: View {
                     TabView(selection:$selection) {
                         StatsTab().tabItem {
                             Image(systemName: "chart.line.uptrend.xyaxis")
-                            Text("Evaluaciones")
+                            Text("Estadisticas")
                         }.tag(1)
                         HomeTab(onLogout: {
                             self.logged = false
