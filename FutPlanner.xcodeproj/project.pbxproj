@@ -36,6 +36,7 @@
 		7CC5ED612B5920910056DB7D /* CreateMatchSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC5ED602B5920910056DB7D /* CreateMatchSheetView.swift */; };
 		7CD9FCEF2B56CBF300421B0D /* TeamTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9FCEE2B56CBF300421B0D /* TeamTab.swift */; };
 		7CD9FCF12B56CD0600421B0D /* PlayerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9FCF02B56CD0600421B0D /* PlayerRow.swift */; };
+		7CDDFE292B5F432200212DA0 /* FutField.json in Resources */ = {isa = PBXBuildFile; fileRef = 7CDDFE282B5F432200212DA0 /* FutField.json */; };
 		7CEB240C2B3031C600BDF78E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CEB240B2B3031C600BDF78E /* Launch Screen.storyboard */; };
 		7CFFBBE02B5DDB9000C66D6C /* OldMatchesActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFFBBDF2B5DDB9000C66D6C /* OldMatchesActivity.swift */; };
 /* End PBXBuildFile section */
@@ -70,6 +71,7 @@
 		7CC5ED602B5920910056DB7D /* CreateMatchSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMatchSheetView.swift; sourceTree = "<group>"; };
 		7CD9FCEE2B56CBF300421B0D /* TeamTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTab.swift; sourceTree = "<group>"; };
 		7CD9FCF02B56CD0600421B0D /* PlayerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRow.swift; sourceTree = "<group>"; };
+		7CDDFE282B5F432200212DA0 /* FutField.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FutField.json; sourceTree = "<group>"; };
 		7CEB240B2B3031C600BDF78E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		7CFFBBDF2B5DDB9000C66D6C /* OldMatchesActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldMatchesActivity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -196,6 +198,7 @@
 		7C4A17D32B5C2F65001C7C4E /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
+				7CDDFE282B5F432200212DA0 /* FutField.json */,
 				7C4A17D62B5C2F96001C7C4E /* logo.json */,
 				7C4A17DD2B5C3727001C7C4E /* loading.json */,
 				7C4A17DB2B5C3540001C7C4E /* animation.json */,
@@ -285,6 +288,7 @@
 			files = (
 				7C465CCA2B5707C300B97FC8 /* teamData.json in Resources */,
 				7CEB240C2B3031C600BDF78E /* Launch Screen.storyboard in Resources */,
+				7CDDFE292B5F432200212DA0 /* FutField.json in Resources */,
 				7C17A0802B569E1B00EFFE5C /* Main.storyboard in Resources */,
 				7C2488482B55DAD8001A18AB /* matchData.json in Resources */,
 				7C02D6EF2ACE958F000917BD /* Preview Assets.xcassets in Resources */,
