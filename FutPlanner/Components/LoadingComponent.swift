@@ -28,6 +28,8 @@ struct LoadingComponent: View {
     }
 }
 
+
+
 #Preview {
     LoadingComponent()
 }

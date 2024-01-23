@@ -43,8 +43,6 @@ struct LogInView: View {
             .background(Gradient(colors: [.green, .gray, .green]).opacity(0.6))
     }
     func login() {
-        // Aquí debería implementar la lógica de validación y autenticación
-        // Por ahora, este es solo un ejemplo
         print("Intento de inicio de sesión con Usuario: \(username), Contraseña: \(password)")
         
         // Supongamos que la validación fue exitosa
