@@ -14,6 +14,7 @@ struct MatchInfo: Identifiable, Hashable, Codable {
     var awayTeamName: String
     var category: String
     var subCategory: String
+    var you: String //0 If you are homTeam 1 if you are away
     var date: Date
     var coordinates_name: String
 

@@ -41,7 +41,7 @@ struct CreateMatchSheetView: View {
                         homeTeam = self.rivalTeamName
                         awayTeam = team.team_name
                     }
-                    let newMatch = MatchInfo(id: matches.count + 1, homeTeamName: homeTeam, awayTeamName: awayTeam, category: team.category, subCategory: team.subCategory, date: self.date, coordinates_name: selectedPlace, coordinates: Coordinates(latitude: region.center.latitude, longitude: region.center.longitude))
+                    let newMatch = MatchInfo(id: matches.count + 1, homeTeamName: homeTeam, awayTeamName: awayTeam, category: team.category, subCategory: team.subCategory, you: self.isHomeTeam ? "1" : "0", date: self.date, coordinates_name: selectedPlace, coordinates: Coordinates(latitude: region.center.latitude, longitude: region.center.longitude))
                     matches.append(newMatch)
                     self.showingSheet()
                 }) {

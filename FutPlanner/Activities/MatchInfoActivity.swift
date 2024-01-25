@@ -15,8 +15,16 @@ struct MatchInfoActivity: View {
     var body: some View {
         VStack {
             ZStack {
-                Map(initialPosition: .region(region)).frame(height: 500)
-                Text(infoMatch.coordinates_name).padding().background(.night).cornerRadius(20).bold().offset(y: -200)
+                Map(initialPosition: .region(region)) {
+                    Annotation(infoMatch.coordinates_name, coordinate: region.center) {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 5)
+                                .fill(Color.futGreenLight)
+                            Text("🥅")
+                                .padding(5)
+                        }
+                    }
+                }.frame(height: 500)
             }
             VStack {
                 HStack {
@@ -35,7 +43,7 @@ struct MatchInfoActivity: View {
                             }.shadow(radius: 3)
                         Text(infoMatch.awayTeamName).bold().font(.headline)
                     }.padding().frame(width: 150).background(Color("NightColor")).cornerRadius(10).offset(y: -100)
-                }.padding().padding(.bottom, -110)
+                }.padding().padding(.bottom, -110).foregroundStyle(Color.futNight)
                 Divider()
                 HStack {
                     VStack(alignment: .leading) {
@@ -48,13 +56,13 @@ struct MatchInfoActivity: View {
                         Text(formatDate(infoMatch.date))
                     }
                 }.padding()
-            }.offset(x: 0, y: self.loaded ? 0 : UIScreen.main.bounds.height)
+                Spacer()
+            }.background(Color.futGreen).offset(x: 0, y: self.loaded ? 0 : UIScreen.main.bounds.height)
                 .animation(Animation.spring().delay(0.5), value: self.loaded)
                 .onAppear {
                 self.loaded = true
                 }
-            Spacer()
-        }.navigationTitle(infoMatch.homeTeamName + " - " + infoMatch.awayTeamName)
+        }.navigationTitle(infoMatch.homeTeamName + " - " + infoMatch.awayTeamName).foregroundStyle(Color.white)
     }
     
     private var region: MKCoordinateRegion {
