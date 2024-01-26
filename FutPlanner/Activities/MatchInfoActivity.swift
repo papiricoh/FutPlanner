@@ -28,21 +28,31 @@ struct MatchInfoActivity: View {
             }
             VStack {
                 HStack {
-                    VStack {
-                        Image("teamPlaceholder").resizable().frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 100).clipShape(Circle())
-                            .overlay {
-                                Circle().stroke(.white, lineWidth: 4)
-                            }.shadow(radius: 3)
-                        Text(infoMatch.homeTeamName).bold().font(.headline)
-                    }.padding().frame(width: 150).background(Color("NightColor")).cornerRadius(10).offset(y: -100)
+                    ZStack {
+                        VStack {
+                            Image("teamPlaceholder").resizable().frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 100).clipShape(Circle())
+                                .overlay {
+                                    Circle().stroke(.white, lineWidth: 4)
+                                }.shadow(radius: 3)
+                            Text(infoMatch.homeTeamName).bold().font(.headline)
+                        }
+                        if(infoMatch.you == 0) {
+                            Text("Tu").bold().rotationEffect(Angle(degrees: 45)).offset(x:55, y:-60).shadow(radius: 4).foregroundStyle(Color.futGold)
+                        }
+                    }.padding().frame(width: 150).background(Color("NightColor")).cornerRadius(10).overlay(infoMatch.you == 0 ? RoundedRectangle(cornerRadius: 10).stroke(Color.futGold, lineWidth: 2) : nil).offset(y: -100)
                     Text("VS").padding().background(Color("NightColor")).cornerRadius(10).offset(y: -100).font(.system(size: 8))
-                    VStack {
-                        Image("teamPlaceholder").resizable().frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 100).clipShape(Circle())
-                            .overlay {
-                                Circle().stroke(.white, lineWidth: 4)
-                            }.shadow(radius: 3)
-                        Text(infoMatch.awayTeamName).bold().font(.headline)
-                    }.padding().frame(width: 150).background(Color("NightColor")).cornerRadius(10).offset(y: -100)
+                    ZStack {
+                        VStack {
+                            Image("teamPlaceholder").resizable().frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 100).clipShape(Circle())
+                                .overlay {
+                                    Circle().stroke(.white, lineWidth: 4)
+                                }.shadow(radius: 3)
+                            Text(infoMatch.awayTeamName).bold().font(.headline)
+                        }
+                        if(infoMatch.you == 1) {
+                            Text("Tu").bold().rotationEffect(Angle(degrees: -45)).offset(x:-55, y:-60).shadow(radius: 4).foregroundStyle(Color.futGold)
+                        }
+                    }.padding().frame(width: 150).background(Color("NightColor")).cornerRadius(10).overlay(infoMatch.you == 1 ? RoundedRectangle(cornerRadius: 10).stroke(Color.futGold, lineWidth: 2) : nil).offset(y: -100)
                 }.padding().padding(.bottom, -110).foregroundStyle(Color.futNight)
                 Divider()
                 HStack {
