@@ -5,19 +5,43 @@
     "category": "Absoluta",
     "subCategory": "2-B",
     "players": [
-            {
-                "id": 1,
-                "first_name": "Pablo",
-                "last_name": "Lopez",
-                "photo_url": "",
-                "date_of_birth": 423472741
-            },
-            {
-                "id": 2,
-                "first_name": "Pablo",
-                "last_name": "Rico",
-                "photo_url": "",
-                "date_of_birth": 441472741
-            }
+        {
+            "id": 1,
+            "first_name": "Pablo",
+            "last_name": "Lopez",
+            "photo_url": "",
+            "date_of_birth": 423472741,
+            "reports": [
+                {
+                    "id": 2,
+                    "match_id": 3,
+                    "general_performance": 4,
+                    "tactical_performance": 3,
+                    "played_time": 3,
+                    "goals": 3,
+                    "red_cards": 0,
+                    "yellow_cards": 0
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "first_name": "Pablo",
+            "last_name": "Rico",
+            "photo_url": "",
+            "date_of_birth": 441472741,
+            "reports": [
+                {
+                    "id": 1,
+                    "match_id": 3,
+                    "general_performance": 4,
+                    "tactical_performance": 2,
+                    "played_time": 3,
+                    "goals": 3,
+                    "red_cards": 0,
+                    "yellow_cards": 0
+                }
+            ]
+        }
     ]
 }
