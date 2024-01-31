@@ -26,8 +26,8 @@ struct StatsTab: View {
                 Text("Resumen del equipo").bold()
                 Chart(data) { dev in
                     BarMark(
-                        x: .value("Department", dev.classification),
-                        y: .value("Profit", dev.points)
+                        x: .value("Clase", dev.classification),
+                        y: .value("Puntuacion", dev.points)
                     ).foregroundStyle(Color.futGreenLight)
                 }.frame(height: 300).padding().cornerRadius(20).bold()
                 VStack(alignment: .center) {

@@ -13,6 +13,7 @@
 		7C02D6EC2ACE958F000917BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C02D6EB2ACE958F000917BD /* Assets.xcassets */; };
 		7C02D6EF2ACE958F000917BD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C02D6EE2ACE958F000917BD /* Preview Assets.xcassets */; };
 		7C05475B2B516E55000BC7D2 /* HomeTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C05475A2B516E55000BC7D2 /* HomeTab.swift */; };
+		7C06C3392B6A50B900FDF0DC /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 7C06C3382B6A50B900FDF0DC /* DGCharts */; };
 		7C0F53A62B5FE0E100C71AC1 /* PlayerListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0F53A52B5FE0E100C71AC1 /* PlayerListItem.swift */; };
 		7C0F53A82B5FEF5C00C71AC1 /* StatsActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0F53A72B5FEF5C00C71AC1 /* StatsActivity.swift */; };
 		7C17A0802B569E1B00EFFE5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C17A07F2B569E1B00EFFE5C /* Main.storyboard */; };
@@ -50,6 +51,7 @@
 		7C02D6EB2ACE958F000917BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C02D6EE2ACE958F000917BD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7C05475A2B516E55000BC7D2 /* HomeTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTab.swift; sourceTree = "<group>"; };
+		7C06C3362B6A4CE200FDF0DC /* FutPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FutPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C0F53A52B5FE0E100C71AC1 /* PlayerListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListItem.swift; sourceTree = "<group>"; };
 		7C0F53A72B5FEF5C00C71AC1 /* StatsActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsActivity.swift; sourceTree = "<group>"; };
 		7C17A07F2B569E1B00EFFE5C /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -70,7 +72,6 @@
 		7C50936D2B56728F00521CC4 /* MatchInfoActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchInfoActivity.swift; sourceTree = "<group>"; };
 		7C6053932B5A6FF5005F60B0 /* MapPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPickerView.swift; sourceTree = "<group>"; };
 		7C7EA12A2B5705BF00218D30 /* TeamData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamData.swift; sourceTree = "<group>"; };
-		7CA3C3682B5DAD630046D0DD /* FutPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = FutPlanner.app; path = "/Users/pabloricoal/Desktop/FutPlanner/FutPlanner/build/Debug-iphoneos/FutPlanner.app"; sourceTree = "<absolute>"; };
 		7CA3C36A2B5DADC00046D0DD /* LocationSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchService.swift; sourceTree = "<group>"; };
 		7CC5ED602B5920910056DB7D /* CreateMatchSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMatchSheetView.swift; sourceTree = "<group>"; };
 		7CD9FCEE2B56CBF300421B0D /* TeamTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTab.swift; sourceTree = "<group>"; };
@@ -85,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C06C3392B6A50B900FDF0DC /* DGCharts in Frameworks */,
 				7C4A17DA2B5C32C0001C7C4E /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				7C02D6E42ACE958E000917BD /* FutPlanner */,
+				7C06C3362B6A4CE200FDF0DC /* FutPlanner.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -245,9 +248,10 @@
 			name = FutPlanner;
 			packageProductDependencies = (
 				7C4A17D92B5C32C0001C7C4E /* Lottie */,
+				7C06C3382B6A50B900FDF0DC /* DGCharts */,
 			);
 			productName = FutPlanner;
-			productReference = 7CA3C3682B5DAD630046D0DD /* FutPlanner.app */;
+			productReference = 7C06C3362B6A4CE200FDF0DC /* FutPlanner.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -276,6 +280,7 @@
 			mainGroup = 7C02D6D92ACE958E000917BD;
 			packageReferences = (
 				7C4A17D82B5C32C0001C7C4E /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				7C06C3372B6A50B900FDF0DC /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = 7C02D6D92ACE958E000917BD;
 			projectDirPath = "";
@@ -551,6 +556,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		7C06C3372B6A50B900FDF0DC /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		7C4A17D82B5C32C0001C7C4E /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios";
@@ -562,6 +575,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7C06C3382B6A50B900FDF0DC /* DGCharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7C06C3372B6A50B900FDF0DC /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGCharts;
+		};
 		7C4A17D92B5C32C0001C7C4E /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7C4A17D82B5C32C0001C7C4E /* XCRemoteSwiftPackageReference "lottie-ios" */;
