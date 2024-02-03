@@ -46,7 +46,9 @@ struct StatsActivity: View {
                         }
                     }
                     Divider()
-                    Text("dwadw")
+                    VStack {
+                        
+                    }
                     Spacer()
                 }
             }

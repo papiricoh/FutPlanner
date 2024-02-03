@@ -145,11 +145,9 @@
 		7C2054ED2B552C6800D1FCFA /* Activities */ = {
 			isa = PBXGroup;
 			children = (
-				7C2054EE2B552C7E00D1FCFA /* MatchesView.swift */,
-				7C50936D2B56728F00521CC4 /* MatchInfoActivity.swift */,
-				7C6053932B5A6FF5005F60B0 /* MapPickerView.swift */,
-				7CFFBBDF2B5DDB9000C66D6C /* OldMatchesActivity.swift */,
-				7C0F53A72B5FEF5C00C71AC1 /* StatsActivity.swift */,
+				7C484A6F2B6ECEF20055F898 /* Map */,
+				7C484A6E2B6ECEDA0055F898 /* Matches */,
+				7C484A6D2B6ECEB50055F898 /* Stats */,
 			);
 			path = Activities;
 			sourceTree = "<group>";
@@ -192,15 +190,73 @@
 		7C3A7DDC2B544B64006B8B81 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				7C3A7DDD2B544B7E006B8B81 /* ClubCard.swift */,
+				7C484A732B6ECF7D0055F898 /* Team */,
+				7C484A722B6ECF700055F898 /* Home */,
+				7C484A712B6ECF630055F898 /* Stats */,
+				7C484A702B6ECF3A0055F898 /* Matches */,
 				7C24883D2B55C898001A18AB /* LoadingComponent.swift */,
-				7C24884A2B55DE42001A18AB /* MatchOverview.swift */,
-				7CD9FCF02B56CD0600421B0D /* PlayerRow.swift */,
-				7CC5ED602B5920910056DB7D /* CreateMatchSheetView.swift */,
-				7C1A486D2B5E6889002A8A1E /* PlaceListItem.swift */,
-				7C0F53A52B5FE0E100C71AC1 /* PlayerListItem.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		7C484A6D2B6ECEB50055F898 /* Stats */ = {
+			isa = PBXGroup;
+			children = (
+				7C0F53A72B5FEF5C00C71AC1 /* StatsActivity.swift */,
+			);
+			path = Stats;
+			sourceTree = "<group>";
+		};
+		7C484A6E2B6ECEDA0055F898 /* Matches */ = {
+			isa = PBXGroup;
+			children = (
+				7C2054EE2B552C7E00D1FCFA /* MatchesView.swift */,
+				7C50936D2B56728F00521CC4 /* MatchInfoActivity.swift */,
+				7CFFBBDF2B5DDB9000C66D6C /* OldMatchesActivity.swift */,
+			);
+			path = Matches;
+			sourceTree = "<group>";
+		};
+		7C484A6F2B6ECEF20055F898 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				7C6053932B5A6FF5005F60B0 /* MapPickerView.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		7C484A702B6ECF3A0055F898 /* Matches */ = {
+			isa = PBXGroup;
+			children = (
+				7C24884A2B55DE42001A18AB /* MatchOverview.swift */,
+				7CC5ED602B5920910056DB7D /* CreateMatchSheetView.swift */,
+				7C1A486D2B5E6889002A8A1E /* PlaceListItem.swift */,
+			);
+			path = Matches;
+			sourceTree = "<group>";
+		};
+		7C484A712B6ECF630055F898 /* Stats */ = {
+			isa = PBXGroup;
+			children = (
+				7C0F53A52B5FE0E100C71AC1 /* PlayerListItem.swift */,
+			);
+			path = Stats;
+			sourceTree = "<group>";
+		};
+		7C484A722B6ECF700055F898 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				7C3A7DDD2B544B7E006B8B81 /* ClubCard.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		7C484A732B6ECF7D0055F898 /* Team */ = {
+			isa = PBXGroup;
+			children = (
+				7CD9FCF02B56CD0600421B0D /* PlayerRow.swift */,
+			);
+			path = Team;
 			sourceTree = "<group>";
 		};
 		7C4A17D32B5C2F65001C7C4E /* Lottie */ = {
