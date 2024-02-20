@@ -28,6 +28,8 @@
 		7C24884B2B55DE42001A18AB /* MatchOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C24884A2B55DE42001A18AB /* MatchOverview.swift */; };
 		7C3A7DDE2B544B7E006B8B81 /* ClubCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3A7DDD2B544B7E006B8B81 /* ClubCard.swift */; };
 		7C465CCA2B5707C300B97FC8 /* teamData.json in Resources */ = {isa = PBXBuildFile; fileRef = 7C465CC92B5707C300B97FC8 /* teamData.json */; };
+		7C484A762B6ED0B00055F898 /* PlayerReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C484A752B6ED0B00055F898 /* PlayerReport.swift */; };
+		7C484A782B6ED6F20055F898 /* reports.json in Resources */ = {isa = PBXBuildFile; fileRef = 7C484A772B6ED6F20055F898 /* reports.json */; };
 		7C4A17D72B5C2F96001C7C4E /* logo.json in Resources */ = {isa = PBXBuildFile; fileRef = 7C4A17D62B5C2F96001C7C4E /* logo.json */; };
 		7C4A17DA2B5C32C0001C7C4E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 7C4A17D92B5C32C0001C7C4E /* Lottie */; };
 		7C4A17DC2B5C3540001C7C4E /* animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 7C4A17DB2B5C3540001C7C4E /* animation.json */; };
@@ -39,8 +41,11 @@
 		7CC5ED612B5920910056DB7D /* CreateMatchSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC5ED602B5920910056DB7D /* CreateMatchSheetView.swift */; };
 		7CD9FCEF2B56CBF300421B0D /* TeamTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9FCEE2B56CBF300421B0D /* TeamTab.swift */; };
 		7CD9FCF12B56CD0600421B0D /* PlayerRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9FCF02B56CD0600421B0D /* PlayerRow.swift */; };
+		7CDBE3E02B8369E8001CABED /* RatingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDBE3DF2B8369E8001CABED /* RatingComponent.swift */; };
 		7CDDFE292B5F432200212DA0 /* FutField.json in Resources */ = {isa = PBXBuildFile; fileRef = 7CDDFE282B5F432200212DA0 /* FutField.json */; };
+		7CE38AE22B73B06700985826 /* ReportEvaluator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE38AE12B73B06700985826 /* ReportEvaluator.swift */; };
 		7CEB240C2B3031C600BDF78E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CEB240B2B3031C600BDF78E /* Launch Screen.storyboard */; };
+		7CED8F1D2B84D7AA00A9125E /* NumericAssignComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CED8F1C2B84D7AA00A9125E /* NumericAssignComponent.swift */; };
 		7CFFBBE02B5DDB9000C66D6C /* OldMatchesActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFFBBDF2B5DDB9000C66D6C /* OldMatchesActivity.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +71,8 @@
 		7C24884A2B55DE42001A18AB /* MatchOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchOverview.swift; sourceTree = "<group>"; };
 		7C3A7DDD2B544B7E006B8B81 /* ClubCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubCard.swift; sourceTree = "<group>"; };
 		7C465CC92B5707C300B97FC8 /* teamData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = teamData.json; sourceTree = "<group>"; };
+		7C484A752B6ED0B00055F898 /* PlayerReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerReport.swift; sourceTree = "<group>"; };
+		7C484A772B6ED6F20055F898 /* reports.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = reports.json; sourceTree = "<group>"; };
 		7C4A17D62B5C2F96001C7C4E /* logo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = logo.json; sourceTree = "<group>"; };
 		7C4A17DB2B5C3540001C7C4E /* animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation.json; sourceTree = "<group>"; };
 		7C4A17DD2B5C3727001C7C4E /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
@@ -76,8 +83,11 @@
 		7CC5ED602B5920910056DB7D /* CreateMatchSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMatchSheetView.swift; sourceTree = "<group>"; };
 		7CD9FCEE2B56CBF300421B0D /* TeamTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTab.swift; sourceTree = "<group>"; };
 		7CD9FCF02B56CD0600421B0D /* PlayerRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRow.swift; sourceTree = "<group>"; };
+		7CDBE3DF2B8369E8001CABED /* RatingComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingComponent.swift; sourceTree = "<group>"; };
 		7CDDFE282B5F432200212DA0 /* FutField.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FutField.json; sourceTree = "<group>"; };
+		7CE38AE12B73B06700985826 /* ReportEvaluator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportEvaluator.swift; sourceTree = "<group>"; };
 		7CEB240B2B3031C600BDF78E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		7CED8F1C2B84D7AA00A9125E /* NumericAssignComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumericAssignComponent.swift; sourceTree = "<group>"; };
 		7CFFBBDF2B5DDB9000C66D6C /* OldMatchesActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldMatchesActivity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,6 +155,7 @@
 		7C2054ED2B552C6800D1FCFA /* Activities */ = {
 			isa = PBXGroup;
 			children = (
+				7CE38AE02B73AF8D00985826 /* Reports */,
 				7C484A6F2B6ECEF20055F898 /* Map */,
 				7C484A6E2B6ECEDA0055F898 /* Matches */,
 				7C484A6D2B6ECEB50055F898 /* Stats */,
@@ -155,6 +166,7 @@
 		7C24883F2B55D875001A18AB /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				7C484A742B6ED0480055F898 /* Reports */,
 				7C7EA1292B5705A100218D30 /* Team */,
 				7C2488432B55DA0C001A18AB /* Utils */,
 				7C2488402B55D87D001A18AB /* Matches */,
@@ -183,6 +195,7 @@
 			children = (
 				7C465CC92B5707C300B97FC8 /* teamData.json */,
 				7C2488472B55DAD8001A18AB /* matchData.json */,
+				7C484A772B6ED6F20055F898 /* reports.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -239,6 +252,8 @@
 			isa = PBXGroup;
 			children = (
 				7C0F53A52B5FE0E100C71AC1 /* PlayerListItem.swift */,
+				7CDBE3DF2B8369E8001CABED /* RatingComponent.swift */,
+				7CED8F1C2B84D7AA00A9125E /* NumericAssignComponent.swift */,
 			);
 			path = Stats;
 			sourceTree = "<group>";
@@ -257,6 +272,14 @@
 				7CD9FCF02B56CD0600421B0D /* PlayerRow.swift */,
 			);
 			path = Team;
+			sourceTree = "<group>";
+		};
+		7C484A742B6ED0480055F898 /* Reports */ = {
+			isa = PBXGroup;
+			children = (
+				7C484A752B6ED0B00055F898 /* PlayerReport.swift */,
+			);
+			path = Reports;
 			sourceTree = "<group>";
 		};
 		7C4A17D32B5C2F65001C7C4E /* Lottie */ = {
@@ -284,6 +307,14 @@
 				7CA3C36A2B5DADC00046D0DD /* LocationSearchService.swift */,
 			);
 			path = Logic;
+			sourceTree = "<group>";
+		};
+		7CE38AE02B73AF8D00985826 /* Reports */ = {
+			isa = PBXGroup;
+			children = (
+				7CE38AE12B73B06700985826 /* ReportEvaluator.swift */,
+			);
+			path = Reports;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,6 +383,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C484A782B6ED6F20055F898 /* reports.json in Resources */,
 				7C465CCA2B5707C300B97FC8 /* teamData.json in Resources */,
 				7CEB240C2B3031C600BDF78E /* Launch Screen.storyboard in Resources */,
 				7CDDFE292B5F432200212DA0 /* FutField.json in Resources */,
@@ -378,11 +410,13 @@
 				7C50936E2B56728F00521CC4 /* MatchInfoActivity.swift in Sources */,
 				7C24884B2B55DE42001A18AB /* MatchOverview.swift in Sources */,
 				7C6053942B5A6FF5005F60B0 /* MapPickerView.swift in Sources */,
+				7C484A762B6ED0B00055F898 /* PlayerReport.swift in Sources */,
 				7C05475B2B516E55000BC7D2 /* HomeTab.swift in Sources */,
 				7C2488422B55D896001A18AB /* MatchInfo.swift in Sources */,
 				7C2488452B55DA40001A18AB /* ModelLoader.swift in Sources */,
 				7C0F53A62B5FE0E100C71AC1 /* PlayerListItem.swift in Sources */,
 				7C2054F12B554CF600D1FCFA /* LogInView.swift in Sources */,
+				7CED8F1D2B84D7AA00A9125E /* NumericAssignComponent.swift in Sources */,
 				7C24883E2B55C898001A18AB /* LoadingComponent.swift in Sources */,
 				7C02D6E82ACE958E000917BD /* ContentView.swift in Sources */,
 				7C3A7DDE2B544B7E006B8B81 /* ClubCard.swift in Sources */,
@@ -393,8 +427,10 @@
 				7C2054EF2B552C7E00D1FCFA /* MatchesView.swift in Sources */,
 				7C1A48702B5E9DE4002A8A1E /* StatsTab.swift in Sources */,
 				7C02D6E62ACE958E000917BD /* FutPlannerApp.swift in Sources */,
+				7CDBE3E02B8369E8001CABED /* RatingComponent.swift in Sources */,
 				7C7EA12B2B5705BF00218D30 /* TeamData.swift in Sources */,
 				7CD9FCEF2B56CBF300421B0D /* TeamTab.swift in Sources */,
+				7CE38AE22B73B06700985826 /* ReportEvaluator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

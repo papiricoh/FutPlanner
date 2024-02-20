@@ -47,13 +47,33 @@ struct StatsActivity: View {
                     }
                     Divider()
                     VStack {
-                        
+                        ForEach(getPlayerReports(playerId: player.id)) { report in
+                            Text("\(searchMatch(matchId: report.matchId).homeTeamName)")
+                        }
                     }
                     Spacer()
                 }
             }
             Spacer()
         }.padding(.top, 10).navigationBarTitle("Estadisticas de " + player.first_name, displayMode: .inline)
+    }
+    func getPlayerReports(playerId: Int) -> [PlayerReport] {
+        var reportsTotal: [PlayerReport] = []
+        for report in reports {
+            if(report.playerId == playerId) {
+                reportsTotal.append(report)
+            }
+        }
+        
+        return reportsTotal
+    }
+    func searchMatch(matchId: Int) -> MatchInfo {
+        for match in matches {
+            if(match.id == matchId) {
+                return match
+            }
+        }
+        return MatchInfo(id: -1, homeTeamName: "String", awayTeamName: "String", category: "String", subCategory: "String", you: 1, date: Date(timeIntervalSince1970: 10), coordinates_name: "String", evaluated: false, coordinates: Coordinates(latitude: 1, longitude: 1))
     }
 }
 struct RadarChartRepresentable: UIViewControllerRepresentable {
@@ -85,7 +105,7 @@ class RadarChartViewController: UIViewController {
         let min: UInt32 = 20
         let cnt = 5
         
-        let categories = ["Desempeño \nGeneral", "Desempeño \nTactico", "Pases", "Control\nBalon", "Vision\nde juego"]
+        let categories = ["Desempeño \nGeneral", "Desempeño \nTactico", "Calidad de\nPases", "Control\nBalon", "Vision\nde juego"]
         
         radarChart.xAxis.valueFormatter = IndexAxisValueFormatter(values: categories)
         radarChart.xAxis.labelTextColor = .futNight // Configura el color según necesites

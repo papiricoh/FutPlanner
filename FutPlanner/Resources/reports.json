@@ -1,0 +1,32 @@
+[
+        {
+            "id": 1,
+            "playerId": 1,
+            "matchId": 1,
+            "generalPerformance": 8,
+            "tacticalPerformance": 6,
+            "passesQuality": 4,
+            "ballControl": 5,
+            "gameVision": 3,
+            
+            "playedTime": 42,
+            "goals": 2,
+            "redCards": 0,
+            "yellowCards": 1
+        },
+        {
+            "id": 2,
+            "playerId": 1,
+            "matchId": 2,
+            "generalPerformance": 7,
+            "tacticalPerformance": 2,
+            "passesQuality": 3,
+            "ballControl": 8,
+            "gameVision": 7,
+            
+            "playedTime": 52,
+            "goals": 1,
+            "redCards": 0,
+            "yellowCards": 2
+        }
+]

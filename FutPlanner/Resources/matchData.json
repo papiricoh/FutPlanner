@@ -7,6 +7,7 @@
         "category": "Juvenil",
         "subCategory": "Preferente",
         "date": 3203920,
+        "evaluated": false,
         
         "coordinates_name": "ExampleName",
         "coordinates": {
@@ -22,6 +23,7 @@
         "category": "Juvenil",
         "subCategory": "2",
         "date": 32099203920,
+        "evaluated": false,
         
         "coordinates_name": "ExampleName",
         "coordinates": {
@@ -37,6 +39,7 @@
         "category": "Cadete",
         "subCategory": "A",
         "date": 320404920,
+        "evaluated": false,
         "coordinates_name": "ExampleName",
         "coordinates": {
             "latitude": 40.7143528,
@@ -51,6 +54,7 @@
         "category": "Infantil",
         "subCategory": "B",
         "date": 320505920,
+        "evaluated": false,
         "coordinates_name": "ExampleName",
         "coordinates": {
             "latitude": 34.0522342,
@@ -65,6 +69,7 @@
         "category": "Senior",
         "subCategory": "Primera",
         "date": 320606920,
+        "evaluated": false,
         "coordinates_name": "ExampleName",
         "coordinates": {
             "latitude": 48.856614,
@@ -79,6 +84,7 @@
         "category": "Juvenil",
         "subCategory": "Regional",
         "date": 320707920,
+        "evaluated": false,
         "coordinates_name": "ExampleName",
         "coordinates": {
             "latitude": 52.5200066,
@@ -93,6 +99,7 @@
         "category": "Cadete",
         "subCategory": "A",
         "date": 320404920,
+        "evaluated": false,
         "coordinates_name": "ExampleName",
         "coordinates": {
             "latitude": 40.7143528,
@@ -107,6 +114,7 @@
         "category": "Infantil",
         "subCategory": "B",
         "date": 320505920,
+        "evaluated": false,
         "coordinates_name": "ExampleName",
         "coordinates": {
             "latitude": 34.0522342,
@@ -121,6 +129,7 @@
         "category": "Senior",
         "subCategory": "Primera",
         "date": 320606920,
+        "evaluated": false,
         "coordinates_name": "ExampleName",
         "coordinates": {
             "latitude": 48.856614,
@@ -135,6 +144,7 @@
         "category": "Juvenil",
         "subCategory": "Regional",
         "date": 320707920,
+        "evaluated": false,
         "coordinates_name": "ExampleName",
         "coordinates": {
             "latitude": 52.5200066,

@@ -10,6 +10,7 @@ import Foundation
 
 var matches: [MatchInfo] = load("matchData.json")
 var team: TeamData = load("teamData.json")
+var reports: [PlayerReport] = load("reports.json")
 
 
 func load<T: Decodable>(_ filename: String) -> T {

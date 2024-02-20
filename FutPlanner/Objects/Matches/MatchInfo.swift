@@ -17,6 +17,7 @@ struct MatchInfo: Identifiable, Hashable, Codable {
     var you: Int //0 If you are homTeam 1 if you are away
     var date: Date
     var coordinates_name: String
+    var evaluated: Bool
 
     var coordinates: Coordinates
     
