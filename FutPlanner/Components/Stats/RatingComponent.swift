@@ -28,7 +28,7 @@ struct RatingComponent: View {
                     }
                 }.buttonStyle(.plain)
             }
-        }.padding()
+        }.padding(.horizontal).padding(.vertical, 5)
     }
     
     func renderRating(for i: Int) -> Image {

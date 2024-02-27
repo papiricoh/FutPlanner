@@ -9,15 +9,22 @@
             "id": 1,
             "first_name": "Pablo",
             "last_name": "Lopez",
-            "photo_url": "",
-            "date_of_birth": 423472741
+            "photo_url": "https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg",
+            "date_of_birth": 423472741,
+            "nationality": "Argelia",
+            "position": "P",
+            "shirt_number": 12
+            
         },
         {
             "id": 2,
             "first_name": "Pablo",
             "last_name": "Rico",
             "photo_url": "",
-            "date_of_birth": 441472741
+            "date_of_birth": 441472741,
+            "nationality": "España",
+            "position": "SUP",
+            "shirt_number": 7
         }
     ]
 }

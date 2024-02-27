@@ -35,6 +35,7 @@
 		7C4A17DC2B5C3540001C7C4E /* animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 7C4A17DB2B5C3540001C7C4E /* animation.json */; };
 		7C4A17DE2B5C3727001C7C4E /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 7C4A17DD2B5C3727001C7C4E /* loading.json */; };
 		7C50936E2B56728F00521CC4 /* MatchInfoActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C50936D2B56728F00521CC4 /* MatchInfoActivity.swift */; };
+		7C5664C92B8D894C005EC078 /* ProfileCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5664C82B8D894C005EC078 /* ProfileCard.swift */; };
 		7C6053942B5A6FF5005F60B0 /* MapPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6053932B5A6FF5005F60B0 /* MapPickerView.swift */; };
 		7C7EA12B2B5705BF00218D30 /* TeamData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7EA12A2B5705BF00218D30 /* TeamData.swift */; };
 		7CA3C36B2B5DADC00046D0DD /* LocationSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA3C36A2B5DADC00046D0DD /* LocationSearchService.swift */; };
@@ -77,6 +78,7 @@
 		7C4A17DB2B5C3540001C7C4E /* animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = animation.json; sourceTree = "<group>"; };
 		7C4A17DD2B5C3727001C7C4E /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		7C50936D2B56728F00521CC4 /* MatchInfoActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchInfoActivity.swift; sourceTree = "<group>"; };
+		7C5664C82B8D894C005EC078 /* ProfileCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCard.swift; sourceTree = "<group>"; };
 		7C6053932B5A6FF5005F60B0 /* MapPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPickerView.swift; sourceTree = "<group>"; };
 		7C7EA12A2B5705BF00218D30 /* TeamData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamData.swift; sourceTree = "<group>"; };
 		7CA3C36A2B5DADC00046D0DD /* LocationSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchService.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				7C484A712B6ECF630055F898 /* Stats */,
 				7C484A702B6ECF3A0055F898 /* Matches */,
 				7C24883D2B55C898001A18AB /* LoadingComponent.swift */,
+				7C5664C82B8D894C005EC078 /* ProfileCard.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				7C24884B2B55DE42001A18AB /* MatchOverview.swift in Sources */,
 				7C6053942B5A6FF5005F60B0 /* MapPickerView.swift in Sources */,
 				7C484A762B6ED0B00055F898 /* PlayerReport.swift in Sources */,
+				7C5664C92B8D894C005EC078 /* ProfileCard.swift in Sources */,
 				7C05475B2B516E55000BC7D2 /* HomeTab.swift in Sources */,
 				7C2488422B55D896001A18AB /* MatchInfo.swift in Sources */,
 				7C2488452B55DA40001A18AB /* ModelLoader.swift in Sources */,

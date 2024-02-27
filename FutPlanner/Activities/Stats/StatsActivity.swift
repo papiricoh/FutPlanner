@@ -14,8 +14,7 @@ struct StatsActivity: View {
     
     var body: some View {
         VStack {
-            Text(player.first_name + " " + player.last_name).bold().font(.title2)
-            Divider()
+            ProfileCard(player: player)
             ScrollView {
                 VStack {
                     RadarChartRepresentable().frame(height: 400)

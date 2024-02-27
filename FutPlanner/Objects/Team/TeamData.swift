@@ -25,5 +25,8 @@ struct Player: Hashable, Codable {
     var last_name: String
     var photo_url: String
     var date_of_birth: Date
+    var nationality: String
+    var position: String
+    var shirt_number: Int
 }
 
