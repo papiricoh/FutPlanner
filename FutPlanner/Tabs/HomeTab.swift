@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeTab: View {
     var onLogout: () -> Void
     @State private var loaded = false
+    @State private var lastMatch: MatchInfo? = matches[0]   //Debug set to nil
     var changeTab: (Int) -> Void
     var body: some View {
         
@@ -20,6 +21,19 @@ struct HomeTab: View {
                 self.onLogout()
             })
             ScrollView {
+                if(lastMatch != nil && lastMatch?.evaluated == false) {
+                    NavigationLink(destination: MatchesView()) {
+                        HStack {
+                            Image(systemName: "exclamationmark.octagon.fill").foregroundColor(.yellow).font(.system(size: 80))
+                            Spacer()
+                            VStack(alignment: .trailing) {
+                                Text("Partido sin evaluar").font(.system(size: 24)).bold()
+                                Text("\(lastMatch?.homeTeamName ?? "") - \(lastMatch?.awayTeamName ?? "")")
+                                Text("\(formatDate(lastMatch?.date ?? Date()))")
+                            }.foregroundColor(.white)
+                        }.padding().background(Color.black).cornerRadius(10).padding(4)
+                    }
+                }
                 NavigationLink(destination: MatchesView()) {
                     HStack {
                         VStack(alignment: .leading) {
@@ -51,6 +65,15 @@ struct HomeTab: View {
             .onAppear {
             self.loaded = true
             }
+    }
+    
+    func formatDate(_ date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        formatter.locale = Locale(identifier: "es_ES")
+
+        return formatter.string(from: date)
     }
 }
 
