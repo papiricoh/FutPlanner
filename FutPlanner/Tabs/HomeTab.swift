@@ -18,11 +18,12 @@ struct HomeTab: View {
             Text("FutPlanner").font(.system(size: 30)).multilineTextAlignment(.leading).bold()
             Divider()
             ClubCard(onLogout: {
+                //self.lastMatch = nil
                 self.onLogout()
             })
             ScrollView {
                 if(lastMatch != nil && lastMatch?.evaluated == false) {
-                    NavigationLink(destination: MatchesView()) {
+                    NavigationLink(destination: MatchInfoActivity(infoMatch: lastMatch!)) {
                         HStack {
                             Image(systemName: "exclamationmark.octagon.fill").foregroundColor(.yellow).font(.system(size: 80))
                             Spacer()
