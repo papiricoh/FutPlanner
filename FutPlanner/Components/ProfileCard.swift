@@ -20,7 +20,7 @@ struct ProfileCard: View {
                     image.resizable()
                 } placeholder: {
                     ProgressView()
-                }.frame(width: 100, height: 100)
+                }.frame(width: 100, height: 100).cornerRadius(16)
             }
             HStack(spacing: 10) {
                 VStack(alignment: .center) {
@@ -57,5 +57,5 @@ struct ProfileCard: View {
 }
 
 #Preview {
-    ProfileCard(player: team.players[1])
+    ProfileCard(player: team.players[0])
 }

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ReportEvaluator: View {
+    @Environment(\.presentationMode) var presentationMode
+    
     var players: [Player]
     var match: MatchInfo
     @State var reports: [PlayerReport] = []
@@ -23,6 +25,9 @@ struct ReportEvaluator: View {
         self.currentReport = PlayerReport(id: 0, playerId: 0, matchId: 0, generalPerformance: 1, tacticalPerformance: 1, passesQuality: 1, ballControl: 1, gameVision: 1, playedTime: 0.0, goals: 0, redCards: 0, yellowCards: 0)
         if(!isLast) {
             self.currentPlayerIndex += 1
+        }else {
+            //todo fetch to send all data
+            self.presentationMode.wrappedValue.dismiss()
         }
     }
     
@@ -64,14 +69,17 @@ struct ReportEvaluator: View {
                                 nextCommand(isLast: false)
                                 proxy.scrollTo("Card", anchor: .top)
                             } label: {
-                                Image(systemName: "arrow.right").font(.title2).bold()
-                            }.padding(16).background(Color.futGrey).cornerRadius(10)
+                                HStack{
+                                    Text("Siguiente")
+                                    Image(systemName: "arrow.right").font(.title2).bold()
+                                }
+                            }.padding(16).padding(.horizontal, 70).background(Color.futGreen).cornerRadius(8).foregroundColor(.white)
                         }else {
                             Button {
                                 nextCommand(isLast: true)
                             } label: {
                                 Text("Finalizar").font(.title2).bold()
-                            }.padding(16).background(Color.futGrey).cornerRadius(10)
+                            }.padding(16).padding(.horizontal, 70).background(Color.futGreen).cornerRadius(10).foregroundColor(.white)
                         }
                     }.padding()
                 }

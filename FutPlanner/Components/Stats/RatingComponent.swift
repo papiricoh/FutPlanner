@@ -16,7 +16,7 @@ struct RatingComponent: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text(text).font(.title3).bold()
+            Text(text).font(.title3).bold().foregroundStyle(Color.white)
             
             HStack {
                 ForEach(1...maxRating, id: \.self) { i in
@@ -24,11 +24,11 @@ struct RatingComponent: View {
                         rating = i
                     } label: {
                         renderRating(for: i).font(.title3)
-                            .foregroundStyle(i > rating ? Color.gray : Color.futGreenLight)
+                            .foregroundStyle(i > rating ? Color.white : Color.yellow)
                     }
                 }.buttonStyle(.plain)
             }
-        }.padding(.horizontal).padding(.vertical, 5)
+        }.padding(.horizontal).padding(.vertical, 5).background(Color.futGreenLight).cornerRadius(10)
     }
     
     func renderRating(for i: Int) -> Image {
