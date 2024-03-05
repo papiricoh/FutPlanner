@@ -54,7 +54,7 @@ struct ReportEvaluator: View {
                             Text("\(Int(currentReport.playedTime)) mins")
                                 .foregroundColor(onSlider ? .red : .blue)
                         }.padding(.horizontal, 30.0)
-                        HStack {
+                        HStack(alignment: .center) {
                             NumericAssignComponent(text: "Goles", img: "soccerball", imgColor: Color.futNight, num: $currentReport.goals)
                             Spacer()
                             NumericAssignComponent(text: "Amarillas", img: "greetingcard.fill", imgColor: Color.yellow, num: $currentReport.yellowCards)

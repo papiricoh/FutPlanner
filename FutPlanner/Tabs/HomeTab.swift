@@ -11,6 +11,7 @@ struct HomeTab: View {
     var onLogout: () -> Void
     @State private var loaded = false
     @State private var lastMatch: MatchInfo? = matches[0]   //Debug set to nil
+    @State private var nextMatch: MatchInfo? = matches[1]
     var changeTab: (Int) -> Void
     var body: some View {
         
@@ -22,8 +23,11 @@ struct HomeTab: View {
                 self.onLogout()
             })
             ScrollView {
+                if(nextMatch != nil) {
+                    NextMatchComponent(match: nextMatch!)
+                }
                 if(lastMatch != nil && lastMatch?.evaluated == false) {
-                    NavigationLink(destination: MatchInfoActivity(infoMatch: lastMatch!)) {
+                    NavigationLink(destination: ReportEvaluator(players: team.players, match: lastMatch!)) {
                         HStack {
                             Image(systemName: "exclamationmark.octagon.fill").foregroundColor(.yellow).font(.system(size: 80))
                             Spacer()
@@ -31,8 +35,8 @@ struct HomeTab: View {
                                 Text("Partido sin evaluar").font(.system(size: 24)).bold()
                                 Text("\(lastMatch?.homeTeamName ?? "") - \(lastMatch?.awayTeamName ?? "")")
                                 Text("\(formatDate(lastMatch?.date ?? Date()))")
-                            }.foregroundColor(.white)
-                        }.padding().background(Color.black).cornerRadius(10).padding(4)
+                            }.foregroundColor(.futDay)
+                        }.padding().background(Color.futNight.opacity(0.8)).cornerRadius(10).padding(4)
                     }
                 }
                 NavigationLink(destination: MatchesView()) {
@@ -64,7 +68,8 @@ struct HomeTab: View {
         }.padding(.top, 10).offset(x: 0, y: self.loaded ? 0 : -UIScreen.main.bounds.height)
             .animation(Animation.spring().delay(0.5), value: self.loaded)
             .onAppear {
-            self.loaded = true
+                self.loaded = true
+                //Todo redo fetch
             }
     }
     

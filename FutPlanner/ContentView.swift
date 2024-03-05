@@ -14,6 +14,10 @@ struct ContentView: View {
     @State public var logged = true
     @State public var loading = false
     
+    init() {
+        UITabBar.appearance().backgroundColor = UIColor.white
+    }
+    
     var body: some View {
         ZStack() {
             if(!logged) {

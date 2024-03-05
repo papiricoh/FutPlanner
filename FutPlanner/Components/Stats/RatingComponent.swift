@@ -16,19 +16,23 @@ struct RatingComponent: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text(text).font(.title3).bold().foregroundStyle(Color.white)
-            
             HStack {
+                Text(text).font(.title3).bold().foregroundStyle(Color.white)
+                Spacer(minLength: 10)
+            }
+            HStack {
+                Spacer()
                 ForEach(1...maxRating, id: \.self) { i in
                     Button {
                         rating = i
                     } label: {
-                        renderRating(for: i).font(.title3)
+                        renderRating(for: i).font(.system(size: 20))
                             .foregroundStyle(i > rating ? Color.white : Color.yellow)
                     }
                 }.buttonStyle(.plain)
+                Spacer()
             }
-        }.padding(.horizontal).padding(.vertical, 5).background(Color.futGreenLight).cornerRadius(10)
+        }.padding(.horizontal).padding(.vertical, 5).background(Color.futGreenLight).cornerRadius(10).padding(.horizontal)
     }
     
     func renderRating(for i: Int) -> Image {
