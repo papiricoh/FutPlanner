@@ -9,13 +9,19 @@ import SwiftUI
 
 struct ClubCard: View {
     var onLogout: () -> Void
+    var team: TeamData
     var body: some View {
         HStack() {
-            Image("ClubPlaceholder").resizable().frame(width: 80.0, height: 80.0)
-                .clipShape(Circle())
+            AsyncImage(url: URL(string: team.shield_url)){ image in
+                image.resizable()
+            } placeholder: {
+                ProgressView()
+            }.frame(width: 80.0, height: 80.0)
+                .clipShape(Rectangle()).cornerRadius(10)
+            
             VStack(alignment: .leading) {
-                Text("Nombre del club")
-                Text("Nombre de tu equipo")
+                Text(team.club_name).bold().font(.title3)
+                Text(team.team_name)
             }
             Spacer()
             Button(action: onLogout, label: {
@@ -31,5 +37,5 @@ struct ClubCard: View {
 #Preview {
     ClubCard(onLogout: {
         
-    })
+    }, team: team)
 }

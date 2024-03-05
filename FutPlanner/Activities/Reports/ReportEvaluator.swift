@@ -27,6 +27,10 @@ struct ReportEvaluator: View {
             self.currentPlayerIndex += 1
         }else {
             //todo fetch to send all data
+            if let index = matches.firstIndex(where: { $0.id == self.match.id }) {
+                matches[index].evaluated = true
+            }
+
             self.presentationMode.wrappedValue.dismiss()
         }
     }

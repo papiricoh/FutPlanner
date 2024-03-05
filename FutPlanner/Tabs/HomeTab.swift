@@ -21,7 +21,7 @@ struct HomeTab: View {
             ClubCard(onLogout: {
                 //self.lastMatch = nil
                 self.onLogout()
-            })
+            }, team: team)
             ScrollView {
                 if(nextMatch != nil) {
                     NextMatchComponent(match: nextMatch!)
@@ -70,6 +70,7 @@ struct HomeTab: View {
             .onAppear {
                 self.loaded = true
                 //Todo redo fetch
+                self.lastMatch = matches[1]
             }
     }
     

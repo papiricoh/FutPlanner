@@ -10,6 +10,7 @@ import Foundation
 struct TeamData: Identifiable, Hashable, Codable {
     var id: Int
     var team_name: String
+    var club_name: String
     var shield_url: String
     var category: String
     var subCategory: String
