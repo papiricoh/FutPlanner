@@ -7,4 +7,4 @@
 
 import Foundation
 
-var apiDir: String = "46.4.74.141:8080"
+var apiDir: String = "http://46.4.74.141:8080"

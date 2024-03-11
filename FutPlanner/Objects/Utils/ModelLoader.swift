@@ -13,6 +13,7 @@ var team: TeamData = load("teamData.json")
 var reports: [PlayerReport] = load("reports.json")
 
 
+
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data
 
@@ -37,9 +38,9 @@ func load<T: Decodable>(_ filename: String) -> T {
         fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
     }
 }
-/*
+
 extension URLSession {
-  func fetchData(at url: URL, completion: @escaping (Result<[ToDo], Error>) -> Void) {
+  func fetchUserData(at url: URL, completion: @escaping (Result<User, Error>) -> Void) {
     self.dataTask(with: url) { (data, response, error) in
       if let error = error {
         completion(.failure(error))
@@ -47,7 +48,7 @@ extension URLSession {
 
       if let data = data {
         do {
-          let toDos = try JSONDecoder().decode([ToDo].self, from: data)
+          let toDos = try JSONDecoder().decode(User.self, from: data)
           completion(.success(toDos))
         } catch let decoderError {
           completion(.failure(decoderError))
@@ -56,4 +57,3 @@ extension URLSession {
     }.resume()
   }
 }
-*/

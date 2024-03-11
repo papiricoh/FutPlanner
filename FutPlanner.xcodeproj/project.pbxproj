@@ -21,6 +21,7 @@
 		7C1A48702B5E9DE4002A8A1E /* StatsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A486F2B5E9DE4002A8A1E /* StatsTab.swift */; };
 		7C2054EF2B552C7E00D1FCFA /* MatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2054EE2B552C7E00D1FCFA /* MatchesView.swift */; };
 		7C2054F12B554CF600D1FCFA /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2054F02B554CF600D1FCFA /* LogInView.swift */; };
+		7C23E1FF2B9EF7390042EC60 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C23E1FE2B9EF7390042EC60 /* User.swift */; };
 		7C24883E2B55C898001A18AB /* LoadingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C24883D2B55C898001A18AB /* LoadingComponent.swift */; };
 		7C2488422B55D896001A18AB /* MatchInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2488412B55D896001A18AB /* MatchInfo.swift */; };
 		7C2488452B55DA40001A18AB /* ModelLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2488442B55DA40001A18AB /* ModelLoader.swift */; };
@@ -67,6 +68,8 @@
 		7C1A486F2B5E9DE4002A8A1E /* StatsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTab.swift; sourceTree = "<group>"; };
 		7C2054EE2B552C7E00D1FCFA /* MatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesView.swift; sourceTree = "<group>"; };
 		7C2054F02B554CF600D1FCFA /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		7C23E1FE2B9EF7390042EC60 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		7C23E2022B9F09900042EC60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		7C24883D2B55C898001A18AB /* LoadingComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingComponent.swift; sourceTree = "<group>"; };
 		7C2488412B55D896001A18AB /* MatchInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchInfo.swift; sourceTree = "<group>"; };
 		7C2488442B55DA40001A18AB /* ModelLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelLoader.swift; sourceTree = "<group>"; };
@@ -121,6 +124,7 @@
 		7C02D6E42ACE958E000917BD /* FutPlanner */ = {
 			isa = PBXGroup;
 			children = (
+				7C23E2022B9F09900042EC60 /* Info.plist */,
 				7CA3C3692B5DADAB0046D0DD /* Logic */,
 				7C4A17D32B5C2F65001C7C4E /* Lottie */,
 				7C2488462B55DA84001A18AB /* Resources */,
@@ -163,7 +167,6 @@
 			isa = PBXGroup;
 			children = (
 				7CE38AE02B73AF8D00985826 /* Reports */,
-				7C484A6F2B6ECEF20055F898 /* Map */,
 				7C484A6E2B6ECEDA0055F898 /* Matches */,
 				7C484A6D2B6ECEB50055F898 /* Stats */,
 			);
@@ -177,6 +180,7 @@
 				7C7EA1292B5705A100218D30 /* Team */,
 				7C2488432B55DA0C001A18AB /* Utils */,
 				7C2488402B55D87D001A18AB /* Matches */,
+				7C23E1FE2B9EF7390042EC60 /* User.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -321,6 +325,7 @@
 		7CE38AE02B73AF8D00985826 /* Reports */ = {
 			isa = PBXGroup;
 			children = (
+				7C484A6F2B6ECEF20055F898 /* Map */,
 				7CE38AE12B73B06700985826 /* ReportEvaluator.swift */,
 			);
 			path = Reports;
@@ -417,6 +422,7 @@
 				7CA3C36B2B5DADC00046D0DD /* LocationSearchService.swift in Sources */,
 				7CFFBBE02B5DDB9000C66D6C /* OldMatchesActivity.swift in Sources */,
 				7C50936E2B56728F00521CC4 /* MatchInfoActivity.swift in Sources */,
+				7C23E1FF2B9EF7390042EC60 /* User.swift in Sources */,
 				7C24884B2B55DE42001A18AB /* MatchOverview.swift in Sources */,
 				7C6053942B5A6FF5005F60B0 /* MapPickerView.swift in Sources */,
 				7C484A762B6ED0B00055F898 /* PlayerReport.swift in Sources */,
@@ -583,6 +589,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FutPlanner/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -617,6 +624,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FutPlanner/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
