@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PlayerRow: View {
-    var player: Player
+    var player: TPlayer
     @State var isDataOpen: Bool = false
     
     var body: some View {

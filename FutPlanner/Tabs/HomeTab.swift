@@ -11,7 +11,7 @@ struct HomeTab: View {
     var onLogout: () -> Void
     @State private var loaded = false
     @State private var lastMatch: MatchInfo? = matches[0]   //Debug set to nil
-    @State private var nextMatch: MatchInfo? = matches[1]
+    @State private var nextMatch: MatchInfo? = matches[4]
     var changeTab: (Int) -> Void
     var body: some View {
         

@@ -15,12 +15,12 @@ struct TeamData: Identifiable, Hashable, Codable {
     var category: String
     var subCategory: String
 
-    var players: [Player]
+    var players: [TPlayer]
     
     
 }
 
-struct Player: Hashable, Codable {
+struct TPlayer: Hashable, Codable {
     var id: Int
     var first_name: String
     var last_name: String

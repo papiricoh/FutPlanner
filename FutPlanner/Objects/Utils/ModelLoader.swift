@@ -8,11 +8,14 @@
 import Foundation
 import Alamofire
 
-
+//DEBUG VARIABLES
 var matches: [MatchInfo] = load("matchData.json")
 var team: TeamData = load("teamData.json")
 var reports: [PlayerReport] = load("reports.json")
+
+//PRODUCTION VARIABLES
 var user: User? = nil
+var fTeam: Team? = nil
 
 
 func load<T: Decodable>(_ filename: String) -> T {
@@ -70,6 +73,24 @@ func fetchUser(username: String, password: String) async throws {
     switch response.result {
     case .success(let auser):
         user = auser
+    case .failure(let error):
+        throw error
+    }
+}
+
+
+func fetchTeam() async throws {
+    let url = "\(apiDir)/api/trainer/getTeam"
+    let parameters: [String: String] = [
+        "user_id": "\(String(describing: user?.id))",
+        "token": user?.lastTokenKey ?? ""
+    ]
+    
+    let response: DataResponse<Team, AFError> = await AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).serializingDecodable(Team.self).response
+    print(response)
+    switch response.result {
+    case .success(let ateam):
+        fTeam = ateam
     case .failure(let error):
         throw error
     }

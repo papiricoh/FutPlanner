@@ -9,7 +9,7 @@ import SwiftUI
 import DGCharts
 
 struct StatsActivity: View {
-    var player: Player
+    var player: TPlayer
     
     
     var body: some View {

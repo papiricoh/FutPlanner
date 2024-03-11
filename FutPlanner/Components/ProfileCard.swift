@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProfileCard: View {
     
-    var player: Player
+    var player: TPlayer
     
     var body: some View {
         VStack{

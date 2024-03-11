@@ -31,7 +31,7 @@ struct TeamTab: View {
             Spacer()
         }.padding()
     }
-    var filteredPlayers: [Player] {
+    var filteredPlayers: [TPlayer] {
         if searchText.isEmpty {
             return team.players
         } else {

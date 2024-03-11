@@ -34,6 +34,8 @@ struct ContentView: View {
                             Text("Estadisticas")
                         }.tag(1)
                         HomeTab(onLogout: {
+                            let defaults = UserDefaults.standard
+                            defaults.set("", forKey: "token")
                             self.logged = false
                         }, changeTab: { tab in
                             self.selection = tab

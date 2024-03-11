@@ -10,7 +10,7 @@ import SwiftUI
 struct ReportEvaluator: View {
     @Environment(\.presentationMode) var presentationMode
     
-    var players: [Player]
+    var players: [TPlayer]
     var match: MatchInfo
     @State var reports: [PlayerReport] = []
     @State var currentPlayerIndex = 0
