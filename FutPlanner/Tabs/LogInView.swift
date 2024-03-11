@@ -11,6 +11,7 @@ struct LogInView: View {
     var onLoginSuccess: () -> Void
     @State private var username: String = ""
     @State private var password: String = ""
+    @Binding var loading: Bool
     
     var body: some View {
         ZStack {
@@ -43,10 +44,23 @@ struct LogInView: View {
             .background(Gradient(colors: [.green, .gray, .green]).opacity(0.6))
     }
     func login() {
-        print("Intento de inicio de sesión con Usuario: \(username), Contraseña: \(password)")
+        print("Intento de inicio de sesión con Usuario: \(username)")
         
-        // Supongamos que la validación fue exitosa
-        onLoginSuccess()
+        loading = true
+        Task {
+            do {
+                try await fetchUser(username: username, password: password)
+                if user != nil {
+                    let defaults = UserDefaults.standard
+                    defaults.set(user?.username, forKey: "username")
+                    defaults.set(user?.lastTokenKey, forKey: "token")
+                    onLoginSuccess()
+                }
+            } catch {
+                print("Error en la solicitud: \(error.localizedDescription)")
+            }
+            loading = false
+        }
     }
     
 }
@@ -61,5 +75,5 @@ extension UITextField {
 #Preview {
     LogInView(onLoginSuccess: {
         //
-    })
+    }, loading: .constant(false))
 }

@@ -22,6 +22,8 @@
 		7C2054EF2B552C7E00D1FCFA /* MatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2054EE2B552C7E00D1FCFA /* MatchesView.swift */; };
 		7C2054F12B554CF600D1FCFA /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2054F02B554CF600D1FCFA /* LogInView.swift */; };
 		7C23E1FF2B9EF7390042EC60 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C23E1FE2B9EF7390042EC60 /* User.swift */; };
+		7C23E2052B9F19C20042EC60 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7C23E2042B9F19C20042EC60 /* Alamofire */; };
+		7C23E2072B9F19C20042EC60 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 7C23E2062B9F19C20042EC60 /* AlamofireDynamic */; };
 		7C24883E2B55C898001A18AB /* LoadingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C24883D2B55C898001A18AB /* LoadingComponent.swift */; };
 		7C2488422B55D896001A18AB /* MatchInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2488412B55D896001A18AB /* MatchInfo.swift */; };
 		7C2488452B55DA40001A18AB /* ModelLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2488442B55DA40001A18AB /* ModelLoader.swift */; };
@@ -105,6 +107,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C23E2052B9F19C20042EC60 /* Alamofire in Frameworks */,
+				7C23E2072B9F19C20042EC60 /* AlamofireDynamic in Frameworks */,
 				7C06C3392B6A50B900FDF0DC /* DGCharts in Frameworks */,
 				7C4A17DA2B5C32C0001C7C4E /* Lottie in Frameworks */,
 			);
@@ -350,6 +354,8 @@
 			packageProductDependencies = (
 				7C4A17D92B5C32C0001C7C4E /* Lottie */,
 				7C06C3382B6A50B900FDF0DC /* DGCharts */,
+				7C23E2042B9F19C20042EC60 /* Alamofire */,
+				7C23E2062B9F19C20042EC60 /* AlamofireDynamic */,
 			);
 			productName = FutPlanner;
 			productReference = 7C06C3362B6A4CE200FDF0DC /* FutPlanner.app */;
@@ -382,6 +388,7 @@
 			packageReferences = (
 				7C4A17D82B5C32C0001C7C4E /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				7C06C3372B6A50B900FDF0DC /* XCRemoteSwiftPackageReference "Charts" */,
+				7C23E2032B9F19C20042EC60 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 7C02D6D92ACE958E000917BD;
 			projectDirPath = "";
@@ -676,6 +683,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		7C23E2032B9F19C20042EC60 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.0;
+			};
+		};
 		7C4A17D82B5C32C0001C7C4E /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-ios";
@@ -691,6 +706,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7C06C3372B6A50B900FDF0DC /* XCRemoteSwiftPackageReference "Charts" */;
 			productName = DGCharts;
+		};
+		7C23E2042B9F19C20042EC60 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7C23E2032B9F19C20042EC60 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		7C23E2062B9F19C20042EC60 /* AlamofireDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7C23E2032B9F19C20042EC60 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = AlamofireDynamic;
 		};
 		7C4A17D92B5C32C0001C7C4E /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;

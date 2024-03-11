@@ -11,11 +11,12 @@ import SwiftData
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @State private var selection = 2
-    @State public var logged = true
+    @State public var logged = false
     @State public var loading = false
     
     init() {
-        UITabBar.appearance().backgroundColor = UIColor.white
+        UITabBar.appearance().backgroundColor = UIColor.futDay
+        
     }
     
     var body: some View {
@@ -23,7 +24,8 @@ struct ContentView: View {
             if(!logged) {
                 LogInView(onLoginSuccess: {
                     self.logged = true
-                });
+                    user = nil
+                }, loading: $loading);
             }else {
                 NavigationStack() {
                     TabView(selection:$selection) {
@@ -49,8 +51,24 @@ struct ContentView: View {
             if(loading) {
                 LoadingComponent()
             }
+        }.onAppear {
+            fetchTokenUserContent()
         }
         
+    }
+    func fetchTokenUserContent() {
+        loading = true
+        Task {
+            do {
+                try await fetchTokenUser()
+                if user != nil {
+                    self.logged = true
+                }
+            } catch {
+                print("Error en la solicitud: \(error.localizedDescription)")
+            }
+            loading = false
+        }
     }
 
     

@@ -6,17 +6,17 @@
 //
 
 import Foundation
+import Alamofire
 
 
 var matches: [MatchInfo] = load("matchData.json")
 var team: TeamData = load("teamData.json")
 var reports: [PlayerReport] = load("reports.json")
-
+var user: User? = nil
 
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data
-
 
     guard let file = Bundle.main.url(forResource: filename, withExtension: nil)
     else {
@@ -39,21 +39,38 @@ func load<T: Decodable>(_ filename: String) -> T {
     }
 }
 
-extension URLSession {
-  func fetchUserData(at url: URL, completion: @escaping (Result<User, Error>) -> Void) {
-    self.dataTask(with: url) { (data, response, error) in
-      if let error = error {
-        completion(.failure(error))
-      }
+func fetchTokenUser() async throws {
+    let url = "\(apiDir)/api/logIn/token"
+    let defaults = UserDefaults.standard
+    let parameters: [String: String] = [
+        "username": defaults.string(forKey: "username") ?? "",
+        "token": defaults.string(forKey: "token") ?? ""
+    ]
+    
+    let response: DataResponse<User, AFError> = await AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).serializingDecodable(User.self).response
+    
+    switch response.result {
+    case .success(let auser):
+        user = auser
+    case .failure(let error):
+        throw error
+    }
+}
 
-      if let data = data {
-        do {
-          let toDos = try JSONDecoder().decode(User.self, from: data)
-          completion(.success(toDos))
-        } catch let decoderError {
-          completion(.failure(decoderError))
-        }
-      }
-    }.resume()
-  }
+
+func fetchUser(username: String, password: String) async throws {
+    let url = "\(apiDir)/api/logIn"
+    let parameters: [String: String] = [
+        "username": username,
+        "password": password
+    ]
+    
+    let response: DataResponse<User, AFError> = await AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).serializingDecodable(User.self).response
+    
+    switch response.result {
+    case .success(let auser):
+        user = auser
+    case .failure(let error):
+        throw error
+    }
 }
