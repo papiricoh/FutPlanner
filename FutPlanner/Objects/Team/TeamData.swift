@@ -20,7 +20,7 @@ struct TeamData: Identifiable, Hashable, Codable {
     
 }
 
-struct TPlayer: Hashable, Codable {
+struct TPlayer: Identifiable, Hashable, Codable {
     var id: Int
     var first_name: String
     var last_name: String

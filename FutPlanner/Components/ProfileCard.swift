@@ -9,14 +9,14 @@ import SwiftUI
 
 struct ProfileCard: View {
     
-    var player: TPlayer
+    var player: Player
     
     var body: some View {
         VStack{
             HStack(alignment: .top) {
-                Text(player.first_name + " " + player.last_name).textCase(.uppercase).font(.title2).bold()
+                Text(player.firstName + " " + player.lastName).textCase(.uppercase).font(.title2).bold()
                 Spacer()
-                AsyncImage(url: URL(string: player.photo_url)){ image in
+                AsyncImage(url: URL(string: player.photoUrl ?? "https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg")){ image in
                     image.resizable()
                 } placeholder: {
                     ProgressView()
@@ -30,17 +30,17 @@ struct ProfileCard: View {
                 Divider().frame(width: 1, height: 50)
                 VStack(alignment: .center) {
                     Text("Pais").font(.caption2)
-                    Text(player.nationality).bold()
+                    Text(player.nationality ?? "?").bold()
                 }
                 Divider().frame(width: 1, height: 50)
                 VStack(alignment: .center) {
                     Text("Numero").font(.caption2)
-                    Text(String(player.shirt_number)).bold()
+                    Text(String(player.shirtNumber ?? 0)).bold()
                 }
                 Divider().frame(width: 1, height: 50)
                 VStack(alignment: .center) {
                     Text("Nacimiento").font(.caption2)
-                    Text(formatDate(player.date_of_birth)).bold()
+                    Text(formatDate(player.dateOfBirthDate ?? Date())).bold()
                 }
             }
         }.padding().overlay(RoundedRectangle(cornerRadius: 16).stroke(.futNight, lineWidth: 3)).padding(.horizontal)
@@ -57,5 +57,5 @@ struct ProfileCard: View {
 }
 
 #Preview {
-    ProfileCard(player: team.players[0])
+    ProfileCard(player: Player(id: 1, firstName: "String", lastName: "String", photoUrl: nil, dateOfBirth: nil, playerId: 1, position: "String", shirtNumber: 41, nationality: nil))
 }

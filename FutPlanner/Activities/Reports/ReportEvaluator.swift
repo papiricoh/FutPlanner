@@ -39,7 +39,8 @@ struct ReportEvaluator: View {
         ScrollViewReader { proxy in
             ScrollView {
                 VStack{
-                    ProfileCard(player: players[currentPlayerIndex]).id("Card")
+                    //TODO TEMPORAL
+                    ProfileCard(player: Player(id: 1, firstName: "String", lastName: "String", photoUrl: nil, dateOfBirth: nil, playerId: 1, position: "String", shirtNumber: 41, nationality: nil)).id("Card")
                     VStack {//EV Process
                         RatingComponent(text: "Rendimiento General", rating: $currentReport.generalPerformance)
                         RatingComponent(text: "Rendimiento Tactico", rating: $currentReport.tacticalPerformance)

@@ -9,10 +9,10 @@ import SwiftUI
 
 struct ClubCard: View {
     var onLogout: () -> Void
-    var team: TeamData
+    var team: Team
     var body: some View {
         HStack() {
-            AsyncImage(url: URL(string: team.shield_url)){ image in
+            AsyncImage(url: URL(string: team.club.shieldUrl ?? "https://st3.depositphotos.com/6672868/13701/v/450/depositphotos_137014128-stock-illustration-user-profile-icon.jpg")){ image in
                 image.resizable()
             } placeholder: {
                 ProgressView()
@@ -20,8 +20,8 @@ struct ClubCard: View {
                 .clipShape(Rectangle()).cornerRadius(10)
             
             VStack(alignment: .leading) {
-                Text(team.club_name).bold().font(.title3)
-                Text(team.team_name)
+                Text(team.club.clubName).bold().font(.title3)
+                Text(team.teamName)
             }
             Spacer()
             Button(action: onLogout, label: {
@@ -30,12 +30,12 @@ struct ClubCard: View {
                     Text("Salir").multilineTextAlignment(.center)
                 }
             })
-        }.padding().overlay(Rectangle().frame(height: 2).foregroundColor(.gray), alignment: .bottom)
+        }.padding().overlay(Rectangle().frame(height: 1).foregroundColor(.gray), alignment: .bottom)
     }
 }
 
 #Preview {
     ClubCard(onLogout: {
         
-    }, team: team)
+    }, team: Team(id: 1, teamName: "String", shieldUrl: nil, subCategoryId: 1, clubId: 1, players: nil, club: Club(id: 1, clubName: "String", shieldUrl: nil, ownerId: 3)))
 }

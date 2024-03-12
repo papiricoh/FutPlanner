@@ -24,12 +24,11 @@ struct ContentView: View {
             if(!logged) {
                 LogInView(onLoginSuccess: {
                     self.logged = true
-                    user = nil
                 }, loading: $loading);
             }else {
                 NavigationStack() {
                     TabView(selection:$selection) {
-                        StatsTab().tabItem {
+                        StatsTab(loading: $loading).tabItem {
                             Image(systemName: "chart.line.uptrend.xyaxis")
                             Text("Estadisticas")
                         }.tag(1)
@@ -37,6 +36,7 @@ struct ContentView: View {
                             let defaults = UserDefaults.standard
                             defaults.set("", forKey: "token")
                             self.logged = false
+                            user = nil
                         }, changeTab: { tab in
                             self.selection = tab
                         }).tabItem {

@@ -16,7 +16,7 @@ struct LogInView: View {
     var body: some View {
         ZStack {
             VStack {
-                Image("ClubPlaceholder").resizable().frame(width: 100, height: 100).clipShape(Rectangle()).cornerRadius(20)
+                Image("FutAppIcon").resizable().frame(width: 100, height: 100).clipShape(Rectangle()).cornerRadius(20)
                 Text("Bienvenido a FutPlanner")
                 VStack {
                     ZStack (alignment: .leading) {
@@ -50,10 +50,11 @@ struct LogInView: View {
         Task {
             do {
                 try await fetchUser(username: username, password: password)
-                if user != nil {
+                if fTeam != nil {
                     let defaults = UserDefaults.standard
                     defaults.set(user?.username, forKey: "username")
                     defaults.set(user?.lastTokenKey, forKey: "token")
+                    print(fTeam!)
                     onLoginSuccess()
                 }
             } catch {

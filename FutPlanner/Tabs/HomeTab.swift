@@ -21,7 +21,7 @@ struct HomeTab: View {
             ClubCard(onLogout: {
                 //self.lastMatch = nil
                 self.onLogout()
-            }, team: team)
+            }, team: fTeam!)
             ScrollView {
                 if(nextMatch != nil) {
                     NextMatchComponent(match: nextMatch!)

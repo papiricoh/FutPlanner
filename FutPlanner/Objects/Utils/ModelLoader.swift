@@ -55,7 +55,14 @@ func fetchTokenUser() async throws {
     switch response.result {
     case .success(let auser):
         user = auser
+        do {
+            try await fetchTeam()
+        } catch {
+            print("Error en la solicitud: \(error.localizedDescription)")
+            throw error
+        }
     case .failure(let error):
+        print(error)
         throw error
     }
 }
@@ -73,7 +80,14 @@ func fetchUser(username: String, password: String) async throws {
     switch response.result {
     case .success(let auser):
         user = auser
+        do {
+            try await fetchTeam()
+        } catch {
+            print("Error en la solicitud: \(error.localizedDescription)")
+            throw error
+        }
     case .failure(let error):
+        print(error)
         throw error
     }
 }
@@ -82,16 +96,16 @@ func fetchUser(username: String, password: String) async throws {
 func fetchTeam() async throws {
     let url = "\(apiDir)/api/trainer/getTeam"
     let parameters: [String: String] = [
-        "user_id": "\(String(describing: user?.id))",
+        "user_id": "\(user?.id ?? 0)",
         "token": user?.lastTokenKey ?? ""
     ]
     
     let response: DataResponse<Team, AFError> = await AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).serializingDecodable(Team.self).response
-    print(response)
     switch response.result {
     case .success(let ateam):
         fTeam = ateam
     case .failure(let error):
+        print(error)
         throw error
     }
 }

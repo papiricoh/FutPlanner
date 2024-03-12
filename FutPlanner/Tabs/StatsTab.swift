@@ -9,6 +9,7 @@ import SwiftUI
 import Charts
 
 struct StatsTab: View {
+    @Binding var loading: Bool
     
     let data: [Develompent] = [
         Develompent(classification: "Nivel Tecnico", points: 11),
@@ -31,16 +32,18 @@ struct StatsTab: View {
                     ).foregroundStyle(Color.futGreenLight)
                 }.frame(height: 300).padding().cornerRadius(20).bold()
                 VStack(alignment: .center) {
-                    ForEach(team.players, id: \.id) { player in
-                        NavigationLink(destination: StatsActivity(player: player)) {
-                            PlayerListItem(text: player.first_name + " " + player.last_name)
+                    ForEach(fTeam?.players ?? [], id: \.id) { player in
+                        NavigationLink(destination: StatsActivity(player: player, loading: $loading)) {
+                            PlayerListItem(text: player.firstName + " " + player.lastName)
                         }
                     }
                 }
                 
             }
             Spacer()
-        }.padding(.top, 10)
+        }.padding(.top, 10).onAppear() {
+            loading = false
+        }
     }
 }
 
@@ -51,5 +54,5 @@ struct Develompent: Identifiable {
 }
 
 #Preview {
-    StatsTab()
+    StatsTab(loading: .constant(false))
 }
