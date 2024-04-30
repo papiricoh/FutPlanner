@@ -13,7 +13,7 @@ struct fMatch: Identifiable, Hashable, Codable {
     var awayTeamName: String
     var category: String
     var subCategory: String
-    var you: Int //0 If you are homTeam 1 if you are away
+    var you: Int //0 If you are homeTeam 1 if you are away
     var date: Date
     var coordinates_name: String
     var evaluated: Bool
@@ -34,7 +34,7 @@ struct fMatch: Identifiable, Hashable, Codable {
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         id = try container.decode(Int.self, forKey: .id)
         homeTeamName = try container.decode(String.self, forKey: .homeTeamName)
         awayTeamName = try container.decode(String.self, forKey: .awayTeamName)
@@ -43,23 +43,30 @@ struct fMatch: Identifiable, Hashable, Codable {
         homeTeamId = try container.decode(Int.self, forKey: .homeTeamId)
         you = homeTeamId == fTeam?.id ? 0 : 1
         coordinates_name = try container.decode(String.self, forKey: .coordinates_name)
-        var evalNumber: Int = try container.decode(Int.self, forKey: .evaluated)
-        evaluated = evalNumber == 1 ? true : false
-         
+        let evalNumber = try container.decode(Int.self, forKey: .evaluated)
+        evaluated = evalNumber == 1
 
-        
         let dateString = try container.decode(String.self, forKey: .date)
         let formatter = ISO8601DateFormatter()
+        formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+
         if let date = formatter.date(from: dateString) {
             self.date = date
         } else {
+            print("Fechas no válidas: \(dateString)")
             throw DecodingError.dataCorruptedError(forKey: .date, in: container, debugDescription: "Fecha no válida")
         }
         
         let coordsString = try container.decode(String.self, forKey: .coordinates)
-        let coordsParts = coordsString.split(separator: ",").map { Double($0) }
-        coordinates = Coordinates(latitude: coordsParts[0] ?? 0.0, longitude: coordsParts[1] ?? 0.0)
+        let coordsParts = coordsString.split(separator: ",").map { Double($0) ?? 0.0 }
+        if coordsParts.count == 2 {
+            coordinates = Coordinates(latitude: coordsParts[0], longitude: coordsParts[1])
+        } else {
+            print("Coordenadas no válidas")
+            throw DecodingError.dataCorruptedError(forKey: .coordinates, in: container, debugDescription: "Coordenadas no válidas")
+        }
     }
+
 }
 
 extension fMatch {

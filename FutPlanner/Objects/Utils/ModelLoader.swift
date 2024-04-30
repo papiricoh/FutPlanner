@@ -16,6 +16,7 @@ var reports: [PlayerReport] = load("reports.json")
 //PRODUCTION VARIABLES
 var user: User? = nil
 var fTeam: Team? = nil
+var fMatches: [fMatch?]? = nil
 
 
 func load<T: Decodable>(_ filename: String) -> T {
@@ -106,6 +107,38 @@ func fetchTeam() async throws {
         fTeam = ateam
     case .failure(let error):
         print(error)
+        throw error
+    }
+}
+
+func fetchMatches() async throws {
+    let url = "\(apiDir)/api/trainer/getMatches"
+    let parameters: [String: String] = [
+        "user_id": "\(user?.id ?? 0)",
+        "token": user?.lastTokenKey ?? ""
+    ]
+    
+    do {
+        let response: DataResponse<[fMatch], AFError> = await AF.request(
+            url,
+            method: .post,
+            parameters: parameters,
+            encoding: JSONEncoding.default
+        ).serializingDecodable([fMatch].self).response
+        
+        switch response.result {
+        case .success(let matchList):
+            fMatches = matchList
+        case .failure(let error):
+            print("Request failed with error: \(error)")
+            fMatches = []
+            print("Empty matches list: \(fMatches != nil)")
+            throw error
+        }
+    } catch {
+        print("Error in network request or decoding: \(error)")
+        fMatches = []
+        print("Empty matches list: \(fMatches != nil)")
         throw error
     }
 }

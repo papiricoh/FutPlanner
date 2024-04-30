@@ -40,6 +40,18 @@ struct MatchesView: View {
             CreateMatchSheetView() { 
                 self.showCreateMatchSheet = !self.showCreateMatchSheet
             }.presentationDetents([.medium, .large])
+        }.onAppear () {
+            loading = true
+            Task {
+                do {
+                    try await fetchMatches()
+                    
+                    loading = false
+                } catch {
+                    print("Error en la solicitud: \(error.localizedDescription)")
+                    loading = false
+                }
+            }
         }
     }
     func avariableMatches() -> [MatchInfo] {
