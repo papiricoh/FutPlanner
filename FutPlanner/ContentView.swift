@@ -39,7 +39,7 @@ struct ContentView: View {
                             user = nil
                         }, changeTab: { tab in
                             self.selection = tab
-                        }).tabItem {
+                        }, loading: $loading).tabItem {
                             Image(systemName: "soccerball")
                             Text("Principal")
                         }.tag(2)

@@ -13,6 +13,7 @@ struct HomeTab: View {
     @State private var lastMatch: MatchInfo? = matches[0]   //Debug set to nil
     @State private var nextMatch: MatchInfo? = matches[4]
     var changeTab: (Int) -> Void
+    @Binding var loading: Bool
     var body: some View {
         
         VStack() {
@@ -39,7 +40,7 @@ struct HomeTab: View {
                         }.padding().background(Color.futNight.opacity(0.8)).cornerRadius(10).padding(4)
                     }
                 }
-                NavigationLink(destination: MatchesView()) {
+                NavigationLink(destination: MatchesView(loading: $loading)) {
                     HStack {
                         VStack(alignment: .leading) {
                             Text("Partidos").font(.system(size: 20)).bold()
@@ -86,5 +87,5 @@ struct HomeTab: View {
 
 #Preview {
     HomeTab(onLogout: {
-    }, changeTab: {tab in})
+    }, changeTab: {tab in}, loading: .constant(false))
 }

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MatchesView: View {
     @State private var showCreateMatchSheet = false
+    @Binding var loading: Bool
     
     var body: some View {
         VStack {
@@ -65,5 +66,5 @@ struct MatchesView: View {
 }
 
 #Preview {
-    MatchesView()
+    MatchesView(loading: .constant(false))
 }
