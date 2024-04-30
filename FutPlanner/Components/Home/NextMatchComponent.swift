@@ -24,7 +24,7 @@ struct NextMatchComponent: View {
                 Spacer()
                 Text("\(timeRemaining(match.date))")
             }
-            NavigationLink(destination: MatchInfoActivity(infoMatch: fMatch(id: 1, homeTeamName: "", awayTeamName: "", category: "", subCategory: "", you: 2, date: Date(), coordinates_name: "", evaluated: true, coordinates: Coordinates(latitude: 0, longitude: 0), homeTeamId: 2))) { //TODO: Cambiar match
+            NavigationLink(destination: MatchInfoActivity(infoMatch: fMatch(id: 1, homeTeamName: "", awayTeamName: "", category: "", subCategory: "", you: 2, date: Date(), coordinates_name: "", evaluated: true, coordinates: Coordinates(latitude: 0, longitude: 0), homeTeamId: 2, awayTeamId: nil))) { //TODO: Cambiar match
                 HStack(alignment: .center) {
                     Spacer()
                     Text("Ver Partido").foregroundColor(.futNight).bold()

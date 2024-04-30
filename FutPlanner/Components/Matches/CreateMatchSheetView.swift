@@ -7,6 +7,7 @@
 
 import SwiftUI
 import MapKit
+import Alamofire
 
 struct CreateMatchSheetView: View {
     @State private var rivalTeamName: String = ""
@@ -23,6 +24,7 @@ struct CreateMatchSheetView: View {
         )
     @State private var selectedPlace: String = "Sin ubicacion"
     var showingSheet: () -> Void
+    @Binding var loading: Bool
 
     
     
@@ -34,16 +36,29 @@ struct CreateMatchSheetView: View {
                 Text("Añade un partido").bold().font(.title2)
                 Spacer()
                 Button(action: {
-                    ///TODO: Llamar a la API para insertar el partido
-                    var homeTeam = team.team_name
-                    var awayTeam = self.rivalTeamName
-                    if(!isHomeTeam) {
-                        homeTeam = self.rivalTeamName
-                        awayTeam = team.team_name
+                    Task {
+                        do {
+                            loading = true
+                            
+                            var homeTeam = fTeam!.teamName
+                            var awayTeam = self.rivalTeamName
+                            if(!isHomeTeam) {
+                                homeTeam = self.rivalTeamName
+                                awayTeam = fTeam!.teamName
+                            }
+                            let newMatch = fMatch(id: fMatches![fMatches!.count - 1].id + 1, homeTeamName: homeTeam, awayTeamName: awayTeam, category: team.category, subCategory: team.subCategory, you: self.isHomeTeam ? 0: 1, date: self.date, coordinates_name: selectedPlace, evaluated: false, coordinates: Coordinates(latitude: region.center.latitude, longitude: region.center.longitude), homeTeamId: self.isHomeTeam ? fTeam!.id : nil, awayTeamId: !self.isHomeTeam ? fTeam!.id : nil)
+                            
+                            fMatches?.append(newMatch)
+                            
+                            ///TODO: Llamar a la API para insertar el partido
+                            try await insertMatch(newMatch)
+                            loading = false
+                            self.showingSheet()
+                        } catch {
+                            print("Error en la solicitud: \(error.localizedDescription)")
+                            loading = false
+                        }
                     }
-                    let newMatch = MatchInfo(id: matches.count + 1, homeTeamName: homeTeam, awayTeamName: awayTeam, category: team.category, subCategory: team.subCategory, you: self.isHomeTeam ? 0: 1, date: self.date, coordinates_name: selectedPlace, evaluated: false, coordinates: Coordinates(latitude: region.center.latitude, longitude: region.center.longitude))
-                    matches.append(newMatch)
-                    self.showingSheet()
                 }) {
                     Text("Añadir").bold()
                 }
@@ -114,9 +129,49 @@ struct CreateMatchSheetView: View {
         }.padding(.top, 30).animation(.default, value: searchText)
     }
 
+    func insertMatch(_ match: fMatch) async throws -> Void {
+        let url = "\(apiDir)/api/trainer/insertMatch"
+        let parameters: [String: String] = [
+            "user_id": "\(user?.id ?? 0)",
+            "token": user?.lastTokenKey ?? "",
+            "match_date": "\(unixTimestampFromDate(match.date))",
+            "map_coords": "\(match.coordinates.latitude),\(match.coordinates.longitude)",
+            "place_name": match.coordinates_name,
+            "home_team_id": match.homeTeamId != nil ? "\(String(match.homeTeamId!))" : "",
+            "home_team_name": match.homeTeamName,
+            "away_team_id": match.awayTeamId != nil ? "\(String(match.awayTeamId!))" : "",
+            "away_team_name": match.awayTeamName,
+            "sub_category_id": "\(fTeam!.subCategoryId)"
+        ]
+        
+        
+        let response = await AF.request(url,
+           method: .post,
+           parameters: parameters,
+           encoding: JSONEncoding.default).serializingData().response
+
+        if let data = response.data, let rawResponse = String(data: data, encoding: .utf8) {
+            print("Raw response string: \(rawResponse)")
+            // Intenta parsear el JSON
+            if let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+               let matchId = json["matchId"] as? Int {
+                print("Inserted match id: \(matchId)")
+            } else {
+                print("Match ID not found or incorrect format in response")
+            }
+        }
+    }
+    func stringFromDate(_ date: Date) -> String {
+        let formatter = ISO8601DateFormatter()
+        formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds, .withTimeZone]
+        return formatter.string(from: date)
+    }
+    func unixTimestampFromDate(_ date: Date) -> Int {
+        return Int(date.timeIntervalSince1970)
+    }
 }
 
 
 #Preview {
-    CreateMatchSheetView(showingSheet: {})
+    CreateMatchSheetView(showingSheet: {}, loading: .constant(false))
 }

@@ -44,9 +44,20 @@ struct MatchesView: View {
                 Spacer()
             }
         }.navigationBarTitle("Proximos partidos", displayMode: .inline).animation(.default, value: showCreateMatchSheet).sheet(isPresented: $showCreateMatchSheet) {
-            CreateMatchSheetView() { 
+            CreateMatchSheetView(showingSheet: {
                 self.showCreateMatchSheet = !self.showCreateMatchSheet
-            }.presentationDetents([.medium, .large])
+                loading = true
+                Task {
+                    do {
+                        try await fetchMatches()
+                        self.avariable = avariableMatches();
+                        loading = false
+                    } catch {
+                        print("Error en la solicitud: \(error.localizedDescription)")
+                        loading = false
+                    }
+                }
+            }, loading: $loading).presentationDetents([.medium, .large])
         }.onAppear () {
             loading = true
             Task {
@@ -80,7 +91,7 @@ struct MatchesView: View {
             }
         }
         
-        return newMatches.sorted { $0.date < $1.date }
+        return newMatches.sorted { $0.date > $1.date }
     }
 }
 

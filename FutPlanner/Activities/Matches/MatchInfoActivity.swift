@@ -93,5 +93,5 @@ struct MatchInfoActivity: View {
 }
 
 #Preview {
-    MatchInfoActivity(infoMatch: fMatch(id: 1, homeTeamName: "", awayTeamName: "", category: "", subCategory: "", you: 2, date: Date(), coordinates_name: "", evaluated: true, coordinates: Coordinates(latitude: 0, longitude: 0), homeTeamId: 2))
+    MatchInfoActivity(infoMatch: fMatch(id: 1, homeTeamName: "", awayTeamName: "", category: "", subCategory: "", you: 2, date: Date(), coordinates_name: "", evaluated: true, coordinates: Coordinates(latitude: 0, longitude: 0), homeTeamId: 2, awayTeamId: nil))
 }

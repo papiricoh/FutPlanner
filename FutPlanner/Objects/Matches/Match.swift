@@ -17,7 +17,8 @@ struct fMatch: Identifiable, Hashable, Codable {
     var date: Date
     var coordinates_name: String
     var evaluated: Bool
-    var homeTeamId: Int
+    var homeTeamId: Int?
+    var awayTeamId: Int?
 
     var coordinates: Coordinates
     
@@ -29,6 +30,7 @@ struct fMatch: Identifiable, Hashable, Codable {
         case coordinates_name = "place_name"
         case coordinates = "map_coords"
         case homeTeamId = "home_team_id"
+        case awayTeamId = "away_team_id"
         
     }
 
@@ -40,7 +42,10 @@ struct fMatch: Identifiable, Hashable, Codable {
         awayTeamName = try container.decode(String.self, forKey: .awayTeamName)
         category = "Alevines"
         subCategory = "1"
-        homeTeamId = try container.decode(Int.self, forKey: .homeTeamId)
+        
+        homeTeamId = try container.decodeIfPresent(Int.self, forKey: .homeTeamId)
+        awayTeamId = try container.decodeIfPresent(Int.self, forKey: .awayTeamId)
+        
         you = homeTeamId == fTeam?.id ? 0 : 1
         coordinates_name = try container.decode(String.self, forKey: .coordinates_name)
         let evalNumber = try container.decode(Int.self, forKey: .evaluated)
@@ -70,7 +75,7 @@ struct fMatch: Identifiable, Hashable, Codable {
 }
 
 extension fMatch {
-    init(id: Int, homeTeamName: String, awayTeamName: String, category: String, subCategory: String, you: Int, date: Date, coordinates_name: String, evaluated: Bool, coordinates: Coordinates, homeTeamId: Int) {
+    init(id: Int, homeTeamName: String, awayTeamName: String, category: String, subCategory: String, you: Int, date: Date, coordinates_name: String, evaluated: Bool, coordinates: Coordinates, homeTeamId: Int?, awayTeamId: Int?) {
         self.id = id
         self.homeTeamName = homeTeamName
         self.awayTeamName = awayTeamName
@@ -82,5 +87,6 @@ extension fMatch {
         self.evaluated = evaluated
         self.coordinates = coordinates
         self.homeTeamId = homeTeamId
+        self.awayTeamId = awayTeamId
     }
 }
