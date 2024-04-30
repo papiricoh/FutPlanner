@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct OldMatchesActivity: View {
-    var oldMatches: [MatchInfo]
+    var oldMatches: [fMatch]
     var body: some View {
         VStack {
             ScrollView {
@@ -26,5 +26,5 @@ struct OldMatchesActivity: View {
 }
 
 #Preview {
-    OldMatchesActivity(oldMatches: matches)
+    OldMatchesActivity(oldMatches: [fMatch(id: 1, homeTeamName: "", awayTeamName: "", category: "", subCategory: "", you: 2, date: Date(), coordinates_name: "", evaluated: true, coordinates: Coordinates(latitude: 0, longitude: 0), homeTeamId: 2)])
 }

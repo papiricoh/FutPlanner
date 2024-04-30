@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MatchOverview: View {
-    var match: MatchInfo
+    var match: fMatch
     @State private var loaded = false
     var body: some View {
         HStack {
@@ -38,5 +38,5 @@ struct MatchOverview: View {
 }
 
 #Preview {
-    MatchOverview(match: matches[0])
+    MatchOverview(match: fMatch(id: 1, homeTeamName: "", awayTeamName: "", category: "", subCategory: "", you: 2, date: Date(), coordinates_name: "", evaluated: true, coordinates: Coordinates(latitude: 0, longitude: 0), homeTeamId: 2))
 }

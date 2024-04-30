@@ -9,7 +9,7 @@ import SwiftUI
 import MapKit
 
 struct MatchInfoActivity: View {
-    let infoMatch: MatchInfo
+    let infoMatch: fMatch
     @State var loaded = false
     
     var body: some View {
@@ -93,5 +93,5 @@ struct MatchInfoActivity: View {
 }
 
 #Preview {
-    MatchInfoActivity(infoMatch: matches[0])
+    MatchInfoActivity(infoMatch: fMatch(id: 1, homeTeamName: "", awayTeamName: "", category: "", subCategory: "", you: 2, date: Date(), coordinates_name: "", evaluated: true, coordinates: Coordinates(latitude: 0, longitude: 0), homeTeamId: 2))
 }

@@ -16,7 +16,7 @@ var reports: [PlayerReport] = load("reports.json")
 //PRODUCTION VARIABLES
 var user: User? = nil
 var fTeam: Team? = nil
-var fMatches: [fMatch?]? = nil
+var fMatches: [fMatch]? = nil
 
 
 func load<T: Decodable>(_ filename: String) -> T {
