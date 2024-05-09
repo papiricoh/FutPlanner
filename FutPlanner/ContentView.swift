@@ -43,9 +43,14 @@ struct ContentView: View {
                             Image(systemName: "soccerball")
                             Text("Principal")
                         }.tag(2)
-                        TeamTab().tabItem {
-                            Image(systemName: "sportscourt")
-                            Text("Equipo")
+                        ProfileTab(onLogout: {
+                            let defaults = UserDefaults.standard
+                            defaults.set("", forKey: "token")
+                            self.logged = false
+                            user = nil
+                        }).tabItem {
+                            Image(systemName: "person")
+                            Text("Perfil")
                         }.tag(3)
                     }
                 }

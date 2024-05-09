@@ -20,7 +20,7 @@ struct LogInView: View {
                 Text("Bienvenido a FutPlanner")
                 VStack {
                     ZStack (alignment: .leading) {
-                        TextField("", text: $username).padding().clipShape(Rectangle()).background(Color("FutGreen")).foregroundColor(.white).cornerRadius(8).padding(.horizontal)
+                        TextField("", text: $username).autocapitalization(.none).padding().clipShape(Rectangle()).background(Color("FutGreen")).foregroundColor(.white).cornerRadius(8).padding(.horizontal)
                         
                         if username.isEmpty {
                             Text("Usuario").foregroundStyle(Color.gray).padding(.leading, 34).allowsHitTesting(false)

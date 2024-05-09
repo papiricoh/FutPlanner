@@ -45,6 +45,8 @@
 		7C7EA12B2B5705BF00218D30 /* TeamData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C7EA12A2B5705BF00218D30 /* TeamData.swift */; };
 		7CA3C36B2B5DADC00046D0DD /* LocationSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA3C36A2B5DADC00046D0DD /* LocationSearchService.swift */; };
 		7CA6C4D32BCE520A00449B0E /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CA6C4D22BCE520A00449B0E /* Match.swift */; };
+		7CAF84242BED00DF00108432 /* ProfileTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAF84232BED00DF00108432 /* ProfileTab.swift */; };
+		7CAF84272BED0E1B00108432 /* UploadResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAF84262BED0E1B00108432 /* UploadResponse.swift */; };
 		7CC5ED612B5920910056DB7D /* CreateMatchSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC5ED602B5920910056DB7D /* CreateMatchSheetView.swift */; };
 		7CCD7E772B9E8E78006C4CCC /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCD7E762B9E8E78006C4CCC /* Config.swift */; };
 		7CD9FCEF2B56CBF300421B0D /* TeamTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9FCEE2B56CBF300421B0D /* TeamTab.swift */; };
@@ -95,6 +97,8 @@
 		7CA3C36A2B5DADC00046D0DD /* LocationSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchService.swift; sourceTree = "<group>"; };
 		7CA6C4D12BCE4FDF00449B0E /* FutPlanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FutPlanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CA6C4D22BCE520A00449B0E /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		7CAF84232BED00DF00108432 /* ProfileTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTab.swift; sourceTree = "<group>"; };
+		7CAF84262BED0E1B00108432 /* UploadResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadResponse.swift; sourceTree = "<group>"; };
 		7CC5ED602B5920910056DB7D /* CreateMatchSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMatchSheetView.swift; sourceTree = "<group>"; };
 		7CCD7E762B9E8E78006C4CCC /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		7CD9FCEE2B56CBF300421B0D /* TeamTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTab.swift; sourceTree = "<group>"; };
@@ -167,6 +171,7 @@
 				7C2054F02B554CF600D1FCFA /* LogInView.swift */,
 				7CD9FCEE2B56CBF300421B0D /* TeamTab.swift */,
 				7C1A486F2B5E9DE4002A8A1E /* StatsTab.swift */,
+				7CAF84232BED00DF00108432 /* ProfileTab.swift */,
 			);
 			path = Tabs;
 			sourceTree = "<group>";
@@ -184,6 +189,7 @@
 		7C24883F2B55D875001A18AB /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				7CAF84252BED0E0600108432 /* Profile */,
 				7C484A742B6ED0480055F898 /* Reports */,
 				7C7EA1292B5705A100218D30 /* Team */,
 				7C2488432B55DA0C001A18AB /* Utils */,
@@ -333,6 +339,14 @@
 			path = Logic;
 			sourceTree = "<group>";
 		};
+		7CAF84252BED0E0600108432 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				7CAF84262BED0E1B00108432 /* UploadResponse.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		7CE38AE02B73AF8D00985826 /* Reports */ = {
 			isa = PBXGroup;
 			children = (
@@ -438,6 +452,7 @@
 				7C23E1FF2B9EF7390042EC60 /* User.swift in Sources */,
 				7C24884B2B55DE42001A18AB /* MatchOverview.swift in Sources */,
 				7C6053942B5A6FF5005F60B0 /* MapPickerView.swift in Sources */,
+				7CAF84272BED0E1B00108432 /* UploadResponse.swift in Sources */,
 				7C484A762B6ED0B00055F898 /* PlayerReport.swift in Sources */,
 				7C5664C92B8D894C005EC078 /* ProfileCard.swift in Sources */,
 				7C05475B2B516E55000BC7D2 /* HomeTab.swift in Sources */,
@@ -462,6 +477,7 @@
 				7C02D6E62ACE958E000917BD /* FutPlannerApp.swift in Sources */,
 				7C2E56082B970DC00002D1C3 /* NextMatchComponent.swift in Sources */,
 				7CDBE3E02B8369E8001CABED /* RatingComponent.swift in Sources */,
+				7CAF84242BED00DF00108432 /* ProfileTab.swift in Sources */,
 				7C7EA12B2B5705BF00218D30 /* TeamData.swift in Sources */,
 				7CD9FCEF2B56CBF300421B0D /* TeamTab.swift in Sources */,
 				7CE38AE22B73B06700985826 /* ReportEvaluator.swift in Sources */,
