@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NextMatchComponent: View {
-    var match: MatchInfo
+    var match: fMatch
     var body: some View {
         VStack(alignment: .leading){
             Text("Siguiente Partido").bold().font(.system(size: 24))
@@ -24,7 +24,7 @@ struct NextMatchComponent: View {
                 Spacer()
                 Text("\(timeRemaining(match.date))")
             }
-            NavigationLink(destination: MatchInfoActivity(infoMatch: fMatch(id: 1, homeTeamName: "", awayTeamName: "", category: "", subCategory: "", you: 2, date: Date(), coordinates_name: "", evaluated: true, coordinates: Coordinates(latitude: 0, longitude: 0), homeTeamId: 2, awayTeamId: nil))) { //TODO: Cambiar match
+            NavigationLink(destination: MatchInfoActivity(infoMatch: match)) {
                 HStack(alignment: .center) {
                     Spacer()
                     Text("Ver Partido").foregroundColor(.futNight).bold()
@@ -58,5 +58,5 @@ struct NextMatchComponent: View {
 }
 
 #Preview {
-    NextMatchComponent(match: matches[1])
+    NextMatchComponent(match: fMatch(id: 1, homeTeamName: "", awayTeamName: "", category: "", subCategory: "", you: 1, date: Date(), coordinates_name: "String", evaluated: false, coordinates: Coordinates(latitude: 2, longitude: 142), homeTeamId: 1, awayTeamId: 3))
 }

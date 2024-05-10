@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import Alamofire
 
 struct HomeTab: View {
     var onLogout: () -> Void
     @State private var loaded = false
-    @State private var lastMatch: MatchInfo? = matches[0]   //Debug set to nil
-    @State private var nextMatch: MatchInfo? = matches[4]
+    @State private var lastMatch: fMatch? = nil   //Debug set to nil
+    @State private var nextMatch: fMatch? = nil
     var changeTab: (Int) -> Void
     @Binding var loading: Bool
     var body: some View {
@@ -28,7 +29,9 @@ struct HomeTab: View {
                     NextMatchComponent(match: nextMatch!)
                 }
                 if(lastMatch != nil && lastMatch?.evaluated == false) {
-                    NavigationLink(destination: ReportEvaluator(players: team.players, match: lastMatch!)) {
+                    NavigationLink(destination: ReportEvaluator(players: fTeam!.players!, match: lastMatch!, completeReport: {
+                        self.lastMatch = nil
+                    })) {
                         HStack {
                             Image(systemName: "exclamationmark.octagon.fill").foregroundColor(.yellow).font(.system(size: 80))
                             Spacer()
@@ -71,7 +74,14 @@ struct HomeTab: View {
             .onAppear {
                 self.loaded = true
                 //Todo redo fetch
-                self.lastMatch = matches[1]
+                
+                Task {
+                    do {
+                        try await self.checkMatches()
+                    }catch {
+                        print("Error en la solicitud: \(error.localizedDescription)")
+                    }
+                }
             }
     }
     
@@ -82,6 +92,35 @@ struct HomeTab: View {
         formatter.locale = Locale(identifier: "es_ES")
 
         return formatter.string(from: date)
+    }
+    
+    func checkMatches() async throws -> Void {
+        let url = "\(apiDir)/api/trainer/checkMatches"
+        let parameters: [String: String] = [
+            "user_id": "\(user?.id ?? 0)",
+            "token": user?.lastTokenKey ?? ""
+        ]
+        
+        do {
+            let response: DataResponse<MatchChecker, AFError> = await AF.request(
+                url,
+                method: .post,
+                parameters: parameters,
+                encoding: JSONEncoding.default
+            ).serializingDecodable(MatchChecker.self).response
+            
+            switch response.result {
+            case .success(let matchList):
+                self.nextMatch = matchList.next_match
+                self.lastMatch = matchList.pending_match
+            case .failure(let error):
+                print("Request failed with error: \(error)")
+                throw error
+            }
+        } catch {
+            print("Error in network request or decoding: \(error)")
+            throw error
+        }
     }
 }
 

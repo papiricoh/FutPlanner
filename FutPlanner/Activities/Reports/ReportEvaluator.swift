@@ -10,27 +10,26 @@ import SwiftUI
 struct ReportEvaluator: View {
     @Environment(\.presentationMode) var presentationMode
     
-    var players: [TPlayer]
-    var match: MatchInfo
+    var players: [Player]
+    var match: fMatch
     @State var reports: [PlayerReport] = []
     @State var currentPlayerIndex = 0
     @State var currentReport: PlayerReport = PlayerReport(id: 0, playerId: 0, matchId: 0, generalPerformance: 1, tacticalPerformance: 1, passesQuality: 1, ballControl: 1, gameVision: 1, playedTime: 0.0, goals: 0, redCards: 0, yellowCards: 0)
     @State private var onSlider = false
     @State private var scrollPosition: Int?
+    var completeReport: () -> Void
     
     func nextCommand(isLast: Bool) -> Void {
         self.currentReport.playerId = players[self.currentPlayerIndex].id
         self.reports.append(self.currentReport)
-        //TODO: FETCH
         self.currentReport = PlayerReport(id: 0, playerId: 0, matchId: 0, generalPerformance: 1, tacticalPerformance: 1, passesQuality: 1, ballControl: 1, gameVision: 1, playedTime: 0.0, goals: 0, redCards: 0, yellowCards: 0)
         if(!isLast) {
             self.currentPlayerIndex += 1
         }else {
             //todo fetch to send all data
-            if let index = matches.firstIndex(where: { $0.id == self.match.id }) {
-                matches[index].evaluated = true
-            }
-
+            print(self.reports)
+            
+            self.completeReport()
             self.presentationMode.wrappedValue.dismiss()
         }
     }
@@ -39,8 +38,7 @@ struct ReportEvaluator: View {
         ScrollViewReader { proxy in
             ScrollView {
                 VStack{
-                    //TODO TEMPORAL
-                    ProfileCard(player: Player(id: 1, firstName: "String", lastName: "String", photoUrl: nil, dateOfBirth: nil, playerId: 1, position: "String", shirtNumber: 41, nationality: nil)).id("Card")
+                    ProfileCard(player: self.players[self.currentPlayerIndex]).id("Card")
                     VStack {//EV Process
                         RatingComponent(text: "Rendimiento General", rating: $currentReport.generalPerformance)
                         RatingComponent(text: "Rendimiento Tactico", rating: $currentReport.tacticalPerformance)
@@ -94,5 +92,8 @@ struct ReportEvaluator: View {
 }
 
 #Preview {
-    ReportEvaluator(players: team.players, match: matches[0])
+    ReportEvaluator(players: [
+        Player(id: 2, firstName: "Hola", lastName: "1", playerId: 3, position: "DI"),
+        Player(id: 1, firstName: "Hola", lastName: "2", playerId: 1, position: "DC")
+    ], match: fMatch(id: 1, homeTeamName: "", awayTeamName: "", category: "", subCategory: "", you: 1, date: Date(), coordinates_name: "", evaluated: false, coordinates: Coordinates(latitude: 2, longitude: 1), homeTeamId: 1, awayTeamId: 4), completeReport: {})
 }
