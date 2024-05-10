@@ -31,6 +31,7 @@
 		7C2488482B55DAD8001A18AB /* matchData.json in Resources */ = {isa = PBXBuildFile; fileRef = 7C2488472B55DAD8001A18AB /* matchData.json */; };
 		7C24884B2B55DE42001A18AB /* MatchOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C24884A2B55DE42001A18AB /* MatchOverview.swift */; };
 		7C2590012BEE0B42005B0018 /* MatchChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2590002BEE0B42005B0018 /* MatchChecker.swift */; };
+		7C2590042BEE3F19005B0018 /* ReportsSenders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2590032BEE3F19005B0018 /* ReportsSenders.swift */; };
 		7C2E56082B970DC00002D1C3 /* NextMatchComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2E56072B970DC00002D1C3 /* NextMatchComponent.swift */; };
 		7C3A7DDE2B544B7E006B8B81 /* ClubCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3A7DDD2B544B7E006B8B81 /* ClubCard.swift */; };
 		7C465CCA2B5707C300B97FC8 /* teamData.json in Resources */ = {isa = PBXBuildFile; fileRef = 7C465CC92B5707C300B97FC8 /* teamData.json */; };
@@ -84,6 +85,7 @@
 		7C2488472B55DAD8001A18AB /* matchData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = matchData.json; sourceTree = "<group>"; };
 		7C24884A2B55DE42001A18AB /* MatchOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchOverview.swift; sourceTree = "<group>"; };
 		7C2590002BEE0B42005B0018 /* MatchChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchChecker.swift; sourceTree = "<group>"; };
+		7C2590032BEE3F19005B0018 /* ReportsSenders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsSenders.swift; sourceTree = "<group>"; };
 		7C2E56072B970DC00002D1C3 /* NextMatchComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextMatchComponent.swift; sourceTree = "<group>"; };
 		7C3A7DDD2B544B7E006B8B81 /* ClubCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubCard.swift; sourceTree = "<group>"; };
 		7C465CC92B5707C300B97FC8 /* teamData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = teamData.json; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 		7C24883F2B55D875001A18AB /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				7C2590022BEE3EFD005B0018 /* Senders */,
 				7CAF84252BED0E0600108432 /* Profile */,
 				7C484A742B6ED0480055F898 /* Reports */,
 				7C7EA1292B5705A100218D30 /* Team */,
@@ -227,6 +230,14 @@
 				7C484A772B6ED6F20055F898 /* reports.json */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		7C2590022BEE3EFD005B0018 /* Senders */ = {
+			isa = PBXGroup;
+			children = (
+				7C2590032BEE3F19005B0018 /* ReportsSenders.swift */,
+			);
+			path = Senders;
 			sourceTree = "<group>";
 		};
 		7C3A7DDC2B544B64006B8B81 /* Components */ = {
@@ -452,6 +463,7 @@
 				7CA3C36B2B5DADC00046D0DD /* LocationSearchService.swift in Sources */,
 				7CFFBBE02B5DDB9000C66D6C /* OldMatchesActivity.swift in Sources */,
 				7C50936E2B56728F00521CC4 /* MatchInfoActivity.swift in Sources */,
+				7C2590042BEE3F19005B0018 /* ReportsSenders.swift in Sources */,
 				7C2590012BEE0B42005B0018 /* MatchChecker.swift in Sources */,
 				7C23E1FF2B9EF7390042EC60 /* User.swift in Sources */,
 				7C24884B2B55DE42001A18AB /* MatchOverview.swift in Sources */,

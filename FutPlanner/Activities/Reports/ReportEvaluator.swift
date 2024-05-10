@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Alamofire
 
 struct ReportEvaluator: View {
     @Environment(\.presentationMode) var presentationMode
@@ -20,7 +21,7 @@ struct ReportEvaluator: View {
     var completeReport: () -> Void
     
     func nextCommand(isLast: Bool) -> Void {
-        self.currentReport.playerId = players[self.currentPlayerIndex].id
+        self.currentReport.playerId = players[self.currentPlayerIndex].playerId
         self.reports.append(self.currentReport)
         self.currentReport = PlayerReport(id: 0, playerId: 0, matchId: 0, generalPerformance: 1, tacticalPerformance: 1, passesQuality: 1, ballControl: 1, gameVision: 1, playedTime: 0.0, goals: 0, redCards: 0, yellowCards: 0)
         if(!isLast) {
@@ -29,8 +30,18 @@ struct ReportEvaluator: View {
             //todo fetch to send all data
             print(self.reports)
             
-            self.completeReport()
-            self.presentationMode.wrappedValue.dismiss()
+            Task {
+                do {
+                    try await self.fetchInsertReports()
+                    
+                    DispatchQueue.main.async {
+                        self.completeReport()
+                        self.presentationMode.wrappedValue.dismiss()
+                    }
+                }catch {
+                    print("Error in request: \(error)")
+                }
+            }
         }
     }
     
@@ -87,6 +98,71 @@ struct ReportEvaluator: View {
                     }.padding()
                 }
             }
+        }
+    }
+    func fetchInsertReports() async throws -> Void {
+        let url = "\(apiDir)/api/trainer/insertReports"
+        
+        
+        var reportsArray = [[String: Any]]()
+
+        self.reports.forEach { report in
+            let reportDict: [String: Any] = [
+                "player_id": report.playerId,
+                "general_performance": report.generalPerformance,
+                "tactical_performance": report.tacticalPerformance,
+                "passes_quality": report.passesQuality,
+                "ball_controll": report.ballControl,
+                "game_vision": report.gameVision,
+                "played_time": report.playedTime,
+                "goals": report.goals,
+                "red_cards": report.redCards,
+                "yellow_cards": report.yellowCards
+            ]
+            reportsArray.append(reportDict)
+        }
+        let jsonData = try JSONSerialization.data(withJSONObject: reportsArray, options: [])
+        let jsonReports = try JSONSerialization.jsonObject(with: jsonData, options: [])
+
+        let parameters: [String: Any] = [
+            "user_id": "\(user?.id ?? 0)",
+            "token": user?.lastTokenKey ?? "",
+            "match_id": "\(self.match.id)",
+            "reports": jsonReports  // Usar el objeto JSON directamente aquí
+        ]
+        
+        // Si necesitas convertir parameters a Data para enviar en una solicitud HTTP, etc.
+        let finalJsonData = try JSONSerialization.data(withJSONObject: parameters, options: [])
+        let finalJsonString = String(data: finalJsonData, encoding: .utf8) ?? ""
+        
+        print("JSON Parameters String: \(finalJsonString)")
+        
+        do {
+            guard let url = URL(string: "\(url)") else {
+                print("Invalid URL")
+                return
+            }
+            
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.httpBody = finalJsonString.data(using: .utf8)
+            
+            
+            let response: DataResponse<[Int], AFError> = await AF.request(request)
+                .serializingDecodable([Int].self).response
+                
+            switch response.result {
+            case .success(let list):
+                print("Success: \(list)")
+                return
+            case .failure(let error):
+                print("Request failed with error: \(error)")
+                throw error
+            }
+        } catch {
+            print("Error in network request or decoding: \(error)")
+            throw error
         }
     }
 }
