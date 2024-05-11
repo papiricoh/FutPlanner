@@ -23,19 +23,26 @@ struct TeamAnalytic: Identifiable, Hashable, Codable {
         total_reports = try container.decode(Int.self, forKey: .total_reports)
         total_matches = try container.decode(Int.self, forKey: .total_matches)
         
-        avg_general_performance = try? container.decode(Double?.self, forKey: .avg_general_performance)
-        avg_tactical_performance = try? container.decode(Double?.self, forKey: .avg_tactical_performance)
-        avg_passes_quality = try? container.decode(Double?.self, forKey: .avg_passes_quality)
-        avg_ball_control = try? container.decode(Double?.self, forKey: .avg_ball_control)
-        avg_game_vision = try? container.decode(Double?.self, forKey: .avg_game_vision)
-        avg_played_time = try? container.decode(Double?.self, forKey: .avg_played_time)
-        total_played_time = try? container.decode(Double?.self, forKey: .total_played_time)
-        total_goals = try? container.decode(Double?.self, forKey: .total_goals)
-        total_red_cards = try? container.decode(Double?.self, forKey: .total_red_cards)
-        total_yellow_cards = try? container.decode(Double?.self, forKey: .total_yellow_cards)
+        avg_general_performance = decodeDouble(forKey: .avg_general_performance)
+        avg_tactical_performance = decodeDouble(forKey: .avg_tactical_performance)
+        avg_passes_quality = decodeDouble(forKey: .avg_passes_quality)
+        avg_ball_control = decodeDouble(forKey: .avg_ball_control)
+        avg_game_vision = decodeDouble(forKey: .avg_game_vision)
+        avg_played_time = decodeDouble(forKey: .avg_played_time)
+        total_played_time = decodeDouble(forKey: .total_played_time)
+        total_goals = decodeDouble(forKey: .total_goals)
+        total_red_cards = decodeDouble(forKey: .total_red_cards)
+        total_yellow_cards = decodeDouble(forKey: .total_yellow_cards)
+        
+        
         performancePerMinute = try? container.decode(Double?.self, forKey: .performancePerMinute)
         goalRate = try? container.decode(Double?.self, forKey: .goalRate)
         
-
+        func decodeDouble(forKey key: CodingKeys) -> Double? {
+            if let stringValue = try? container.decode(String.self, forKey: key) {
+                return Double(stringValue)
+            }
+            return nil
+        }
     }
 }
