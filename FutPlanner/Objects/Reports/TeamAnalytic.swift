@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct TeamAnalytic: Hashable, Codable {
+struct TeamAnalytic: Identifiable, Hashable, Codable {
+    let id: UUID
     let total_reports, total_matches: Int
     let avg_general_performance, avg_tactical_performance, avg_passes_quality, avg_ball_control, avg_game_vision, avg_played_time, total_played_time, total_goals, total_red_cards, total_yellow_cards, performancePerMinute, goalRate: Double?
     
@@ -18,6 +19,7 @@ struct TeamAnalytic: Hashable, Codable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
+        id = UUID()
         total_reports = try container.decode(Int.self, forKey: .total_reports)
         total_matches = try container.decode(Int.self, forKey: .total_matches)
         

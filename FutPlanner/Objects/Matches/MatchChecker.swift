@@ -18,8 +18,8 @@ struct MatchChecker: Hashable, Codable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        pending_match = try container.decode(fMatch.self, forKey: .pending_match)
-        next_match = try container.decode(fMatch.self, forKey: .next_match)
+        pending_match = try? container.decode(fMatch?.self, forKey: .pending_match)
+        next_match = try? container.decode(fMatch?.self, forKey: .next_match)
         
     }
 
