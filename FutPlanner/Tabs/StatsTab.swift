@@ -13,7 +13,7 @@ struct StatsTab: View {
     @Binding var loading: Bool
     
     @State var data: [Develompent] = []
-    @State var totals: [Int] = []
+    @State var totals: [Int] = [0, 0, 0, 0, 0, 0]
     
     var body: some View {
         VStack {
@@ -22,14 +22,18 @@ struct StatsTab: View {
             ScrollView() {
                 Text("Resumen del equipo").bold()
                 if(data.isEmpty) {
-                    LoadingComponent().frame(height: 200).padding()
+                    LoadingComponent().frame(height: 300).padding()
                 }else {
                     Chart(data) { dev in
                         BarMark(
                             x: .value("Clase", dev.classification),
                             y: .value("Puntuacion", dev.points)
-                        ).foregroundStyle(devCheckColor(dev))
+                        ).foregroundStyle(devCheckColor(dev)).annotation(position: .overlay, alignment: .bottom) {
+                            Text("\(dev.points, specifier: "%.1f")")
+                                .foregroundColor(.white)
+                        }
                     }.frame(height: 200).padding().cornerRadius(20).bold()
+                    TotalStatsView(data: self.totals)
                     
                 }
                 VStack(alignment: .center) {

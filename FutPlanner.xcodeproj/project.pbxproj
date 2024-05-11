@@ -50,6 +50,7 @@
 		7CAF84242BED00DF00108432 /* ProfileTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAF84232BED00DF00108432 /* ProfileTab.swift */; };
 		7CAF84272BED0E1B00108432 /* UploadResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAF84262BED0E1B00108432 /* UploadResponse.swift */; };
 		7CB7671F2BEFE9540016ED85 /* TeamAnalytic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB7671E2BEFE9540016ED85 /* TeamAnalytic.swift */; };
+		7CB767212BEFF9D60016ED85 /* TotalStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB767202BEFF9D60016ED85 /* TotalStatsView.swift */; };
 		7CC5ED612B5920910056DB7D /* CreateMatchSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC5ED602B5920910056DB7D /* CreateMatchSheetView.swift */; };
 		7CCD7E772B9E8E78006C4CCC /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCD7E762B9E8E78006C4CCC /* Config.swift */; };
 		7CD9FCEF2B56CBF300421B0D /* TeamTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD9FCEE2B56CBF300421B0D /* TeamTab.swift */; };
@@ -105,6 +106,7 @@
 		7CAF84232BED00DF00108432 /* ProfileTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTab.swift; sourceTree = "<group>"; };
 		7CAF84262BED0E1B00108432 /* UploadResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadResponse.swift; sourceTree = "<group>"; };
 		7CB7671E2BEFE9540016ED85 /* TeamAnalytic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamAnalytic.swift; sourceTree = "<group>"; };
+		7CB767202BEFF9D60016ED85 /* TotalStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalStatsView.swift; sourceTree = "<group>"; };
 		7CC5ED602B5920910056DB7D /* CreateMatchSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateMatchSheetView.swift; sourceTree = "<group>"; };
 		7CCD7E762B9E8E78006C4CCC /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		7CD9FCEE2B56CBF300421B0D /* TeamTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTab.swift; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 				7C0F53A52B5FE0E100C71AC1 /* PlayerListItem.swift */,
 				7CDBE3DF2B8369E8001CABED /* RatingComponent.swift */,
 				7CED8F1C2B84D7AA00A9125E /* NumericAssignComponent.swift */,
+				7CB767202BEFF9D60016ED85 /* TotalStatsView.swift */,
 			);
 			path = Stats;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 				7C484A762B6ED0B00055F898 /* PlayerReport.swift in Sources */,
 				7C5664C92B8D894C005EC078 /* ProfileCard.swift in Sources */,
 				7C05475B2B516E55000BC7D2 /* HomeTab.swift in Sources */,
+				7CB767212BEFF9D60016ED85 /* TotalStatsView.swift in Sources */,
 				7C2488422B55D896001A18AB /* MatchInfo.swift in Sources */,
 				7C23E20B2BA06D2C0042EC60 /* Report.swift in Sources */,
 				7C2488452B55DA40001A18AB /* ModelLoader.swift in Sources */,
