@@ -20,8 +20,11 @@ struct ReportEvaluator: View {
     @State private var scrollPosition: Int?
     var completeReport: () -> Void
     
-    func nextCommand(isLast: Bool) -> Void {
+    func nextCommand(isLast: Bool, notDisputed: Bool) -> Void {
         self.currentReport.playerId = players[self.currentPlayerIndex].playerId
+        if(notDisputed) {
+            self.currentReport.generalPerformance = 0
+        }
         self.reports.append(self.currentReport)
         self.currentReport = PlayerReport(id: 0, playerId: 0, matchId: 0, generalPerformance: 1, tacticalPerformance: 1, passesQuality: 1, ballControl: 1, gameVision: 1, playedTime: 0.0, goals: 0, redCards: 0, yellowCards: 0)
         if(!isLast) {
@@ -80,7 +83,7 @@ struct ReportEvaluator: View {
                     HStack() {
                         if(currentPlayerIndex + 1 < players.count) {
                             Button {
-                                nextCommand(isLast: false)
+                                nextCommand(isLast: false, notDisputed: false)
                                 proxy.scrollTo("Card", anchor: .top)
                             } label: {
                                 HStack{
@@ -90,7 +93,7 @@ struct ReportEvaluator: View {
                             }.padding(16).padding(.horizontal, 70).background(Color.futGreen).cornerRadius(8).foregroundColor(.white)
                         }else {
                             Button {
-                                nextCommand(isLast: true)
+                                nextCommand(isLast: true, notDisputed: false)
                             } label: {
                                 Text("Finalizar").font(.title2).bold()
                             }.padding(16).padding(.horizontal, 70).background(Color.futGreen).cornerRadius(10).foregroundColor(.white)
