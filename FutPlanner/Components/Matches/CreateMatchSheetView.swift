@@ -36,9 +36,8 @@ struct CreateMatchSheetView: View {
                 Text("Añade un partido").bold().font(.title2)
                 Spacer()
                 Button(action: {
-                    print("debug 1")
+                    
                     Task {
-                        print("debug 2")
                         do {
                             loading = true
                             
@@ -48,10 +47,10 @@ struct CreateMatchSheetView: View {
                                 homeTeam = self.rivalTeamName
                                 awayTeam = fTeam!.teamName
                             }
-                            print("deb")
+                            
                             var newMatch = fMatch(id: 1, homeTeamName: homeTeam, awayTeamName: awayTeam, category: team.category, subCategory: team.subCategory, you: self.isHomeTeam ? 0: 1, date: self.date, coordinates_name: selectedPlace, evaluated: false, coordinates: Coordinates(latitude: region.center.latitude, longitude: region.center.longitude), homeTeamId: self.isHomeTeam ? fTeam!.id : nil, awayTeamId: !self.isHomeTeam ? fTeam!.id : nil)
                             
-                            print("deb2")
+                            
                             if(fMatches == nil) {
                                 fMatches = []
                             }
