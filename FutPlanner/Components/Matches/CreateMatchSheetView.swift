@@ -36,7 +36,9 @@ struct CreateMatchSheetView: View {
                 Text("Añade un partido").bold().font(.title2)
                 Spacer()
                 Button(action: {
+                    print("debug 1")
                     Task {
+                        print("debug 2")
                         do {
                             loading = true
                             
@@ -46,12 +48,21 @@ struct CreateMatchSheetView: View {
                                 homeTeam = self.rivalTeamName
                                 awayTeam = fTeam!.teamName
                             }
-                            let newMatch = fMatch(id: fMatches![fMatches!.count - 1].id + 1, homeTeamName: homeTeam, awayTeamName: awayTeam, category: team.category, subCategory: team.subCategory, you: self.isHomeTeam ? 0: 1, date: self.date, coordinates_name: selectedPlace, evaluated: false, coordinates: Coordinates(latitude: region.center.latitude, longitude: region.center.longitude), homeTeamId: self.isHomeTeam ? fTeam!.id : nil, awayTeamId: !self.isHomeTeam ? fTeam!.id : nil)
+                            print("deb")
+                            var newMatch = fMatch(id: 1, homeTeamName: homeTeam, awayTeamName: awayTeam, category: team.category, subCategory: team.subCategory, you: self.isHomeTeam ? 0: 1, date: self.date, coordinates_name: selectedPlace, evaluated: false, coordinates: Coordinates(latitude: region.center.latitude, longitude: region.center.longitude), homeTeamId: self.isHomeTeam ? fTeam!.id : nil, awayTeamId: !self.isHomeTeam ? fTeam!.id : nil)
                             
-                            fMatches?.append(newMatch)
+                            print("deb2")
+                            if(fMatches == nil) {
+                                fMatches = []
+                            }
+                            
+                            
                             
                             ///TODO: Llamar a la API para insertar el partido
-                            try await insertMatch(newMatch)
+                            let id = try await insertMatch(newMatch)
+                            
+                            newMatch.id = id
+                            fMatches!.append(newMatch)
                             loading = false
                             self.showingSheet()
                         } catch {
@@ -129,7 +140,7 @@ struct CreateMatchSheetView: View {
         }.padding(.top, 30).animation(.default, value: searchText)
     }
 
-    func insertMatch(_ match: fMatch) async throws -> Void {
+    func insertMatch(_ match: fMatch) async throws -> Int {
         let url = "\(apiDir)/api/trainer/insertMatch"
         let parameters: [String: String] = [
             "user_id": "\(user?.id ?? 0)",
@@ -143,7 +154,6 @@ struct CreateMatchSheetView: View {
             "away_team_name": match.awayTeamName,
             "sub_category_id": "\(fTeam!.subCategoryId)"
         ]
-        
         
         let response = await AF.request(url,
            method: .post,
@@ -159,7 +169,9 @@ struct CreateMatchSheetView: View {
             } else {
                 print("Match ID not found or incorrect format in response")
             }
+            return Int(rawResponse) ?? 1
         }
+        return 0
     }
     func stringFromDate(_ date: Date) -> String {
         let formatter = ISO8601DateFormatter()

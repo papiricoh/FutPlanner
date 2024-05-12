@@ -14,6 +14,7 @@ struct StatsTab: View {
     
     @State var data: [Develompent] = []
     @State var totals: [Int] = [0, 0, 0, 0, 0, 0]
+    @State var dataEmpty: Bool = false
     
     var body: some View {
         VStack {
@@ -21,7 +22,9 @@ struct StatsTab: View {
             Divider()
             ScrollView() {
                 Text("Resumen del equipo").bold()
-                if(data.isEmpty) {
+                if(dataEmpty) {
+                    Text("No hay datos todavia").frame(height: 300).padding()
+                }else if(data.isEmpty) {
                     LoadingComponent().frame(height: 300).padding()
                 }else {
                     Chart(data) { dev in
@@ -48,7 +51,6 @@ struct StatsTab: View {
             Spacer()
         }.padding(.top, 10).onAppear() {
             loading = false
-        }.onAppear(){
             Task() {
                 do {
                     try await fetchAnalytics()
@@ -78,7 +80,11 @@ struct StatsTab: View {
             switch response.result {
             case .success(let analytics):
                 //print(analytics) //Debug Print
-                
+                if(analytics.total_reports == 0) {
+                    self.dataEmpty = true
+                    return
+                }
+                    
                 //Primary chart data:
                 var newData: [Develompent] = []
                 newData.append(Develompent(classification: "General", points: analytics.avg_general_performance ?? 0))
@@ -100,7 +106,7 @@ struct StatsTab: View {
                 newTotals.append(Int(analytics.total_yellow_cards!))
                 
                 self.totals = newTotals
-                print(totals)
+                
                 
                 
             case .failure(let error):

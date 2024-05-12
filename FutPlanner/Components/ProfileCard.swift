@@ -25,7 +25,7 @@ struct ProfileCard: View {
             HStack(spacing: 10) {
                 VStack(alignment: .center) {
                     Text("Posicion").font(.caption2)
-                    Text(player.position).bold()
+                    Text(player.position ?? "?").bold()
                 }
                 Divider().frame(width: 1, height: 50)
                 VStack(alignment: .center) {

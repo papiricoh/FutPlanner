@@ -31,7 +31,7 @@ struct Player: Hashable, Codable {
     let photoUrl: String?
     let dateOfBirth: String?
     let playerId: Int
-    let position: String
+    let position: String?
     let shirtNumber: Int?
     let nationality: String?
     let dateOfBirthDate: Date?
@@ -55,7 +55,7 @@ struct Player: Hashable, Codable {
         photoUrl = try? container.decode(String.self, forKey: .photoUrl)
         dateOfBirth = try? container.decode(String.self, forKey: .dateOfBirth)
         playerId = try container.decode(Int.self, forKey: .playerId)
-        position = try container.decode(String.self, forKey: .position)
+        position = try? container.decode(String?.self, forKey: .position)
         shirtNumber = try? container.decode(Int.self, forKey: .shirtNumber)
         nationality = try? container.decode(String.self, forKey: .nationality)
         
@@ -70,7 +70,7 @@ struct Player: Hashable, Codable {
 }
 extension Player {
     // Inicializador adicional para crear instancias hardcodeadas de Player
-    init(id: Int, firstName: String, lastName: String, photoUrl: String? = nil, dateOfBirth: String? = nil, playerId: Int, position: String, shirtNumber: Int? = nil, nationality: String? = nil) {
+    init(id: Int, firstName: String, lastName: String, photoUrl: String? = nil, dateOfBirth: String? = nil, playerId: Int, position: String?, shirtNumber: Int? = nil, nationality: String? = nil) {
         self.id = id
         self.firstName = firstName
         self.lastName = lastName

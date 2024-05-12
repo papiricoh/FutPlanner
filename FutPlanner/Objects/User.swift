@@ -9,7 +9,8 @@ import Foundation
 
 struct User: Identifiable, Codable {
     var id: Int
-    var username, firstName, lastName, photoUrl, dateOfBirth, lastTokenKey: String
+    var username, firstName, lastName, dateOfBirth, lastTokenKey: String
+    var photoUrl: String?
     var dateOfBirthDate: Date?
     var clubId: Int
     var userType: String
@@ -30,7 +31,7 @@ struct User: Identifiable, Codable {
         username = try container.decode(String.self, forKey: .username)
         firstName = try container.decode(String.self, forKey: .firstName)
         lastName = try container.decode(String.self, forKey: .lastName)
-        photoUrl = try container.decode(String.self, forKey: .photoUrl)
+        photoUrl = try? container.decode(String?.self, forKey: .photoUrl)
         dateOfBirth = try container.decode(String.self, forKey: .dateOfBirth)
         lastTokenKey = try container.decode(String.self, forKey: .lastTokenKey)
         clubId = try container.decode(Int.self, forKey: .clubId)
