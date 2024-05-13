@@ -8,7 +8,6 @@
 import SwiftUI
 import Charts
 import Alamofire
-import Lottie
 
 struct StatsTab: View {
     @Binding var loading: Bool
@@ -24,9 +23,9 @@ struct StatsTab: View {
             ScrollView() {
                 Text("Resumen del equipo").bold()
                 if(dataEmpty) {
-                    Text("No hay datos todavia").frame(height: 310).padding()
+                    Text("No hay datos todavia").frame(height: 300).padding()
                 }else if(data.isEmpty) {
-                    LottieView(animation: .named("dataLoading")).looping().frame(height: 300).padding()
+                    LoadingComponent().frame(height: 310).padding()
                 }else {
                     Chart(data) { dev in
                         BarMark(
