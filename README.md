@@ -1,6 +1,7 @@
+# FutPlanner 🏆⚽
+
 ![FutPlanner Hero](hero.png)
 
-# FutPlanner 🏆⚽
 
 ## What is FutPlanner?
 
@@ -16,8 +17,6 @@
 
 Distributed under non-comertial use. See `LICENSE` file for more information.
 
-## Contact
-
-Your Name - [@yourTwitter](https://twitter.com/yourTwitter) - email@example.com
+Pablo Rico
 
 ---
