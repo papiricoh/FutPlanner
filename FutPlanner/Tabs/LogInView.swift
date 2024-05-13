@@ -21,7 +21,7 @@ struct LogInView: View {
         ZStack {
             VStack {
                 VStack {
-                    Text("FutPlanner").foregroundStyle(Color.black).font(.title).bold()
+                    //LottiePlannerView(name: "LogoLetters", loopMode: .playOnce, animationSpeed: 4)
                     LottiePlannerView(name: "loading2", loopMode: .playOnce, animationSpeed: 0.5){ completed in
                         if completed {
                             withAnimation {
