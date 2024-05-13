@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Report: Codable {
+struct Report: Identifiable, Codable {
     let id: Int
     let playerId: Int
     let matchId: Int

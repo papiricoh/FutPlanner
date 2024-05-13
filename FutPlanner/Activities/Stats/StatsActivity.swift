@@ -67,6 +67,7 @@ struct StatsActivity: View {
                             }
                             Spacer()
                         }
+                        ReportList(reports: playerReports)
                     }
                 }
                 Spacer()
