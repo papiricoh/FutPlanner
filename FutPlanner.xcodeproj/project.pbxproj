@@ -25,6 +25,7 @@
 		7C20DBF62BF1EBF400DCCB73 /* loading2.json in Resources */ = {isa = PBXBuildFile; fileRef = 7C20DBF42BF1EBF400DCCB73 /* loading2.json */; };
 		7C20DBF82BF1FBC000DCCB73 /* ReportList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C20DBF72BF1FBC000DCCB73 /* ReportList.swift */; };
 		7C20DBFA2BF1FF0000DCCB73 /* ReportRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C20DBF92BF1FF0000DCCB73 /* ReportRow.swift */; };
+		7C20DBFC2BF2098200DCCB73 /* dataLoading.json in Resources */ = {isa = PBXBuildFile; fileRef = 7C20DBFB2BF2098200DCCB73 /* dataLoading.json */; };
 		7C23E1FF2B9EF7390042EC60 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C23E1FE2B9EF7390042EC60 /* User.swift */; };
 		7C23E2052B9F19C20042EC60 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7C23E2042B9F19C20042EC60 /* Alamofire */; };
 		7C23E2092B9F3AB80042EC60 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C23E2082B9F3AB80042EC60 /* Team.swift */; };
@@ -85,6 +86,7 @@
 		7C20DBF42BF1EBF400DCCB73 /* loading2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading2.json; sourceTree = "<group>"; };
 		7C20DBF72BF1FBC000DCCB73 /* ReportList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportList.swift; sourceTree = "<group>"; };
 		7C20DBF92BF1FF0000DCCB73 /* ReportRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportRow.swift; sourceTree = "<group>"; };
+		7C20DBFB2BF2098200DCCB73 /* dataLoading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dataLoading.json; sourceTree = "<group>"; };
 		7C23E1FE2B9EF7390042EC60 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7C23E2022B9F09900042EC60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		7C23E2082B9F3AB80042EC60 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 				7C20DBF32BF1EBF400DCCB73 /* LogoLetters.json */,
 				7CDDFE282B5F432200212DA0 /* FutField.json */,
 				7C4A17D62B5C2F96001C7C4E /* logo.json */,
+				7C20DBFB2BF2098200DCCB73 /* dataLoading.json */,
 				7C4A17DD2B5C3727001C7C4E /* loading.json */,
 				7C4A17DB2B5C3540001C7C4E /* animation.json */,
 			);
@@ -468,6 +471,7 @@
 				7C02D6EC2ACE958F000917BD /* Assets.xcassets in Resources */,
 				7C4A17DC2B5C3540001C7C4E /* animation.json in Resources */,
 				7C4A17D72B5C2F96001C7C4E /* logo.json in Resources */,
+				7C20DBFC2BF2098200DCCB73 /* dataLoading.json in Resources */,
 				7C4A17DE2B5C3727001C7C4E /* loading.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
