@@ -191,6 +191,7 @@
 		7C2054ED2B552C6800D1FCFA /* Activities */ = {
 			isa = PBXGroup;
 			children = (
+				7C484A6F2B6ECEF20055F898 /* Map */,
 				7CE38AE02B73AF8D00985826 /* Reports */,
 				7C484A6E2B6ECEDA0055F898 /* Matches */,
 				7C484A6D2B6ECEB50055F898 /* Stats */,
@@ -376,7 +377,6 @@
 		7CE38AE02B73AF8D00985826 /* Reports */ = {
 			isa = PBXGroup;
 			children = (
-				7C484A6F2B6ECEF20055F898 /* Map */,
 				7CE38AE12B73B06700985826 /* ReportEvaluator.swift */,
 			);
 			path = Reports;

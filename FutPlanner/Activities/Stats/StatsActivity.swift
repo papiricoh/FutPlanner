@@ -21,7 +21,10 @@ struct StatsActivity: View {
             if(!loading) {
                 ProfileCard(player: player)
                 if(noData) {
-                    Text("No Hay Datos")
+                    Divider()
+                    Text("No Hay Datos").font(.title3).bold()
+                    Divider()
+                    Text("Prueba a evaluar un partido ya disputado")
                 }else {
                     ScrollView {
                         VStack {
@@ -51,6 +54,10 @@ struct StatsActivity: View {
                                         Text("\(sumReports(playerReports).redCards) Tarjetas").bold()
                                     }.padding(.horizontal, 10).padding().frame(height:80).frame(width: 160).background(Color.futBlue).cornerRadius(10).padding(.horizontal, 20)
                                 }
+                                HStack {
+                                    Image(systemName: "figure.soccer").font(.title)
+                                    Text("\(playerReports.count) Partidos jugados").bold()
+                                }.padding(.horizontal, 10).padding().frame(height:80).background(Color.futBlue).cornerRadius(10).padding(.horizontal, 20)
                             }
                             Divider()
                             VStack {

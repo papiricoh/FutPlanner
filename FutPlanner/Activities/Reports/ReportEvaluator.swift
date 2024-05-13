@@ -83,20 +83,50 @@ struct ReportEvaluator: View {
                     HStack() {
                         if(currentPlayerIndex + 1 < players.count) {
                             Button {
+                                nextCommand(isLast: false, notDisputed: true)
+                                proxy.scrollTo("Card", anchor: .top)
+                            } label: {
+                                HStack{
+                                    Text("No Convocado")
+                                    Image(systemName: "arrow.right").font(.title2).bold()
+                                }
+                            }.padding(16).overlay(
+                                RoundedRectangle(cornerRadius: 8)
+                                    .stroke(Color.futGreen, lineWidth: 2)
+                            ).foregroundColor(Color.futNight)
+                            Button {
                                 nextCommand(isLast: false, notDisputed: false)
                                 proxy.scrollTo("Card", anchor: .top)
                             } label: {
                                 HStack{
-                                    Text("Siguiente")
+                                    Text("Convocado")
                                     Image(systemName: "arrow.right").font(.title2).bold()
                                 }
-                            }.padding(16).padding(.horizontal, 70).background(Color.futGreen).cornerRadius(8).foregroundColor(.white)
+                            }.padding(16).background(Color.futGreen).cornerRadius(8).overlay(
+                                RoundedRectangle(cornerRadius: 8)
+                                    .stroke(Color.futGreen, lineWidth: 2)
+                            ).foregroundColor(.white)
                         }else {
+                            Button {
+                                nextCommand(isLast: true, notDisputed: true)
+                            } label: {
+                                HStack{
+                                    Text("No Convocado")
+                                    Image(systemName: "hand.thumbsup.fill").font(.title2).bold()
+                                }
+                            }.padding(16).overlay(
+                                RoundedRectangle(cornerRadius: 8)
+                                    .stroke(Color.futGreen, lineWidth: 2)
+                            ).foregroundColor(Color.futNight)
                             Button {
                                 nextCommand(isLast: true, notDisputed: false)
                             } label: {
-                                Text("Finalizar").font(.title2).bold()
-                            }.padding(16).padding(.horizontal, 70).background(Color.futGreen).cornerRadius(10).foregroundColor(.white)
+                                Text("Convocado")
+                                Image(systemName: "hand.thumbsup.fill").font(.title2).bold()
+                            }.padding(16).background(Color.futGreen).cornerRadius(8).overlay(
+                                RoundedRectangle(cornerRadius: 8)
+                                    .stroke(Color.futGreen, lineWidth: 2)
+                            ).foregroundColor(.white)
                         }
                     }.padding()
                 }

@@ -56,7 +56,7 @@ struct LogInView: View {
                                 Text("Iniciar Sesión")
                             }.padding().background(Color("FutGreenLight")).foregroundColor(.white).bold().clipShape(Rectangle()).cornerRadius(8)
                         }
-                    }.padding(32).foregroundColor(.white).background(Color.futGreenDark).cornerRadius(20).padding().transition(.move(edge: .bottom))
+                    }.padding(32).foregroundColor(.white).background(Color.futGreenDark).cornerRadius(20).padding().padding(.bottom, 100).transition(.move(edge: .bottom))
                         .animation(.easeInOut, value: animationCompleted)
                 }
             }
