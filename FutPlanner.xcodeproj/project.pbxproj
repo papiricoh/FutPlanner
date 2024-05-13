@@ -21,6 +21,8 @@
 		7C1A48702B5E9DE4002A8A1E /* StatsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1A486F2B5E9DE4002A8A1E /* StatsTab.swift */; };
 		7C2054EF2B552C7E00D1FCFA /* MatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2054EE2B552C7E00D1FCFA /* MatchesView.swift */; };
 		7C2054F12B554CF600D1FCFA /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2054F02B554CF600D1FCFA /* LogInView.swift */; };
+		7C20DBF52BF1EBF400DCCB73 /* LogoLetters.json in Resources */ = {isa = PBXBuildFile; fileRef = 7C20DBF32BF1EBF400DCCB73 /* LogoLetters.json */; };
+		7C20DBF62BF1EBF400DCCB73 /* loading2.json in Resources */ = {isa = PBXBuildFile; fileRef = 7C20DBF42BF1EBF400DCCB73 /* loading2.json */; };
 		7C23E1FF2B9EF7390042EC60 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C23E1FE2B9EF7390042EC60 /* User.swift */; };
 		7C23E2052B9F19C20042EC60 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7C23E2042B9F19C20042EC60 /* Alamofire */; };
 		7C23E2092B9F3AB80042EC60 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C23E2082B9F3AB80042EC60 /* Team.swift */; };
@@ -77,6 +79,8 @@
 		7C1A486F2B5E9DE4002A8A1E /* StatsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTab.swift; sourceTree = "<group>"; };
 		7C2054EE2B552C7E00D1FCFA /* MatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchesView.swift; sourceTree = "<group>"; };
 		7C2054F02B554CF600D1FCFA /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		7C20DBF32BF1EBF400DCCB73 /* LogoLetters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LogoLetters.json; sourceTree = "<group>"; };
+		7C20DBF42BF1EBF400DCCB73 /* loading2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading2.json; sourceTree = "<group>"; };
 		7C23E1FE2B9EF7390042EC60 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7C23E2022B9F09900042EC60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		7C23E2082B9F3AB80042EC60 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
@@ -334,6 +338,8 @@
 		7C4A17D32B5C2F65001C7C4E /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
+				7C20DBF42BF1EBF400DCCB73 /* loading2.json */,
+				7C20DBF32BF1EBF400DCCB73 /* LogoLetters.json */,
 				7CDDFE282B5F432200212DA0 /* FutField.json */,
 				7C4A17D62B5C2F96001C7C4E /* logo.json */,
 				7C4A17DD2B5C3727001C7C4E /* loading.json */,
@@ -444,10 +450,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C20DBF52BF1EBF400DCCB73 /* LogoLetters.json in Resources */,
 				7C484A782B6ED6F20055F898 /* reports.json in Resources */,
 				7C465CCA2B5707C300B97FC8 /* teamData.json in Resources */,
 				7CEB240C2B3031C600BDF78E /* Launch Screen.storyboard in Resources */,
 				7CDDFE292B5F432200212DA0 /* FutField.json in Resources */,
+				7C20DBF62BF1EBF400DCCB73 /* loading2.json in Resources */,
 				7C17A0802B569E1B00EFFE5C /* Main.storyboard in Resources */,
 				7C2488482B55DAD8001A18AB /* matchData.json in Resources */,
 				7C02D6EF2ACE958F000917BD /* Preview Assets.xcassets in Resources */,
