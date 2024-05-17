@@ -1,0 +1,658 @@
+@startuml
+' STYLE START
+hide empty members
+skinparam shadowing false
+' STYLE END
+set namespaceSeparator none
+
+
+class "LogInView" as LogInView << (S, SkyBlue) struct >> { 
+  ~onLoginSuccess : () -> Void
+  -username : String
+  -password : String
+  ~loading : Bool
+  -animationCompleted
+  ~body : some View
+  ~login() 
+}
+class "LottiePlannerView" as LottiePlannerView << (S, SkyBlue) struct >> { 
+  ~name : String
+  ~loopMode : LottieLoopMode
+  ~animationSpeed : CGFloat
+  ~completion : ((Bool) -> Void)?
+  ~makeUIView(context:)
+  ~updateUIView(_:context:) 
+}
+class "StatsTab" as StatsTab << (S, SkyBlue) struct >> { 
+  ~loading : Bool
+  ~data : [Develompent]
+  ~totals : [Int]
+  ~dataEmpty : Bool
+  ~body : some View
+  ~fetchAnalytics()
+  ~devCheckColor(_:) 
+}
+class "Develompent" as Develompent << (S, SkyBlue) struct >> { 
+  ~id
+  ~classification : String
+  ~points : Double 
+}
+class "TeamTab" as TeamTab << (S, SkyBlue) struct >> { 
+  ~searchText : String
+  ~body : some View
+  ~filteredPlayers : [TPlayer] 
+}
+class "HomeTab" as HomeTab << (S, SkyBlue) struct >> { 
+  ~onLogout : () -> Void
+  -loaded
+  -lastMatch : fMatch?
+  -nextMatch : fMatch?
+  ~changeTab : (Int) -> Void
+  ~loading : Bool
+  ~body : some View
+  ~formatDate(_:)
+  ~checkMatches() 
+}
+class "ProfileTab" as ProfileTab << (S, SkyBlue) struct >> { 
+  ~onLogout : () -> Void
+  -imageKey : UUID
+  -showingImagePicker
+  -inputImage : UIImage?
+  ~body : some View
+  ~handleSelectedImage(_:)
+  ~fetchChangeProfilePhoto(_:) 
+}
+class "ImagePicker" as ImagePicker << (S, SkyBlue) struct >> { 
+  ~dismiss
+  ~image : UIImage?
+  ~onImageSelected : (UIImage) -> Void
+  ~makeUIViewController(context:)
+  ~updateUIViewController(_:context:)
+  ~makeCoordinator() 
+}
+class "Coordinator" as ImagePicker.Coordinator << (C, DarkSeaGreen) >> { 
+  ~parent : ImagePicker
+  ~init(_:)
+  ~picker(_:didFinishPicking:) 
+}
+class "Item" as Item << (C, DarkSeaGreen) >> { 
+  ~timestamp : Date
+  ~init(timestamp:) 
+}
+class "FutPlannerApp" as FutPlannerApp << (S, SkyBlue) struct >> { 
+  ~sharedModelContainer : ModelContainer
+  ~body : some Scene 
+}
+class "LocationSearchService" as LocationSearchService << (C, DarkSeaGreen) >> { 
+  ~searchResults
+  -searchCompleter
+  ~init()
+  ~search(query:)
+  ~completerDidUpdateResults(_:)
+  ~getCoordinates(for:completion:) 
+}
+class "MatchChecker" as MatchChecker << (S, SkyBlue) struct >> { 
+  ~pending_match : fMatch?
+  ~next_match : fMatch?
+  ~init(from:) 
+}
+class "CodingKeys" as MatchChecker.CodingKeys << (E, LightSteelBlue) enum >> { 
+  ~pending_match 
+}
+class "MatchInfo" as MatchInfo << (S, SkyBlue) struct >> { 
+  ~id : Int
+  ~homeTeamName : String
+  ~awayTeamName : String
+  ~category : String
+  ~subCategory : String
+  ~you : Int
+  ~date : Date
+  ~coordinates_name : String
+  ~evaluated : Bool
+  ~coordinates : Coordinates
+  ~init(from:) 
+}
+class "CodingKeys" as MatchInfo.CodingKeys << (E, LightSteelBlue) enum >> { 
+  ~id 
+}
+class "Coordinates" as Coordinates << (S, SkyBlue) struct >> { 
+  ~latitude : Double
+  ~longitude : Double 
+}
+class "fMatch" as fMatch << (S, SkyBlue) struct >> { 
+  ~id : Int
+  ~homeTeamName : String
+  ~awayTeamName : String
+  ~category : String
+  ~subCategory : String
+  ~you : Int
+  ~date : Date
+  ~coordinates_name : String
+  ~evaluated : Bool
+  ~homeTeamId : Int?
+  ~awayTeamId : Int?
+  ~coordinates : Coordinates
+  ~init(from:) 
+}
+class "CodingKeys" as fMatch.CodingKeys << (E, LightSteelBlue) enum >> { 
+  ~id
+  ~date
+  ~homeTeamName
+  ~awayTeamName
+  ~coordinates_name
+  ~coordinates
+  ~homeTeamId
+  ~awayTeamId 
+}
+class "User" as User << (S, SkyBlue) struct >> { 
+  ~id : Int
+  ~username : String
+  ~firstName : String
+  ~lastName : String
+  ~dateOfBirth : String
+  ~lastTokenKey : String
+  ~photoUrl : String?
+  ~dateOfBirthDate : Date?
+  ~clubId : Int
+  ~userType : String
+  ~init(from:) 
+}
+class "CodingKeys" as User.CodingKeys << (E, LightSteelBlue) enum >> { 
+  ~id
+  ~firstName
+  ~lastName
+  ~photoUrl
+  ~dateOfBirth
+  ~lastTokenKey
+  ~clubId
+  ~userType 
+}
+class "senderMatchReport" as senderMatchReport << (S, SkyBlue) struct >> { 
+  ~userId : Int
+  ~token : String?
+  ~matchId : Int
+  ~reports : [senderPlayerReport]
+  ~init(userId:token:matchId:reports:) 
+}
+class "senderPlayerReport" as senderPlayerReport << (S, SkyBlue) struct >> { 
+  ~playerId : Int
+  ~generalPerformance : Int
+  ~tacticalPerformance : Int
+  ~passesQuality : Int
+  ~ballControl : Int
+  ~gameVision : Int
+  ~playedTime : Int
+  ~goals : Int
+  ~redCards : Int
+  ~yellowCards : Int 
+}
+class "UploadResponse" as UploadResponse << (S, SkyBlue) struct >> { 
+  ~message : String
+  ~imageUrl : String 
+}
+class "Team" as Team << (S, SkyBlue) struct >> { 
+  ~id : Int
+  ~teamName : String
+  ~shieldUrl : String?
+  ~subCategoryId : Int
+  ~clubId : Int
+  ~players : [Player]?
+  ~club : Club 
+}
+class "CodingKeys" as Team.CodingKeys << (E, LightSteelBlue) enum >> { 
+  ~id
+  ~teamName
+  ~shieldUrl
+  ~subCategoryId
+  ~clubId
+  ~players 
+}
+class "Player" as Player << (S, SkyBlue) struct >> { 
+  ~id : Int
+  ~firstName : String
+  ~lastName : String
+  ~photoUrl : String?
+  ~dateOfBirth : String?
+  ~playerId : Int
+  ~position : String?
+  ~shirtNumber : Int?
+  ~nationality : String?
+  ~dateOfBirthDate : Date?
+  ~init(from:) 
+}
+class "CodingKeys" as Player.CodingKeys << (E, LightSteelBlue) enum >> { 
+  ~id
+  ~firstName
+  ~lastName
+  ~photoUrl
+  ~dateOfBirth
+  ~playerId
+  ~position
+  ~shirtNumber
+  ~nationality 
+}
+class "Club" as Club << (S, SkyBlue) struct >> { 
+  ~id : Int
+  ~clubName : String
+  ~shieldUrl : String?
+  ~ownerId : Int? 
+}
+class "CodingKeys" as Club.CodingKeys << (E, LightSteelBlue) enum >> { 
+  ~id
+  ~clubName
+  ~shieldUrl
+  ~ownerId 
+}
+class "TeamData" as TeamData << (S, SkyBlue) struct >> { 
+  ~id : Int
+  ~team_name : String
+  ~club_name : String
+  ~shield_url : String
+  ~category : String
+  ~subCategory : String
+  ~players : [TPlayer] 
+}
+class "TPlayer" as TPlayer << (S, SkyBlue) struct >> { 
+  ~id : Int
+  ~first_name : String
+  ~last_name : String
+  ~photo_url : String
+  ~date_of_birth : Date
+  ~nationality : String
+  ~position : String
+  ~shirt_number : Int
+  ~init(from:) 
+}
+class "CodingKeys" as TPlayer.CodingKeys << (E, LightSteelBlue) enum >> { 
+  ~id 
+}
+class "Report" as Report << (S, SkyBlue) struct >> { 
+  ~id : Int
+  ~playerId : Int
+  ~matchId : Int
+  ~generalPerformance : Int
+  ~tacticalPerformance : Int
+  ~passesQuality : Int
+  ~ballControl : Int
+  ~gameVision : Int
+  ~playedTime : Int
+  ~goals : Int
+  ~redCards : Int
+  ~yellowCards : Int
+  ~match : Match 
+}
+class "CodingKeys" as Report.CodingKeys << (E, LightSteelBlue) enum >> { 
+  ~id
+  ~playerId
+  ~matchId
+  ~generalPerformance
+  ~tacticalPerformance
+  ~passesQuality
+  ~ballControl
+  ~gameVision
+  ~playedTime
+  ~goals
+  ~redCards
+  ~yellowCards
+  ~match 
+}
+class "Match" as Match << (S, SkyBlue) struct >> { 
+  ~id : Int
+  ~matchDate : String
+  ~mapCoords : String
+  ~placeName : String
+  ~homeTeamId : Int?
+  ~homeTeamName : String
+  ~awayTeamId : Int?
+  ~awayTeamName : String
+  ~subCategoryId : Int
+  ~evaluated : Int 
+}
+class "CodingKeys" as Match.CodingKeys << (E, LightSteelBlue) enum >> { 
+  ~id
+  ~matchDate
+  ~mapCoords
+  ~placeName
+  ~homeTeamId
+  ~homeTeamName
+  ~awayTeamId
+  ~awayTeamName
+  ~subCategoryId
+  ~evaluated 
+}
+class "PlayerReport" as PlayerReport << (S, SkyBlue) struct >> { 
+  ~id : Int
+  ~playerId : Int
+  ~matchId : Int
+  ~match : MatchInfo?
+  ~generalPerformance : Int
+  ~tacticalPerformance : Int
+  ~passesQuality : Int
+  ~ballControl : Int
+  ~gameVision : Int
+  ~playedTime : Float
+  ~goals : Int
+  ~redCards : Int
+  ~yellowCards : Int 
+}
+class "TeamAnalytic" as TeamAnalytic << (S, SkyBlue) struct >> { 
+  ~id : UUID
+  ~total_reports : Int
+  ~total_matches : Int
+  ~avg_general_performance : Double?
+  ~avg_tactical_performance : Double?
+  ~avg_passes_quality : Double?
+  ~avg_ball_control : Double?
+  ~avg_game_vision : Double?
+  ~avg_played_time : Double?
+  ~total_played_time : Double?
+  ~total_goals : Double?
+  ~total_red_cards : Double?
+  ~total_yellow_cards : Double?
+  ~performancePerMinute : Double?
+  ~goalRate : Double?
+  ~init(from:) 
+}
+class "CodingKeys" as TeamAnalytic.CodingKeys << (E, LightSteelBlue) enum >> { 
+  ~total_reports 
+}
+class "LoadingComponent" as LoadingComponent << (S, SkyBlue) struct >> { 
+  ~degreesRotating
+  ~body : some View 
+}
+class "ClubCard" as ClubCard << (S, SkyBlue) struct >> { 
+  ~onLogout : () -> Void
+  ~team : Team
+  ~body : some View 
+}
+class "NextMatchComponent" as NextMatchComponent << (S, SkyBlue) struct >> { 
+  ~match : fMatch
+  ~body : some View
+  ~formatDate(_:)
+  ~timeRemaining(_:) 
+}
+class "ProfileCard" as ProfileCard << (S, SkyBlue) struct >> { 
+  ~player : Player
+  ~body : some View
+  ~formatDate(_:) 
+}
+class "PlaceListItem" as PlaceListItem << (S, SkyBlue) struct >> { 
+  ~text : String
+  -isPressed
+  ~body : some View 
+}
+class "MatchOverview" as MatchOverview << (S, SkyBlue) struct >> { 
+  ~match : fMatch
+  -loaded
+  ~body : some View
+  ~formatDate(_:) 
+}
+class "CreateMatchSheetView" as CreateMatchSheetView << (S, SkyBlue) struct >> { 
+  -rivalTeamName : String
+  -isHomeTeam : Bool
+  -date : Date
+  -searchText : String
+  -searchMode : Bool
+  -searchService
+  -coords : CLLocationCoordinate2D
+  -region
+  -selectedPlace : String
+  ~showingSheet : () -> Void
+  ~loading : Bool
+  -coordinates
+  ~body : some View
+  ~insertMatch(_:)
+  ~stringFromDate(_:)
+  ~unixTimestampFromDate(_:) 
+}
+class "PlayerRow" as PlayerRow << (S, SkyBlue) struct >> { 
+  ~player : TPlayer
+  ~isDataOpen : Bool
+  ~body : some View
+  ~formatDate(_:) 
+}
+class "ReportList" as ReportList << (S, SkyBlue) struct >> { 
+  ~reports : [Report]
+  ~body : some View 
+}
+class "ReportRow" as ReportRow << (S, SkyBlue) struct >> { 
+  ~isDataOpen : Bool
+  ~report : Report
+  ~body : some View
+  ~convertDate(_:) 
+}
+class "RatingComponent" as RatingComponent << (S, SkyBlue) struct >> { 
+  ~text : String
+  ~rating : Int
+  ~onRating
+  ~offRating : Image?
+  ~maxRating : Int
+  ~body : some View
+  ~renderRating(for:) 
+}
+class "TotalStatsView" as TotalStatsView << (S, SkyBlue) struct >> { 
+  ~data : [Int]
+  ~body : some View 
+}
+class "NumericAssignComponent" as NumericAssignComponent << (S, SkyBlue) struct >> { 
+  ~text : String
+  ~img : String
+  ~imgColor : Color
+  ~num : Int
+  ~body : some View
+  ~decrease() 
+}
+class "PlayerListItem" as PlayerListItem << (S, SkyBlue) struct >> { 
+  ~text : String
+  -isPressed
+  ~body : some View 
+}
+class "MatchInfoActivity" as MatchInfoActivity << (S, SkyBlue) struct >> { 
+  ~infoMatch : fMatch
+  ~loaded
+  ~body : some View
+  -region : MKCoordinateRegion
+  ~formatDate(_:) 
+}
+class "MatchesView" as MatchesView << (S, SkyBlue) struct >> { 
+  -showCreateMatchSheet
+  ~loading : Bool
+  -avariable : [fMatch]
+  ~body : some View
+  ~avariableMatches()
+  ~unavariableMatches() 
+}
+class "OldMatchesActivity" as OldMatchesActivity << (S, SkyBlue) struct >> { 
+  ~oldMatches : [fMatch]
+  ~body : some View 
+}
+class "MapPickerView" as MapPickerView << (S, SkyBlue) struct >> { 
+  ~body : some View 
+}
+class "StatsActivity" as StatsActivity << (S, SkyBlue) struct >> { 
+  ~player : Player
+  ~loading : Bool
+  ~playerReports : [Report]
+  ~noData : Bool
+  ~body : some View
+  ~sumReports(_:)
+  ~fetchReports()
+  ~getPlayerReports(playerId:)
+  ~searchMatch(matchId:) 
+}
+class "RadarChartRepresentable" as RadarChartRepresentable << (S, SkyBlue) struct >> { 
+  ~reports : [Report]
+  ~makeUIViewController(context:)
+  ~updateUIViewController(_:context:) 
+}
+class "RadarChartViewController" as RadarChartViewController << (C, DarkSeaGreen) >> { 
+  ~radarChart : RadarChartView!
+  ~reports : [Report]
+  ~init(reports:)
+  ~init(coder:)
+  ~viewDidLoad()
+  ~setupRadarChart() 
+}
+class "ReportEvaluator" as ReportEvaluator << (S, SkyBlue) struct >> { 
+  ~presentationMode
+  ~players : [Player]
+  ~match : fMatch
+  ~reports : [PlayerReport]
+  ~currentPlayerIndex
+  ~currentReport : PlayerReport
+  -onSlider
+  -scrollPosition : Int?
+  ~completeReport : () -> Void
+  ~nextCommand(isLast:notDisputed:)
+  ~body : some View
+  ~fetchInsertReports() 
+}
+class "ContentView" as ContentView << (S, SkyBlue) struct >> { 
+  -modelContext
+  -selection
+  +logged
+  +loading
+  ~init()
+  ~body : some View
+  ~fetchTokenUserContent() 
+}
+class "UITextField" as UITextField << (X, Orchid) extension >> { 
+  ~setPlaceholderColor(to:) 
+}
+class "View" as View << (X, Orchid) extension >> { 
+  ~keyboardDoneButton()
+  -hideKeyboard() 
+}
+class "UIImage" as UIImage << (X, Orchid) extension >> { 
+  ~fixedOrientation() 
+}
+class "MatchChecker" as MatchChecker0 << (X, Orchid) extension >> { 
+  ~init(pending_match:next_match:) 
+}
+class "MatchInfo" as MatchInfo1 << (X, Orchid) extension >> { 
+  ~init(id:homeTeamName:awayTeamName:category:subCategory:you:date:coordinates_name:evaluated:coordinates:) 
+}
+class "fMatch" as fMatch2 << (X, Orchid) extension >> { 
+  ~init(id:homeTeamName:awayTeamName:category:subCategory:you:date:coordinates_name:evaluated:coordinates:homeTeamId:awayTeamId:) 
+}
+class "Player" as Player3 << (X, Orchid) extension >> { 
+  ~init(id:firstName:lastName:photoUrl:dateOfBirth:playerId:position:shirtNumber:nationality:) 
+}
+class "Array" as Array << (X, Orchid) extension >> { 
+  ~average()
+  ~sum() 
+}
+class "Array" as Array4 << (X, Orchid) extension >> { 
+  ~average()
+  ~sum() 
+}
+View <|-- LogInView : inherits
+UIViewRepresentable <|-- LottiePlannerView : inherits
+View <|-- StatsTab : inherits
+Identifiable <|-- Develompent : inherits
+View <|-- TeamTab : inherits
+View <|-- HomeTab : inherits
+View <|-- ProfileTab : inherits
+UIViewControllerRepresentable <|-- ImagePicker : inherits
+NSObject <|-- ImagePicker.Coordinator : inherits
+PHPickerViewControllerDelegate <|-- ImagePicker.Coordinator : inherits
+App <|-- FutPlannerApp : inherits
+NSObject <|-- LocationSearchService : inherits
+ObservableObject <|-- LocationSearchService : inherits
+MKLocalSearchCompleterDelegate <|-- LocationSearchService : inherits
+Hashable <|-- MatchChecker : inherits
+Codable <|-- MatchChecker : inherits
+String -- MatchChecker.CodingKeys : inherits
+CodingKey -- MatchChecker.CodingKeys : inherits
+Identifiable <|-- MatchInfo : inherits
+Hashable <|-- MatchInfo : inherits
+Codable <|-- MatchInfo : inherits
+String -- MatchInfo.CodingKeys : inherits
+CodingKey -- MatchInfo.CodingKeys : inherits
+Hashable <|-- Coordinates : inherits
+Codable <|-- Coordinates : inherits
+Identifiable <|-- fMatch : inherits
+Hashable <|-- fMatch : inherits
+Codable <|-- fMatch : inherits
+String -- fMatch.CodingKeys : inherits
+CodingKey -- fMatch.CodingKeys : inherits
+Identifiable <|-- User : inherits
+Codable <|-- User : inherits
+String -- User.CodingKeys : inherits
+CodingKey -- User.CodingKeys : inherits
+Codable <|-- senderMatchReport : inherits
+Codable <|-- senderPlayerReport : inherits
+Decodable <|-- UploadResponse : inherits
+Codable <|-- Team : inherits
+String -- Team.CodingKeys : inherits
+CodingKey -- Team.CodingKeys : inherits
+Hashable <|-- Player : inherits
+Codable <|-- Player : inherits
+String -- Player.CodingKeys : inherits
+CodingKey -- Player.CodingKeys : inherits
+Codable <|-- Club : inherits
+String -- Club.CodingKeys : inherits
+CodingKey -- Club.CodingKeys : inherits
+Identifiable <|-- TeamData : inherits
+Hashable <|-- TeamData : inherits
+Codable <|-- TeamData : inherits
+Identifiable <|-- TPlayer : inherits
+Hashable <|-- TPlayer : inherits
+Codable <|-- TPlayer : inherits
+String -- TPlayer.CodingKeys : inherits
+CodingKey -- TPlayer.CodingKeys : inherits
+Identifiable <|-- Report : inherits
+Codable <|-- Report : inherits
+String -- Report.CodingKeys : inherits
+CodingKey -- Report.CodingKeys : inherits
+Codable <|-- Match : inherits
+String -- Match.CodingKeys : inherits
+CodingKey -- Match.CodingKeys : inherits
+Identifiable <|-- PlayerReport : inherits
+Hashable <|-- PlayerReport : inherits
+Codable <|-- PlayerReport : inherits
+Identifiable <|-- TeamAnalytic : inherits
+Hashable <|-- TeamAnalytic : inherits
+Codable <|-- TeamAnalytic : inherits
+String -- TeamAnalytic.CodingKeys : inherits
+CodingKey -- TeamAnalytic.CodingKeys : inherits
+View <|-- LoadingComponent : inherits
+View <|-- ClubCard : inherits
+View <|-- NextMatchComponent : inherits
+View <|-- ProfileCard : inherits
+View <|-- PlaceListItem : inherits
+View <|-- MatchOverview : inherits
+View <|-- CreateMatchSheetView : inherits
+View <|-- PlayerRow : inherits
+View <|-- ReportList : inherits
+View <|-- ReportRow : inherits
+View <|-- RatingComponent : inherits
+View <|-- TotalStatsView : inherits
+View <|-- NumericAssignComponent : inherits
+View <|-- PlayerListItem : inherits
+View <|-- MatchInfoActivity : inherits
+View <|-- MatchesView : inherits
+View <|-- OldMatchesActivity : inherits
+View <|-- MapPickerView : inherits
+View <|-- StatsActivity : inherits
+UIViewControllerRepresentable <|-- RadarChartRepresentable : inherits
+UIViewController <|-- RadarChartViewController : inherits
+View <|-- ReportEvaluator : inherits
+View <|-- ContentView : inherits
+ImagePicker +-- ImagePicker.Coordinator
+MatchChecker +-- MatchChecker.CodingKeys
+MatchInfo +-- MatchInfo.CodingKeys
+fMatch +-- fMatch.CodingKeys
+User +-- User.CodingKeys
+Team +-- Team.CodingKeys
+Player +-- Player.CodingKeys
+Club +-- Club.CodingKeys
+TPlayer +-- TPlayer.CodingKeys
+Report +-- Report.CodingKeys
+Match +-- Match.CodingKeys
+TeamAnalytic +-- TeamAnalytic.CodingKeys
+MatchChecker <.. MatchChecker0 : ext
+MatchInfo <.. MatchInfo1 : ext
+fMatch <.. fMatch2 : ext
+Player <.. Player3 : ext
+@enduml
