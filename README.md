@@ -15,7 +15,7 @@
 
 ## UML
 
-![FutPlanner UML](source.png)
+![FutPlanner UML](sources.png)
 
 ## License
 
