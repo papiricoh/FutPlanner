@@ -13,6 +13,10 @@
 - **Team Management:** Manage your players by assigning positions and specific roles within the team.
 - **Player Evaluation:** Track and analyze each player's performance with your detailed metrics and visual feedback.
 
+## UML
+
+![FutPlanner UML](source.png)
+
 ## License
 
 Distributed under non-comertial use. See `LICENSE` file for more information.
